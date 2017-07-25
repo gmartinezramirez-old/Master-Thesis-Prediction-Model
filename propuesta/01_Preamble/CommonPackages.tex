@@ -1,0 +1,187 @@
+%%% File encoding is UTF8
+%%% You can use special characters just like ä,ü and ñ
+
+% Input encoding is 'latin1' (Latin 1 - also known as ISO-8859-1)
+% CTAN: http://www.ctan.org/pkg/inputenc
+% 
+% A newer package is available - you may look into:
+% \usepackage[x-iso-8859-1]{inputenc}
+% CTAN: http://www.ctan.org/pkg/inputenx
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+
+% Font Encoding is 'T1' -- important for special characters such as Umlaute ü or ä and special characters like ñ (enje)
+% CTAN: http://www.ctan.org/pkg/fontenc
+\usepackage[T1]{fontenc}
+
+% Language support for 'english' (alternative 'ngerman' or 'french' for example)
+% This case is in spanish
+% CTAN: http://www.ctan.org/pkg/babel
+%\usepackage[english]{babel} 
+\usepackage[spanish
+          , es-tabla
+          , es-noindentfirst]{babel} 
+
+% Doing calculations with LaTeX units -- needed for the vertical line in the footer
+% CTAN: http://www.ctan.org/pkg/calc
+\usepackage{calc}
+
+% Extended graphics support 
+% There is also a package named 'graphics' - watch out!
+% CTAN: http://www.ctan.org/pkg/graphicx
+\usepackage{graphicx}
+
+% Extendes support for floating objects (tables, figures), adds the [H] placing option (\begin{figure}[H]) which palces it "Here" (without any doubt).
+% CTAN: http://www.ctan.org/pkg/float
+\usepackage{float}
+
+% Extended color support
+% I use the command \definecolor for example. 
+% Option 'Table': Load the colortbl package, in order to use the tools for coloring rows, columns, and cells within tables.
+% CTAN: http://www.ctan.org/pkg/xcolor
+\usepackage[table]{xcolor} 
+
+% Nice tables
+% CTAN: http://www.ctan.org/pkg/booktabs
+\usepackage{booktabs}
+
+\usepackage{colortbl}
+
+\usepackage{multirow,siunitx}
+
+% Better support for ragged left and right. Provides the commands \RaggedRight and \RaggedLeft. 
+% Standard LaTeX commands are \raggedright and \raggedleft
+% http://www.ctan.org/pkg/ragged2e
+\usepackage{ragged2e}
+
+% Create function plots directly in LaTeX
+% CTAN: http://www.ctan.org/pkg/pgfplots
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+
+% Main Font used: Arial
+\usepackage{uarial}
+\usepackage[expert]{mathdesign}
+\renewcommand{\familydefault}{\sfdefault}
+
+% tocloft ? Control table of contents, figures, etc
+% CTAN: https://ctan.org/pkg/tocloft
+%\usepackage{tocloft}
+
+% Configure Microtype
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+% activate={true,nocompatibility} - activate protrusion and expansion
+% final - enable microtype; use "draft" to disable
+% tracking=true, kerning=true, spacing=true - activate these techniques
+% factor=1100 - add 10% to the protrusion amount (default is 1000)
+% stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
+
+\SetExtraKerning[unit=space]
+{encoding={*}, family={bch}, series={*}, size={footnotesize,small,normalsize}}
+{\textendash={400,400}, % en-dash, add more space around it
+	"28={ ,150}, % left bracket, add space from right
+	"29={150, }, % right bracket, add space from left
+	\textquotedblleft={ ,150}, % left quotation mark, space from right
+	\textquotedblright={150, }} % right quotation mark, space from left
+
+\SetExtraKerning[unit=space]
+{encoding={*}, family={qhv}, series={b}, size={large,Large}}
+{1={-200,-200}, 
+	\textendash={400,400}}
+
+% Use French spacing
+\frenchspacing
+
+
+
+% https://www.ctan.org/pkg/biblatex-ieee
+\usepackage[backend=biber
+		  %, style=ieee % Esta bien, pero no agrupa las citaciones
+		  %, style=numeric-comp %Revisar, porque algunas referencias no las tira correctas
+		  , bibstyle=ieee  %Combinacion de ambas
+		  , citestyle=numeric-comp
+		  , hyperref=true
+		  , url=false
+		  , isbn=false
+		  , backref=true
+		 %, style=custom-numeric-comp
+		  , citereset=chapter
+		  , maxcitenames=3
+		  , maxbibnames=100
+		  , block=none
+		  , sorting=none % El orden de las citas en IEEE es según el orden de aparicion en el texto
+		 %, language=spanish
+]{biblatex}
+\bibliography{bibfile}
+%\usepackage[autostyle]{csquotes}
+\usepackage[style=english]{csquotes}
+%\addbibresource{bibfile}
+
+%\usepackage[nottoc]{tocbibind}
+
+%Si se usa IEEE
+%TODO: Cambiar de bibliografia a Referencias Bibliograficas
+\renewcommand\bibname{Referencias Bibliogr\'aficas}
+\DefineBibliographyStrings{spanish}{%
+	andothers = {\em et\addabbrvspace al\adddot}
+}
+
+\AtEveryBibitem{%
+	\ifboolexpr{test {\ifentrytype{article}} and not test {\iffieldundef{doi}}}
+	{\clearfield{number}}
+	{}%
+}
+
+\usepackage{pgfplotstable}
+
+%FIX: dont work
+\usepackage[noabbrev,capitalize,nameinlink,spanish]{cleveref}
+\crefname{table}{\spanishtablename}{\spanishtablename}
+
+\usepackage{subcaption}
+
+\usepackage{neuralnetwork}
+
+\usepackage[linesnumbered
+		   , algoruled
+	       , vlined
+	       , boxed
+	       , algochapter
+	       , commentsnumbered
+	       , spanish
+	       , onelanguage
+]{algorithm2e}
+
+\usepackage{pgfgantt}
+\ganttset{
+	, y unit title=0.5cm
+	, y unit chart=0.7cm
+	, vgrid,hgrid
+	, progress=today
+	, group/.append style={orange}
+	, milestone/.append style={red}
+	, progress label node anchor/.append style={text=red}
+	, bar/.style={draw=black, fill=gray!50}
+	, incomplete/.style={draw=black, fill=white}
+	, title height=1
+	, title label font=\bfseries\footnotesize
+	, bar/.style={fill=black}
+	, bar height=0.7
+	, today label=HOY
+	, group right shift=0
+	, group top shift=0.7
+	, group height=.3
+	, group peaks width={0.2}
+	, inline
+} 
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\usepackage{amsmath,amssymb}
+
+%Error with biblatex
+%\usepackage{cite}
+
+% Optional: Use minitoc in each chapter 
+\usepackage[spanish]{minitoc}

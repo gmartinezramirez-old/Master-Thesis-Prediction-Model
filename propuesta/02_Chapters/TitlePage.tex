@@ -1,0 +1,69 @@
+%%% File encoding is ISO-8859-1 (also known as Latin-1)
+%%% You can use special characters just like ä,ü and ñ
+
+% Title page using \maketitle (a more flexible alternative is the titlepage environment)
+%\title{PHD Thesis}
+%\subtitle{\LaTeX{} template by Manuel Kuehner\\ \url{www.bedienhaptik.de/latex-template/}}
+%\author{Manuel Kuehner}
+%\date{01.01.2015}
+
+
+%\maketitle
+\def\alumno#1{Gonzalo Martinez Ramirez}
+\def\rut#1{18.045.598\ -\ 1}
+\def\ingreso#1{2010}
+\def\fono#1{(+56)\ 9\ -\ 96112973}
+\def\mail#1{gonzalo.martinez@usach.cl}
+\def\profesorguia#1{Roberto Ignacio González Ibañez}
+
+\newgeometry{top=4cm, bottom=2.5cm, left=4cm, right=2.5cm}
+\begin{titlepage}
+	\begin{center}
+		{\Large\bfseries UNIVERSIDAD DE SANTIAGO DE CHILE} \\ 
+		{\large\bfseries FACULTAD DE INGENIERÍA} \\
+		{\large\bfseries Departamento de Ingeniería Informática} \\
+
+		\begin{picture}(18,4)(0,40)
+		\put(160,50){\includegraphics[width=0.15\textwidth]{03_GraphicFiles/logo-onlyescudo-usach-bw}}
+		\end{picture}
+		
+		% ----------------------------------------------------------------
+		%\vspace{5cm}
+		\vspace*{\fill}
+		{\Large\bfseries \MakeUppercase MODELO DE PREDICCIÓN DEL COMPORTAMIENTO DE BÚSQUEDA DE INFORMACIÓN EN LÍNEA EN ESTUDIANTES DE EDUCACIÓN PRIMARIA} \\ %[5pt]
+		{\bfseries Propuesta de Tesis}
+		\vspace*{\fill}
+		% ----------------------------------------------------------------
+	
+		\vfill
+		\begin{flushright}
+			\begin{tabular}[t]{rl}
+				Nombre: & Gonzalo Javier Martinez Ramirez \\
+				R.U.T.: & 18.045.598-1 \\
+				A\~no Ingreso: & 2010 \\
+				Tel\'efono: & (+56) 9 96112973 \\
+				E-mail: & gonzalo.martinez@usach.cl \\
+				Profesor Patrocinador: & \profesorguia \\ 
+			\end{tabular}
+		\end{flushright}
+	
+		%\vspace{1cm}
+		%\hspace{6.8cm}
+		%\begin{tabular}{p{5.5cm}}
+		%Trabajo de titulación presentado en conformidad a los requisitos para obtener el grado de Magister en Ingeniería Informática.
+		%\end{tabular}
+		\vfill
+		{Santiago\ \textendash \ Chile} \\
+		{Junio\ 2017}
+	\end{center}
+\end{titlepage}
+\restoregeometry
+
+% Copyright page
+\thispagestyle{empty}
+\null\vfill\par
+\begin{flushleft}
+	\textcopyright \ \textbf{Gonzalo Javier Martinez Ramirez y Roberto Ignacio González-Ibañez, 2017}\\
+	$\bullet$ Todos los derechos reservados. Queda prohibida la reproducción total o parcial sin la autorización 
+	previa y por escrito. 
+\end{flushleft}

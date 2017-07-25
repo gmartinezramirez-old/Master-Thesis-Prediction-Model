@@ -1,0 +1,81 @@
+%%% File encoding is UTF8
+%%% You can use special characters just like ä,ü and ñ
+
+% KOMA-Script class 'scrbook'
+% Link to the documentation: 
+% German: http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide.pdf
+% English: http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf
+% CTAN: http://www.ctan.org/pkg/koma-script
+% Author of the KOMA-Script family is Markus Kohm
+\documentclass[paper=letter % Letter is "carta"
+			 , fontsize=10pt % Arial 10 for all text.
+			 , headings=big
+			 , parskip=half-
+			%, noparskip % No par skip. If yes park skip the command is parskip
+			%, numbers=noendperiod % 2.3.1 vs 2.3.1. (no dot after the last chapter number)
+			 , numbers=endperiod
+	         , twoside=false
+			% , toc=bibliography % Bibliography appears in Table of Contents (without a number)
+			% , toc=listof % List of Figures and List of Tables appear in Table of Contents
+			% , chapterprefix=true
+			 , chapterprefix=false
+			 , bibliography=totoc % The bibliography will have an entry at the table of contents but no number.
+			 , numbers=noenddot
+			 , titlepage=simple
+			 , headings=onelinechapter
+			 , version=last % Use latest version of the KOMA-Script
+			 , final
+]{scrbook}
+
+
+\addtokomafont{section}{\large}
+%TODO: Parece que comentado no da problemas
+%\addtokomafont{chapterprefix}{\LARGE}
+\KOMAoption{bibliography}{leveldown}
+
+\newcommand{\mychapter}[1]{%
+	\chapter{#1}
+	\addcontentsline{lof}{chapter}{%
+		Figuras del Capítulo \thechapter: #1 \vspace{10pt}
+	}
+}
+
+%REVISAR
+\usepackage[compact]{titlesec}
+
+% Titles in the chapters, not in TOC.
+\titleformat{\chapter}
+{\bfseries\Large\vspace*{-4.0cm}}	% Formato título
+{	% Contenido de la etiqueta
+	\filright
+	\Large\MakeUppercase\chaptertitlename\ \thechapter.\ 
+}
+{0pt} % Espacio mínimo entre etiqueta y cuerpo
+{\filright\MakeUppercase} % Código que precede al cuerpo del título
+[\vspace{1.5pt}] % Margen de 1.5pt
+
+\titleformat{\section}
+{\bfseries\large\vspace{2pt}}
+{\large\MakeUppercase\thesection\ \vspace{2pt} } % 3 espacios luego del titulo de una seccion
+{0pt}
+{\MakeUppercase}
+[\vspace*{0.5cm}]
+
+\titleformat{\subsection}
+{\bfseries\normalsize\vspace{2pt}} % 3 espacios luego del titulo de una seccion
+{\normalsize\thesubsection\ }
+{0pt}
+{\vspace*{0.5cm}}
+
+\titleformat{\subsubsection}
+{\itshape\normalsize\vspace{1.0cm}}
+{\itshape\thesubsubsection\ }
+{0pt}
+{\vspace*{0.5cm}\itshape}
+
+\titlespacing*{\chapter} {0pt}{85pt}{20pt} 
+\titlespacing*{\section} {0pt}{6.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection} {0pt}{6.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+\titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}

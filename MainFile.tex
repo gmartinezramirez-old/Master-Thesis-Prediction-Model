@@ -1,0 +1,136 @@
+%%% File encoding is UTF8
+
+%%% If you use this template then please give credit like this:
+%%% ----------------------------
+% LaTeX code inspired by the LaTeX Thesis Template by Manuel Kuehner 
+% www.bedienhaptik.de/latex-template/
+%%% ----------------------------
+
+% ##############################################
+% Start: Template Preamble
+% ##############################################
+%
+
+% Documentclass definition
+\input{01_Preamble/documentclass.tex}
+
+% Loading additional packages from the KOMA-Script family
+\input{01_Preamble/KOMA-Script-Packages.tex}
+
+% Page layout definition
+\input{01_Preamble/PageLayout.tex}
+
+% Standard packages
+\input{01_Preamble/CommonPackages.tex}
+
+% Use Spanish file for hyphenation
+\hyphenation{hyph-es}
+
+% ####-Important-####
+%
+% Definition of the two main colors
+% -----------------------
+% The corresponding xcolor package ist loaded in the file 
+% 01_Preamble/StandardPackages.tex
+%
+% ####-Important-####
+%\definecolor[named]{myColorMainA}{RGB}{0,26,153}
+%\definecolor[named]{myColorMainB}{RGB}{174,49,54}
+\definecolor[named]{myColorMainA}{RGB}{0,0,0}
+\definecolor[named]{myColorMainB}{RGB}{0,0,0}
+\definecolor{mylinkcolor}{RGB}{5,123,10}
+\definecolor{mycitecolor}{RGB}{5,10,123}
+
+% colors
+\definecolor{gray75}{gray}{0.75}
+\definecolor{gray90}{gray}{0.90}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{green}{rgb}{0.2,0.8,0.2}
+\definecolor{red}{rgb}{1.0,0.3,0.0}
+\definecolor{orange}{rgb}{1.0,0.6,0.0}
+
+% Customization of 
+% - Floating Objects (Caption) 
+% - Table of Contents (TOC)
+% - List of Figures
+% - List of Tables
+% - Headings (like chapter, section, etc.)
+% - Bibliography Style
+\input{01_Preamble/Floating-AND-TOC-AND-ListOf-AND-Headings.tex}
+
+% Customization of the header, footer and teh margin note
+\input{01_Preamble/HeaderFooterMarginnote.tex}
+
+% Optimize paragraphs (avoid overfull... warnings)
+\input{01_Preamble/ParagraphOptimization.tex}
+
+% PDF related packages
+\input{01_Preamble/PDF-Related.tex}
+
+% PDF related packages
+\input{01_Preamble/RandomTextPackage.tex}
+
+% Bibliography
+\input{01_Preamble/BibliographyStyle.tex}
+
+%
+% #######################
+% Ende: Template Preamble
+% #######################
+
+% ##############################################
+% Start: Document
+% ##############################################
+%
+% ------------------------------------------------------------------
+\begin{document}
+
+% Title page
+\input{02_Chapters/TitlePage.tex}
+% Empty page after title page
+\cleardoublepage
+
+% Activate header and footer defined in the file:
+% 01_Preamble/HeaderFooterMarginnote.tex
+\pagestyle{scrheadings}
+
+% Activate roman numbering (e. g. xii)	
+\pagenumbering{roman}
+
+% Start with page 1 (I)
+\setcounter{page}{1}
+
+% Abstract
+\input{02_Chapters/Abstract.tex}
+
+% Table of Contents and Lost of Figures/Tables
+\input{02_Chapters/TOC-AND-ListOf.tex}
+
+% Introduction
+\input{02_Chapters/01_Introduction/01_Introduction.tex}
+
+\input{02_Chapters/02_Desarrollo/02_Desarrollo.tex}
+
+% Main Part
+%\input{02_Chapters/MainPart.tex}
+
+% Final Thoughts
+%\input{02_Chapters/FinalThoughts.tex}
+
+\printbibliography 
+% Start appendix
+\appendix
+
+% Appendix A
+\input{02_Chapters/AppendixExampleChapterA.tex}
+
+% Appendix B
+\input{02_Chapters/AppendixExampleChapterB.tex}
+
+\end{document}
+% ------------------------------------------------------------------
+%
+% #######################
+% End: Document
+% #######################

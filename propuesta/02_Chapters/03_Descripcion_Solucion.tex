@@ -1,0 +1,28 @@
+\chapter{Descripción de la Solución Propuesta}
+\label{chp:descripcion}
+
+\section{Características de la solución}
+La solución consiste en una plataforma de aprendizaje de máquina y predicción del rendimiento de los estudiantes en tiempo real, en donde a través de la información obtenida en la plataforma NEURONE se crea un modelo de clasificación y predicción del rendimiento de los estudiantes de enseñanza básica en un curso de alfabetización informacional, específicamente en el tema de investigaciones en línea (\textit{online inquiry}). 
+
+Los datos son recopilados y almacenados por NEURONE, estos datos provienen de registros del proceso de buscar información en línea en un sistema cerrado, los cuales son: historial de navegación, consultas realizadas, movimientos del \textit{mouse}, escritura por teclado, número de \textit{clicks} y tiempos de permanencia en páginas web. Además, se conoce con anticipación los documentos y párrafos ideales a seleccionar por parte de los estudiantes.
+
+La información de los estudiantes y el resultado de las evaluaciones definen una buena o mala navegación. La plataforma y el modelo a construir deberá ser capaz de predecir en tiempo real el desempeño de los estudiantes a partir de su comportamiento de búsqueda de información actual.
+
+La plataforma propuesta hará uso de Tensorflow, la cual se conectará con el sistema NEURONE, funcionando como una extensión del mismo, consultando la base de datos de NEURONE. La Figura 3.1, donde un académico hace una consulta a la aplicación, la cual llega a la plataforma propuesta, y el componente Spark Streaming, se encarga de consultar la base de datos de NEURONE y obtener los datos de navegación del usuario en particular, para luego crear y alimentar el modelo de predicción, el cual es almacenado en una base de datos MongoDB. Finalmente, se entrega la predicción del estudiante actual al académico que hizo la consulta. 
+
+
+\section{Propósito de la solución}
+
+El propósito de la solución consiste en proveer evaluaciones de rendimiento oportunas, que permitan a los docentes aplicar acciones correctivas durante el proceso de formación y desarrollo de competencias informacionales, en cursos de alfabetización informacional.
+
+Con la plataforma propuesta en este trabajo, el académico obtiene una respuesta temprana del comportamiento del estudiante en el proceso de búsqueda de información. Tal como se ve en la Figura 3.2, el estudiante interactúa con el sistema educacional, en este caso NEURONE, y la plataforma propuesta a través de técnicas de minería de datos, informa al académico de los patrones y predicciones del comportamiento del estudiante, con el objetivo de ayudar en la toma de decisiones al académico correspondiente para diseñar y planificar de mejor forma la entrega de contenidos hacia el estudiante.
+
+\section{Alcances y limitaciones de la solución}
+Los modelos se construyen a partir de un conjunto de datos específicos, los cuales tienen su propio contexto y origen que limitan los modelos a construir. A continuación, se describen las principales limitaciones y alcances de la solución.
+
+\begin{enumerate}
+	\item El curso de alfabetización informacional y sus respectivos registros de datos, pertenecen al proyecto iFuCo \cite{CONICYT2015-listadoproyectos}, el cual es un trabajo colaborativo entre universidades de Finlandia (University of Tampere, University of  Jyväskylä y University of Turku) y de Chile (Universidad de Santiago de Chile y Pontificia Universidad Católica de Chile). 
+	\item Los registros de datos provienen de un estudio enmarcado en un curso de alfabetización en información, aplicado al área de Ciencia y Ciencias Sociales, en ambos países.
+	\item Los datos son recolectados y almacenados por un sistema externo llamado “NEURONE”, trabajo de memoria de un estudiante de la carrera de Ingeniería de Ejecución en Computación e Informática, de la Universidad de Santiago de Chile \cite{NEURONE2016}.
+	\item La solución funciona como un sistema predictor del comportamiento del resultado de búsqueda de estudiantes, y no ofrece características de un sistema de recomendación.
+\end{enumerate}

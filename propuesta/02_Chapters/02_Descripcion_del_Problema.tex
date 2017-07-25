@@ -1,0 +1,65 @@
+\chapter{Descripción del Problema}
+\label{chp:decripcion-problema}
+\section{Motivación}
+\label{sec:motivacion}
+Durante la última década, debido a los rápidos avances de las tecnologías de la información y comunicación (TICs, desde ahora en adelante) ha aumentado la cantidad de recursos digitales en Internet, la diversidad de fuentes de información, y, además, se ha facilitado el acceso a estos. Asimismo, las búsquedas web han pasado a ser parte de las tareas comunes que realizan los estudiantes de los planteles educativos. En consecuencia, se ha disminuido las visitas a bibliotecas, y el uso de fuentes revisadas y editadas.
+
+La Alfabetización en Información es una disciplina que se define a sí misma en base al desarrollo de destrezas, habilidades y competencias informacionales que permitan ir fortaleciendo el aprendizaje constante y el trabajo colaborativo \cite{american2000information}. Además, favorece la capacidad de buscar, clasificar, y comprender la información, para posteriormente convertirla en conocimiento asimilado y útil. A causa de esto, el estudio, análisis y modelado de las conductas de los estudiantes en ambientes de búsqueda web es esencial para comprender sus niveles de alfabetización informacional \cite{tseng2009meta}.
+
+Considerando la diversidad de fuentes de información y tipos de recursos en línea, resulta necesario desarrollar competencias informacionales durante el proceso de formación en los distintos niveles educativos (primaria, secundaria y universitaria). La enseñanza de la alfabetización informacional, se imparte principalmente por bibliotecas universitarias, y en menor medida en la etapa escolar obligatoria \cite{weiner2014teaches}. Actualmente, ciertas universidades consideran las competencias informacionales como un requisito de entrada para iniciar estudios universitarios \cite{smith2013information}.
+
+Actualmente, en Chile la enseñanza de competencias informacionales es enseñada en bibliotecas universitarias y cursos introductorios de mallas universitarias \cite{marzal2015diagnostico}. De acuerdo con \cite{urra2016alfabetizacion} los estudiantes universitarios de Chile presentan problemas con las competencias informacionales, ya que no aplican la búsqueda de información de forma crítica. Una de las posibles causas de por qué los estudiantes tienen dificultades con estas competencias es el hecho de que, en los colegios, y en el inicio de su educación, no se prioriza la generación de conocimiento, sino la reiteración de información.
+
+\newpage
+Las consecuencias de no considerar cuándo y por qué se necesita la información, dónde encontrarla, y cómo evaluarla, se ven reflejadas en la evaluación crítica de la información, y en el desempeño de los estudiantes \cite{urra2016alfabetizacion}. A causa de esto, existe la necesidad de estudiar el fenómeno de la alfabetización informacional y las competencias de investigación en línea con los objetivos de i) conocer y estudiar los comportamientos de los estudiantes en tareas de búsqueda de información en medios digitales, y ii) obtener modelos para reforzar los niveles de alfabetización informacional. 
+
+Esta propuesta de tesis se enmarca dentro en el contexto del proyecto de investigación “\textit{Enhancing Learning and Teaching Future Competences of Online Inquiry in Multiple Domains}” (iFuCo, desde ahora en adelante) \cite{CONICYT2015-listadoproyectos}, el cual pretende abordar la temática de la alfabetización informacional en estudiantes de enseñanza primaria con el objetivo de estudiar sus patrones de comportamiento y ofrecer modelos curriculares adecuados respecto al tema \cite{ifuco2015}.
+
+\section{Revisión de la literatura}
+\label{sec:revision-literatura}
+En esta sección, se presenta el estado del arte que da soporte a este trabajo, el cual comprende en primer el estudio del comportamiento de estudiantes. En segundo lugar, técnicas de minería de datos y plataformas de aprendizaje de máquina (\textit{Machine Learning}, ML desde ahora en adelante) aplicada al contexto educacional. Finalmente, para una revisión extendida de la literatura, ver ANEXO A. ESTADO DEL ARTE.
+
+La minería de datos (MD, desde ahora en adelante) pretende resolver problemas complejos cuya solución no se puede hallar con técnicas tradicionales como la estadística. Esto se logra al descubrir patrones y predecir tendencias por medio del análisis de datos generados a través de los diferentes sistemas operacionales y transaccionales de una institución y que están almacenados en sus bases de datos \cite{witten2016data}. Cuando se aplica minería de datos en instituciones educativas la disciplina se conoce como minería de datos educacionales (MDE, desde ahora en adelante).
+
+La MDE es una disciplina en evolución que usa tecnologías informáticas como son almacenes de datos y herramientas de inteligencia de negocios para descubrir tendencias y patrones sobre datos educacionales. El conocimiento que la MD genera apoya a las autoridades de centros de educación en la toma de decisiones oportunas, y a los profesores para analizar el comportamiento y aprendizaje de sus alumnos \cite{romero2010educational}. La disciplina se enfoca en el diseño de modelos para mejorar las experiencias del aprendizaje y la eficiencia organizacional \cite{pandey2013decision}. El principal objetivo de la MDE es visto por diferentes investigadores como \cite{merceron2005educational,kumar2015comprehensive,romero2010educational}: i) modelado del estudiante, modelado del dominio, ii) sistema de aprendizaje, iii) construir modelos computacionales, y iv) estudiar los efectos de los recursos.
+
+Actualmente, la aplicación de MDE, se radica en universidades, tales como Paul Smith’s College, la cual utiliza sus datos históricos para mejorar las tasas de retención de alumnos \cite{bichsel2012analytics}. La University of Georgia desarrolló un modelo para predecir la tasa de graduación y abandono estudiantil en un ambiente en línea \cite{morris2005predicting}.  Finalmente, la Purdue University han usado MD para determinar que la evaluación en etapas tempranas y de forma frecuente permite cambiar los hábitos de los estudiantes con calificaciones bajo la media en cursos introductorios. El equipo de investigación ha desarrollado un sistema de alerta académica temprana para saber el desempeño de los estudiantes \cite{baepler2010academic}. 
+
+\textcite{baker2010data} desarrolló un modelo de predicción usando datos recopilados automáticamente de interacciones entre estudiantes y el software como variables de predicción, y después validando la precisión del modelo al ser generalizado a más estudiantes y contextos. Entonces fueron capaces de estudiar sus avances en el conjunto completo de datos. 
+
+\textcite{koedinger2015data} define que un buen modelo cognitivo de un estudiante debe ser capaz de predecir las diferencias en la dificultad de una tarea, y como el aprendizaje es transferido de tarea en tarea.
+
+Las contribuciones de \textcite{romero2013data} son las relevantes en este campo hasta la fecha. Acercan la minería de datos al contexto educativo y describe los diferentes grupos de usuarios, tipos de entornos escolares y los datos que proporcionan. Luego, exponen las tareas más típicas en el ambiente escolar que pueden resueltas a través de técnicas de minería de datos.
+
+\textcite{sarala2015empirical} discute las aplicaciones de la minería de datos en instituciones educativas, para extraer la información útil de grandes conjuntos de datos (\textit{datasets}), y proporciona herramientas analíticas para ver y utilizar esta información para tomar decisiones basadas en ejemplos de la vida real.
+
+\textcite{dutt2015clustering} consolida las variantes de algoritmos de clustering aplicados al contexto de EDM. Además, simplifica el diseño los sistemas que aprenden de los datos, utilizando técnicas y algoritmos de minería de datos, tales como, clustering, clasificación y predicción.  
+
+\textcite{merceron2005educational} establece cómo los algoritmos de minería de datos pueden escoger información pedagógica importante. El conocimiento obtenido ayuda a mejorar el cómo administrar la clase, como el alumno aprende, y cómo proporcionar un \textit{feedback} a los alumnos.
+
+\textcite{akinola2012data} aplica técnicas de minería de datos aplicados a estudiar el rendimiento de estudiantes de educación universitaria en cursos de programación. Los resultados demuestran que el conocimiento a priori de física y matemáticas influye de forma positiva en el rendimiento en la programación.
+
+En este mismo contexto, \textcite{lahtinen2005study} estudia las dificultades de aprender programación, con el objetivo de crear material adecuado para introducir el curso a los estudiantes. De este estudio, se obtuvo las dificultades que sufren los estudiantes al momento de enfrentar tareas de programación.
+
+\textcite{borkar2014attributes} evalúa el rendimiento de los estudiantes, donde selecciona algunos atributos mediante minería de datos, haciendo uso de una red neuronal multicapa perceptron y usando una validación cruzada selecciona las características más influyentes, estableciendo las reglas necesarias para poder detectar las características necesarias para poder predecir el rendimiento de los estudiantes. \textcite{jayakameswaraiah2014study} aplica los mismos métodos propuestos por \textcite{borkar2014attributes}.
+
+\textcite{abdullah2014students} realiza un sistema de predicción del rendimiento de los estudiantes basado en la actividad actual, y mediciones anteriores, clasificando cuales estudiantes rendirán bien, y los que no. 
+
+\textcite{oskouei2014predicting} identifica los factores que afectan el rendimiento de los estudiantes en diferentes países, y aplica técnicas de clasificación y predicción para mejorar la precisión de las predicciones de los resultados de los estudiantes. Los resultados muestran que los factores de género, entorno familiar, nivel de educación de los padres, y el estilo de vida, afectan el rendimiento académico de los estudiantes, independiente del país.
+
+En esta misma línea, \textcite{borkar2013predicting} sugiere un método de evaluación del rendimiento de los estudiantes, usando reglas asociativas de minería de datos, estimando el resultado de los estudiantes basado en la asistencia a sus cursos y su avance académico. \textcite{shazmeen2013performance} evalúa el rendimiento de diferentes algoritmos de clasificación y análisis predictivo, basado en el trabajo de \textcite{borkar2013predicting} y propone técnicas de preprocesamiento de datos para lograr mejores resultados. 
+
+Tal como se muestra en los antecedentes anteriores, las investigaciones en EDM se realizan mayoritariamente en aprendizaje \textit{online} y en casos puntuales en educación superior, por lo que es limitada la información respecto a educación primaria o secundaria, específicamente en la predicción de errores y fracaso escolar \cite{marquez2013predicting}. Para mayor información de trabajos relacionados con la EDM, consultar los siguientes \textit{reviews} \cite{shahiri2015review,sukhija2015recent,anoopkumar2016review}. 
+
+\section{Definición del problema}
+\label{sec:definicion}
+El proceso de búsqueda de información involucra diferentes procesos cognitivos, habilidades, variables de comportamiento y entorno de una persona. Por ejemplo, las creencias epistemológicas personales están vinculadas con los métodos de aprendizaje, además de influir en la toma de decisiones. 
+
+En el contexto de la enseñanza de la alfabetización en información, las evaluaciones de los cursos se centran principalmente en los resultados de los estudiantes, sin tomar en cuenta el proceso formativo y factores asociados que podrían influir directa o indirectamente sobre los resultados finales y el desempeño de los alumnos.  
+
+A partir de lo señalado anteriormente, surgen las siguientes interrogantes (\textit{research questions}, RQ desde ahora en adelante):
+
+\begin{itemize}
+	\item \textbf{RQ 1}: ¿De qué manera se puede estimar, durante el proceso de aprendizaje de competencias informacionales, la influencia de diversos factores en el desempeño de los estudiantes?
+	\item \textbf{RQ 2}: ¿En qué medida es posible detectar situaciones anormales de conducta, y determinar las causas que llevan a un estudiante fallar durante el proceso de búsqueda de información? 
+\end{itemize}
