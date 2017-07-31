@@ -64,7 +64,6 @@
 \usepackage[expert]{mathdesign}
 \renewcommand{\familydefault}{\sfdefault}
 
-
 % tocloft ? Control table of contents, figures, etc
 % CTAN: https://ctan.org/pkg/tocloft
 %\usepackage{tocloft}
@@ -97,7 +96,13 @@
 
 % https://www.ctan.org/pkg/biblatex-ieee
 \usepackage[backend=biber
-		  , style=ieee
+		  %, style=ieee % Esta bien, pero no agrupa las citaciones
+		  %, style=numeric-comp %Revisar, porque algunas referencias no las tira correctas
+		  %Antes: IEEE
+		  %, bibstyle=ieee  %Combinacion de ambas
+		  %, citestyle=numeric-comp
+		  %AHORA: APA
+		  , style=apa
 		  , hyperref=true
 		  , url=false
 		  , isbn=false
@@ -107,13 +112,29 @@
 		  , maxcitenames=3
 		  , maxbibnames=100
 		  , block=none
-		  , sorting=none % El orden de las citas en IEEE es según el orden de aparicion en el texto
-		 %, language=spanish
+		  %, sorting=none % El orden de las citas en IEEE es según el orden de aparicion en el texto
+		  , sortcites=true
+		  , sorting=nyt
+		  % APA no tiene referencias cruzadas, si se quiere desactivar, comentar apabackref
+		  , apabackref=true
+		  , language=spanish
 ]{biblatex}
 \bibliography{bibfile}
+
+% Separacion entre entradas de la referencia
+\setlength\bibitemsep{\baselineskip}
+
+\DeclareLanguageMapping{spanish}{spanish-apa}
+%\DeclareLanguageMapping{american}{american-apa}
+
+% TODO: Fix this, is for indicate pag in the reference
+%\parencite[p.~42]{key}
+
 %\usepackage[autostyle]{csquotes}
 \usepackage[style=english]{csquotes}
 %\addbibresource{bibfile}
+
+%\usepackage[nottoc]{tocbibind}
 
 %Si se usa IEEE
 %TODO: Cambiar de bibliografia a Referencias Bibliograficas

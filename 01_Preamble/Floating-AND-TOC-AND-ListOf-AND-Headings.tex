@@ -23,6 +23,7 @@
 % KOMA-Script code to adjust TOC
 % Applying the color 'myColorMainA' which is defined in the main file (MainFile.tex)
 \makeatletter
+%Dont use color
 \addtokomafont{chapterentrypagenumber}{\color{myColorMainA}}
 \addtokomafont{chapterentry}{\color{myColorMainA}}
 \makeatother
@@ -69,6 +70,10 @@
 %
 
 \newcommand{\englishword}[1]{\textit{#1}}
+
+\newcommand{\ingles}[1]{\textit{#1}}
+\newcommand{\producto}[1]{\textit{#1}}
+\newcommand{\tecnologia}[1]{\textit{#1}}
 
 \newcommand*{\captionsource}[2]{%
 	\caption[{#1}]{#1}
@@ -162,6 +167,7 @@
 \newcommand{\tabla}[1]{Tabla~\ref{#1}}
 \newcommand{\fig}[1]{Figura~\ref{#1}}
 \newcommand{\alg}[1]{Algoritmo~\ref{#1}}
+\newcommand{\eq}[1]{Ecuación~\ref{#1}}
 
 
 % #######################

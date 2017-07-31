@@ -87,7 +87,7 @@
 \begin{document}
 
 % Title page
-\input{02_Chapters/TitlePage.tex}
+\input{02_Chapters/00_Preamble/TitlePage.tex}
 % Empty page after title page
 \cleardoublepage
 
@@ -102,31 +102,24 @@
 \setcounter{page}{1}
 
 % Abstract
-\input{02_Chapters/Abstract.tex}
+\input{02_Chapters/00_Preamble/Abstract.tex}
 
 % Table of Contents and Lost of Figures/Tables
-\input{02_Chapters/TOC-AND-ListOf.tex}
+\input{02_Chapters/00_Preamble/TOC-AND-ListOf.tex}
 
-% Introduction
-\input{02_Chapters/01_Introduction/01_Introduction.tex}
+\input{02_Chapters/01_Introduccion/00_Introduccion.tex}
+\input{02_Chapters/02_Marco_Estado_Arte/00_Marco_Estado_Arte.tex}
 
-\input{02_Chapters/02_Desarrollo/02_Desarrollo.tex}
-
-% Main Part
-%\input{02_Chapters/MainPart.tex}
-
-% Final Thoughts
-%\input{02_Chapters/FinalThoughts.tex}
 
 \printbibliography 
 % Start appendix
 \appendix
 
 % Appendix A
-\input{02_Chapters/AppendixExampleChapterA.tex}
+\input{02_Chapters/Anexos/AppendixExampleChapterA.tex}
 
 % Appendix B
-\input{02_Chapters/AppendixExampleChapterB.tex}
+\input{02_Chapters/Anexos/AppendixExampleChapterB.tex}
 
 \end{document}
 % ------------------------------------------------------------------

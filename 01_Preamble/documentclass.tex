@@ -15,62 +15,35 @@
 			%, numbers=noendperiod % 2.3.1 vs 2.3.1. (no dot after the last chapter number)
 			 , numbers=endperiod
 	         , twoside=false
-			 , toc=bibliography % Bibliography appears in Table of Contents (without a number)
-			% ,toc=listof % List of Figures and List of Tables appear in Table of Contents
+			% , toc=bibliography % Bibliography appears in Table of Contents (without a number)
+			% , toc=listof % List of Figures and List of Tables appear in Table of Contents
 			% , chapterprefix=true
+			 , chapterprefix=false
+			% , bibliography=totoc % The bibliography will have an entry at the table of contents but no number.
 			 , numbers=noenddot
 			 , titlepage=simple
 			 , headings=onelinechapter
-			% , bibliography=totoc -> Dont work
 			 , version=last % Use latest version of the KOMA-Script
+			 , final
 ]{scrbook}
 
+
 \addtokomafont{section}{\large}
-\addtokomafont{chapterprefix}{\LARGE}
+%TODO: Parece que comentado no da problemas
+%\addtokomafont{chapterprefix}{\LARGE}
+\KOMAoption{bibliography}{leveldown}
 
-%TODO
-% Before and After separation
-%\KOMAoptions{chapterprefix}
-%\makeatletter
-%\renewcommand\sectionlinesformat[4]{%
-%	\MakeUppercase{#4}%
-%}
-%\renewcommand\chapterlinesformat[3]{%
-%	\@hangfrom{#2}{\MakeUppercase{#3}}%
-%}
-%\makeatother
-%\renewcommand\chapterlineswithprefixformat[3]{%
-%	\MakeUppercase{#2#3}%
-%}
-
-%\RedeclareSectionCommand[afterskip=\baselineskip % Un renglon en blanco (14 ptos)
-%						, font=\LARGE
-%					    ]{chapter}
-
-%\RedeclareSectionCommand[beforeskip=5mm % separacion texto anterior: Cambio de parrafo + 5mm
-%					   %, afterskip=0.5\baselineskip % separacion texto posterior: Cambio de parrafo
-%					    ]{section} 
-
-%\RedeclareSectionCommand[beforeskip=3mm % separacion texto anterior: Cambio de parrafo + 3mm
-%					   % separacion texto posterior: Cambio de parrafo
-%						]{subsection} 				    
-%afterskip=.5\baselineskip]{section}
-%\RedeclareSectionCommand[
-%beforeskip=-.75\baselineskip,
-%afterskip=.5\baselineskip]{subsection}
-%\RedeclareSectionCommand[
-%beforeskip=-.5\baselineskip,
-%afterskip=.25\baselineskip]{subsubsection}
-
-%\RedeclareSectionCommand[
-%beforeskip=.5\baselineskip,
-%afterskip=-1em]{paragraph}
-%\RedeclareSectionCommand[
-%beforeskip=-.5\baselineskip,
-%afterskip=-1em]{subparagraph}
+\newcommand{\mychapter}[1]{%
+	\chapter{#1}
+	\addcontentsline{lof}{chapter}{%
+		Figuras del Capítulo \thechapter: #1 \vspace{10pt}
+	}
+}
 
 %REVISAR
 \usepackage[compact]{titlesec}
+
+% Titles in the chapters, not in TOC.
 \titleformat{\chapter}
 {\bfseries\Large\vspace*{-4.0cm}}	% Formato título
 {	% Contenido de la etiqueta
@@ -89,7 +62,7 @@
 [\vspace*{0.5cm}]
 
 \titleformat{\subsection}
-{\bfseries\normalsize\vspace{2pt}}
+{\bfseries\normalsize\vspace{2pt}} % 3 espacios luego del titulo de una seccion
 {\normalsize\thesubsection\ }
 {0pt}
 {\vspace*{0.5cm}}
@@ -106,9 +79,3 @@
 \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
 \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
-
-%%\setlength{\parindent}{2cm}	%2cm Tabulación
-%\setlength{\headsep}{20pt}	%20
-%\setlength{\voffset}{0.0cm}
-%\setlength{\hoffset}{0.0cm}
-%\setlength{\footskip}{20pt}	%20
