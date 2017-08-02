@@ -3,7 +3,7 @@ rem --- 'rem' or '::' is the key word for comments in batch files like this
 rem --- Call cleanup script in order to delete all auxiliary files ---
 rem --- Sometimes after error messages there are still errors in the auxiliary files even if the root of the error was corrected in the tex file
 :: ---
-call my_Batch_CleanUp.bat
+rem call Batch_CleanUp.bat
 :: ---
 
 rem --- First LaTeX run (pdflatex) with special options (more memory) for large LaTeX projects and tikz stuff (-shell-escape) ---

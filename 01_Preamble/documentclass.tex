@@ -27,10 +27,16 @@
 			 , final
 ]{scrbook}
 
+\RedeclareSectionCommand[
+afterskip=\parskip]{chapter}
+\RedeclareSectionCommand[
+beforeskip=\parskip
+, afterskip=0.1\parskip]{section}
+\RedeclareSectionCommand[
+beforeskip=1.1\parskip plus 3mm
+, afterskip=0.1\parskip]{subsection}
 
-\addtokomafont{section}{\large}
-%TODO: Parece que comentado no da problemas
-%\addtokomafont{chapterprefix}{\LARGE}
+
 \KOMAoption{bibliography}{leveldown}
 
 \newcommand{\mychapter}[1]{%
@@ -39,6 +45,9 @@
 		Figuras del Capítulo \thechapter: #1 \vspace{10pt}
 	}
 }
+
+\addtokomafont{section}{\large}
+\addtokomafont{subsection}{\normalsize }  %1.1.1 Minus size: 10 % normalsize is 10
 
 %REVISAR
 \usepackage[compact]{titlesec}

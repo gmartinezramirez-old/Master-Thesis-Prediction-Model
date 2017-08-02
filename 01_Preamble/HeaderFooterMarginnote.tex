@@ -19,6 +19,8 @@
 % ##############################################
 %
 
+
+
 % KOMA-Script code for header and footer font
 \setkomafont{pageheadfoot}{%
 	\normalfont\sffamily\bfseries
@@ -56,73 +58,11 @@
 % Clear all defaults
 \clearscrheadfoot
 % Header
-\ohead{%
-	\textcolor{myColorMainA}{\headmark}
-	}
-% Left (even page numbers) footer
-\lefoot%
-[% scrplain style (begin)
-	\setlength{\unitlength}{\myLenghthFootAbstand}%
-	%\begin{picture}(0,0)%
-	%	\put(0,-1)%
-	%	{%
-	%		\makebox(0,0)[lb]%
-	%		{%
-	%			\rule{0.4pt}{\myLenghthTemp}%
-	%		}%
-	%	}%
-	%\end{picture}\llap{\pagemark~}%
-]% scrplain style (end)
-%
-{% scrheadings style (begin)
-	\setlength{\unitlength}{\myLenghthFootAbstand}%
-	%\begin{picture}(0,0)%
-	%	\put(0,-1)%
-	%	{%  
-	%		\makebox(0,0)[lb]%
-	%		{%
-%				\rule{0.4pt}{\myLenghthTemp}%
-	%		}%
-	%	}%
-	%\end{picture}\llap{\pagemark~}%
-}% scrheadings style (end)
+\ohead{\textcolor{myColorMainA}{\headmark}}
 
-% Right (odd page numbers) footer
-\rofoot%
-[% scrplain style (begin)
-	\rlap{~\pagemark}%%
-	\setlength{\unitlength}{\myLenghthFootAbstand}%
-	%\begin{picture}(0,0)%
-	%	\put(0,-1)%
-	%	{%
-	%		\makebox(0,0)[lb]%
-	%		{%
-	%			\rule{0.4pt}{\myLenghthTemp}%
-	%		}%
-	%	}%
-	%\end{picture}%
-]% scrplain style (end)
-%
-{% scrplain style (begin)
-	\rlap{~\pagemark}%%
-	\setlength{\unitlength}{\myLenghthFootAbstand}%
-	
-	% Rule
-	%\begin{picture}(0,0)%
-	%	\put(0,-1)%
-	%	{%
-	%		\makebox(0,0)[lb]%
-	%		{%
-	%			\rule{0.4pt}{\myLenghthTemp}%
-	%		}%
-	%	}%
-	%\end{picture}%
-}% scrplain style (end)
-
-%In header show chapter - section
-%\renewcommand{\chaptermark}[1]{\markboth{\small\textsc{\thechapter.\ #1}}{}}
-%\renewcommand{\sectionmark}[1]{\markright{\small\textsc{\thesection.\ #1}}{}}
-
+% Footers
+\lefoot[\pagemark]{\pagemark}
+\rofoot[\pagemark]{\pagemark}
 
 \automark[section]{chapter}
 
