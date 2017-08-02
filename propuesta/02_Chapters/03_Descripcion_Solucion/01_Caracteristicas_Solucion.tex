@@ -1,2 +1,10 @@
 \section{Características de la solución}
 \label{sec:caracteristicas-solucion}
+
+La solución consiste en una plataforma de aprendizaje de máquina y predicción del rendimiento de los estudiantes en tiempo real, en donde a través de la información obtenida en la plataforma NEURONE se crea un modelo de clasificación y predicción del rendimiento de los estudiantes de enseñanza básica en un curso de alfabetización informacional, específicamente en el tema de investigaciones en línea\footnote{Traducción libre} (\ingles{online inquiry}). 
+
+Los datos son recopilados y almacenados por NEURONE, estos datos provienen de registros del proceso de buscar información en línea en un sistema cerrado, los cuales son: historial de navegación, consultas realizadas, movimientos del \ingles{mouse}, escritura por teclado, número de \ingles{clicks} y tiempos de permanencia en páginas \ingles{web}. Además, se conoce con anticipación los documentos y párrafos ideales a seleccionar por parte de los estudiantes.
+
+La información de los estudiantes y el resultado de las evaluaciones definen una buena o mala navegación. La plataforma en particular debe predecir en tiempo real el desempeño de los estudiantes a partir de su comportamiento de búsqueda de información actual.
+
+La plataforma propuesta hará uso de Tensorflow, la cual se conectará con el sistema NEURONE, funcionando como una extensión del mismo, consultando su base de datos, alimentando y perfeccionando el modelo. El ciclo de construcción, evaluación y optimización del modelo se describe en la Figura 3.1, donde el modelo está en una continua optimización.
