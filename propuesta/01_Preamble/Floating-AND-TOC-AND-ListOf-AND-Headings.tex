@@ -23,6 +23,7 @@
 % KOMA-Script code to adjust TOC
 % Applying the color 'myColorMainA' which is defined in the main file (MainFile.tex)
 \makeatletter
+%Dont use color
 \addtokomafont{chapterentrypagenumber}{\color{myColorMainA}}
 \addtokomafont{chapterentry}{\color{myColorMainA}}
 \makeatother
@@ -62,7 +63,8 @@
 % Extended support for catioons of figures and tables etc.
 % CTAN: http://www.ctan.org/pkg/caption
 \usepackage[font={small}
-		  , labelfont={bf,sf}
+		  %, labelfont={bf,sf}
+		  , labelfont={sf}
 		  , format=hang % try plain or hang
 		  , margin=5pt
 ]{caption}
@@ -70,13 +72,17 @@
 
 \newcommand{\englishword}[1]{\textit{#1}}
 
+\newcommand{\ingles}[1]{\textit{#1}}
+\newcommand{\producto}[1]{\textit{#1}}
+\newcommand{\tecnologia}[1]{\textit{#1}}
+
 \newcommand*{\captionsource}[2]{%
 	\caption[{#1}]{#1}
-	\par\centering\small{\textbf{Fuente:} #2.}
+	\par\centering\small{Fuente: #2.}
 }
 
 \newcommand*{\captiontable}[2]{%
-	\captionabove[{#1}]{#1 \par\centering \small{\textbf{Fuente:} #2.}}
+	\captionabove[{#1}]{#1 \par\centering \small{Fuente: #2.}}
 }
 
 % Make Uppecase section title
@@ -162,6 +168,7 @@
 \newcommand{\tabla}[1]{Tabla~\ref{#1}}
 \newcommand{\fig}[1]{Figura~\ref{#1}}
 \newcommand{\alg}[1]{Algoritmo~\ref{#1}}
+\newcommand{\eq}[1]{Ecuación~\ref{#1}}
 
 
 % #######################

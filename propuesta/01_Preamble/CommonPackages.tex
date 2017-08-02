@@ -98,8 +98,11 @@
 \usepackage[backend=biber
 		  %, style=ieee % Esta bien, pero no agrupa las citaciones
 		  %, style=numeric-comp %Revisar, porque algunas referencias no las tira correctas
-		  , bibstyle=ieee  %Combinacion de ambas
-		  , citestyle=numeric-comp
+		  %Antes: IEEE
+		  %, bibstyle=ieee  %Combinacion de ambas
+		  %, citestyle=numeric-comp
+		  %AHORA: APA
+		  , style=apa
 		  , hyperref=true
 		  , url=false
 		  , isbn=false
@@ -109,17 +112,22 @@
 		  , maxcitenames=3
 		  , maxbibnames=100
 		  , block=none
-		  , sorting=none % El orden de las citas en IEEE es según el orden de aparicion en el texto
-		 %, language=spanish
+		  %, sorting=none % El orden de las citas en IEEE es según el orden de aparicion en el texto
+		  , sortcites=true
+		  , sorting=nyt
+		  % APA no tiene referencias cruzadas, si se quiere desactivar, comentar apabackref
+		  , apabackref=true
+		  , language=spanish
 ]{biblatex}
 \bibliography{bibfile}
-%\usepackage[autostyle]{csquotes}
+
+% Separacion entre entradas de la referencia
+\setlength\bibitemsep{\baselineskip}
+
+\DeclareLanguageMapping{spanish}{spanish-apa}
+
 \usepackage[style=english]{csquotes}
-%\addbibresource{bibfile}
 
-%\usepackage[nottoc]{tocbibind}
-
-%Si se usa IEEE
 %TODO: Cambiar de bibliografia a Referencias Bibliograficas
 \renewcommand\bibname{Referencias Bibliogr\'aficas}
 \DefineBibliographyStrings{spanish}{%
@@ -179,9 +187,3 @@
 \usepackage{xcolor}
 
 \usepackage{amsmath,amssymb}
-
-%Error with biblatex
-%\usepackage{cite}
-
-% Optional: Use minitoc in each chapter 
-\usepackage[spanish]{minitoc}

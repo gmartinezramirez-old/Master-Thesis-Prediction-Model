@@ -34,6 +34,8 @@
 % 01_Preamble/StandardPackages.tex
 %
 % ####-Important-####
+%\definecolor[named]{myColorMainA}{RGB}{0,26,153}
+%\definecolor[named]{myColorMainB}{RGB}{174,49,54}
 \definecolor[named]{myColorMainA}{RGB}{0,0,0}
 \definecolor[named]{myColorMainB}{RGB}{0,0,0}
 \definecolor{mylinkcolor}{RGB}{5,123,10}
@@ -85,7 +87,7 @@
 \begin{document}
 
 % Title page
-\input{02_Chapters/TitlePage.tex}
+\input{02_Chapters/00_Preamble/TitlePage.tex}
 % Empty page after title page
 \cleardoublepage
 
@@ -100,36 +102,26 @@
 \setcounter{page}{1}
 
 % Abstract
-\input{02_Chapters/Abstract.tex}
+\input{02_Chapters/00_Preamble/Abstract.tex}
 
 % Table of Contents and Lost of Figures/Tables
-\input{02_Chapters/TOC-AND-ListOf.tex}
+\input{02_Chapters/00_Preamble/TOC-AND-ListOf.tex}
 
-% Introduction
-\input{02_Chapters/01_Introduction/01_Introduction.tex}
-
-\input{02_Chapters/02_Descripcion_del_Problema.tex}
-
-\input{02_Chapters/03_Descripcion_Solucion.tex}
-
-\input{02_Chapters/04_Metodologia_Herramientas_Ambiente.tex}
-
-\input{02_Chapters/05_Plan_Trabajo.tex}
-% Main Part
-%\input{02_Chapters/MainPart.tex}
-
-% Final Thoughts
-%\input{02_Chapters/FinalThoughts.tex}
+\input{02_Chapters/01_Objetivos/01_Objetivos.tex}
+\input{02_Chapters/02_Descripcion_Problema/00_Descripcion_Problema.tex}
+\input{02_Chapters/03_Descripcion_Solucion/00_Descripcion_Solucion.tex}
+\input{02_Chapters/04_Metodologia_Herramientas_Ambiente/00_Metodologia_Herramientas_Ambiente.tex}
+\input{02_Chapters/05_Plan_Trabajo/01_Plan_Trabajo.tex}
 
 \printbibliography 
 % Start appendix
 \appendix
 
 % Appendix A
-\input{02_Chapters/AppendixExampleChapterA.tex}
+\input{02_Chapters/Anexos/AppendixExampleChapterA.tex}
 
 % Appendix B
-\input{02_Chapters/AppendixExampleChapterB.tex}
+\input{02_Chapters/Anexos/AppendixExampleChapterB.tex}
 
 \end{document}
 % ------------------------------------------------------------------
