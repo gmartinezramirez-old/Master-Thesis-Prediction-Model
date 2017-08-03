@@ -1,8 +1,21 @@
 \chapter{Plan de trabajo}
 \label{ch:plan_trabajo}
 
-El presente proyecto contempla 612 horas de trabajo efectivas y se realizará en el transcurso del segundo semestre del año 2017, el cual se inicia el 7 de agosto y termina el 7 de diciembre del presente año contemplando 16 semanas de trabajo. Se dispone como día de trabajo todos los días hábiles de la semana, y un horario de trabajo desde las 9:00 \textsc{AM} hasta las 18:00 \textsc{PM} considerando una hora de descanso.
+El presente proyecto contempla 612 horas de trabajo efectivas y se realizará en el transcurso del segundo semestre del año 2017, el cual se inicia el 7 de agosto y termina el 7 de diciembre del presente año contemplando 16 semanas de trabajo. Se dispone como día de trabajo todos los días hábiles de la semana, y un horario de trabajo desde las 9:00 hasta las 18:00 hrs considerando una hora de descanso.
 
-El plan de trabajo propuesto se muestra en la \tabla{tab:plan}, dada las metodologías empleadas, las actividades se realizan de forma secuencial. Cabe destacar que el alumno candidato a tesista a la fecha de entrega del presente informe ya ha avanzado el estado del arte e investigación de tecnologías.
+El plan de trabajo propuesto se muestra en la \tabla{tab:plan}, dada las metodologías empleadas las actividades se realizan de forma secuencial. Cabe destacar que a la fecha de entrega de este informe, el alumno candidato a tesista ya ha avanzado el estado del arte e investigación de tecnologías.
 
-\insertTableFile{Plan de trabajo propuesto.}{Elaboración propia, (2017)}{04_Tables/plan_trabajo.csv}{\label{tab:plan}}
+\begin{table}[htb]
+  \centering
+    \captiontable{Plan de trabajo propuesto.}{Elaboración propia, (2017)}
+    \pgfplotstabletypeset[
+        col sep=semicolon,
+        columns/Actividad/.style={string type, column type=|l},
+        columns/Duración (HH)/.style={string type},
+        display columns/0/.style={column type={p{.7\textwidth}}},
+        every even row/.style={before row={\rowcolor[gray]{0.9}}},
+        every head row/.style={before row=\toprule,after row=\midrule},
+        every last row/.style={after row=\bottomrule}
+    ]{04_Tables/plan_trabajo.csv}
+    \label{tab:plan}
+\end{table}
