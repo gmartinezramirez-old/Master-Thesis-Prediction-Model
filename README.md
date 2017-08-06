@@ -1,7 +1,8 @@
-# prediction-model-thesis
+# Search Perfomance Prediction Model on Online Information on Primary Education Students
 [WiP] Repository for the writing of the prediction model and plataform.
 
-# Publications
+
+## Publications related
 
 * Sormunen, E., González-Ibáñez, R., Kiili, C., Leppänen, P., Mikkilä-Erdmann, M., Erdmann, N., Escobar-Macaya, M. (2017). A Performance-based Test for Assessing Students’ Online Inquiry Competences in Schools. European Conference in Information Literacy (ECIL), Saint-Malo, France.
 
