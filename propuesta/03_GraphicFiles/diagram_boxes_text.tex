@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+
+\node[block] (a) {Sociogram\\ Develoment};
+\node[block, above right = 0.2cm and 2cm of a] (b) {Inter-Action \\Modeling};
+\node[block, below =2cm of b]   (c){Responsibilites\\ Modeling};
+\node[block, right =2cm of b]   (d){Interaction\\ Modeling};
+\node[block, right =2cm of c]   (e){Work in-group\\ Task Modeling};
+
+\draw[line] (a.north) |- (b.west);
+\draw[line] (a.south) |- (c.west);
+\draw[line] (e.north) -- (d.south);
+\draw[line] ([xshift=-1cm]b.south) -- ([xshift=-1cm]c.north);
+\draw[line] ([xshift=1cm]c.north) -- ([xshift=1cm]b.south);
+\draw[] (b.east) -- ++(10pt,0) coordinate[yshift=-1.7cm](l){} |- (c.east);
+\draw[<->,>=latex'] (d.west) -- ++(-10pt,0) coordinate[yshift=-1.7cm,](r){} |- (e.west);
+\draw[-] ([xshift=1cm]c.north) -- ([xshift=1cm]b.south);
+\draw[line] (l) -- (r);
+\end{tikzpicture}

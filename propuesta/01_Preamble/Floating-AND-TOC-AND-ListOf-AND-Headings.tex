@@ -71,7 +71,6 @@
 %
 
 \newcommand{\englishword}[1]{\textit{#1}}
-
 \newcommand{\ingles}[1]{\textit{#1}}
 \newcommand{\producto}[1]{\textit{#1}}
 \newcommand{\tecnologia}[1]{\textit{#1}}
@@ -107,6 +106,22 @@
 	\centering
 	\captiontable{#1}{#2}
 	\pgfplotstabletypeset[
+	every even row/.style={before row={\rowcolor[gray]{0.9}}},
+	every head row/.style={before row=\toprule,after row=\midrule},
+	every last row/.style={after row=\bottomrule},
+	col sep=semicolon, 
+	string type]{#3}
+	#4 % Label command		
+	\end{table}
+}
+
+\newcommand{\insertTableFileMoreText}[4]{
+	\begin{table}[htb]
+	\centering
+	\captiontable{#1}{#2}
+	\pgfplotstabletypeset[
+	columns={Actividad;Duración (HH)},
+	columns type=r,
 	every even row/.style={
 		before row={\rowcolor[gray]{0.9}}},
 	every head row/.style={
@@ -192,3 +207,6 @@
 % #######################
 % End: Headings Customization
 % #######################
+% Definition of commands for fancy tables
+%\newcommand{\myrowcolour}{\rowcolor[gray]{0.9}}
+%\newcolumntype{L}{>{\raggedright\arraybackslash}m{10cm}}

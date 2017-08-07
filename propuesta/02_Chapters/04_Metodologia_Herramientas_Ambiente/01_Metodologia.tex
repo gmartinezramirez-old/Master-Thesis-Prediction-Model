@@ -1,12 +1,27 @@
 \section{Metodología a usar}
 \label{sec:metodologia}
-El presente proyecto presenta una componente de investigación y desarrollo de \ingles{software} (I+D), esto debido a la relación que existe entre ambas componentes, la investigación necesita una herramienta de \ingles{software} de apoyo que permita recibir los datos de NEURONE, alimentar el modelo de predicción y que permita al usuario interactuar con resultados de la predicción a realizar.
+El presente proyecto presenta una componente de investigación y desarrollo de \ingles{software} (I+D), esto debido a la relación que existe entre ambas componentes, la investigación necesita una herramienta de \ingles{software} de apoyo que permita recibir los datos de NEURONE, alimentar el modelo de predicción y que permita al usuario interactuar con resultados de la predicción realizada.
 
-La componente de investigación del proyecto será guiada por la metodología \textbf{Descubrimiento de Conocimiento en Base de Datos} (\ingles{Knowledge Discovery in Databases}, KDD desde ahora en adelante), mientras que la componente de desarrollo será guiada por la metodología de desarrollo de \ingles{software} \textbf{\ingles{Rapid Application Development}} (RAD, desde ahora en adelante) \parencite{martin1991rapid}. A continuación, se explica el uso de ambas metodologías en el trabajo propuesto. Para mayor información sobre las metodologías a ocupar, ver ANEXO B.
+La componente de investigación del proyecto será guiada por la metodología \textbf{Descubrimiento de Conocimiento en Base de Datos} (conocido como KDD, las iniciales de \ingles{Knowledge Discovery in Databases}) \parencite{fayyad1996data}, mientras que la componente de desarrollo será guiada por la metodología de desarrollo de \ingles{software} \textbf{Desarrollo de Rápido de Aplicaciones} (conocido como RAD, las iniciales de \ingles{Rapid Application Development}) \parencite{martin1991rapid}. A continuación, se explica el uso de ambas metodologías en el trabajo propuesto. Para mayor información sobre las metodologías a ocupar, ver ANEXO B.
 
 \subsection{Metodología usada en la investigación}
 %TODO: Redefinir la parte de lenguaje de consultas
-Respecto a la componente de investigación, esta será guiada bajo la metodología KDD, la cual se define como “un proceso no trivial de identificar patrones en los datos que sean válidos, novedosos, potencialmente útiles y finalmente comprensibles” \parencite[p.~5]{fayyad1996data}. En primer lugar, se seleccionan y limpian los datos que se deben extraer para poder realizar el modelado del comportamiento de búsqueda. Luego, se transforman los datos y se realiza minería de datos sobre ellos para buscar los patrones de interés que pueden expresarse como un modelo o que expresen dependencia de los datos. Finalmente, se identifican los patrones realmente interesantes que representan el conocimiento, usando diferentes técnicas, incluyendo análisis estadísticos y lenguajes de consultas para posteriormente interpretar los datos obtenidos.
+%FIX: remove parte de lenguajes de consultas
+Respecto a la componente de investigación, esta será guiada bajo la metodología KDD, la cual se define como “un proceso no trivial de identificar patrones en los datos que sean válidos, novedosos, potencialmente útiles y finalmente comprensibles” \parencite[p.~5]{fayyad1996data}. En primer lugar, se seleccionan y limpian los datos que se deben extraer para poder realizar el modelado del comportamiento de búsqueda. Luego, se transforman los datos y se realiza minería de datos sobre ellos para buscar los patrones de interés que pueden expresarse como un modelo o que expresen dependencia de los datos. Finalmente, se identifican los patrones realmente interesantes que representan el conocimiento, usando diferentes técnicas, incluyendo análisis estadísticos para posteriormente interpretar los datos obtenidos.
 
 \subsection{Metodología usada para el desarrollo}
-Respecto a la componente de desarrollo de ingles{software}, se recurre a un enfoque de desarrollo inspirado en la metodología RAD, la cual minimiza la planificación en favor de la creación rápida de prototipos. La planificación se realiza en cada iteración, permitiendo que el \ingles{software} se desarrolle más rápido y se tenga mayor flexibilidad con los requisitos \parencite{mcconnell1996rapid}.
+Respecto a la componente de desarrollo de \ingles{software}, se toma en cuenta las condiciones bajo las cuales se desarrolla el proyecto, las cuales se expresan a continuación:
+
+\newpage
+\begin{itemize}
+	\item El sistema es de rápido desarrollo.
+	\item El sistema es de tamaño pequeño.
+	\item Es un proyecto cuyos requerimientos están sujetos a cambios.
+	\item Inicialmente no existe un número total de requerimientos especificado. Estos se irán desarrollando de forma creciente durante el avance del proyecto.
+	\item El desarrollador no cuenta con un conocimiento profundo de la arquitectura y todas las herramientas de desarrollo, por lo tanto, se requiere un tiempo de investigación y aprendizaje.   
+	\item Se requiere documentar los aspectos fundamentales de la arquitectura, una vez que se tenga un producto estable. Esta documentación permitirá la continuidad del proyecto. 
+	\item Se requiere de varias entregas funcionales, para medir el progreso del proyecto y verificar que se cumplan los objetivos propuestos.
+\end{itemize}
+
+Dado los antecedentes mencionados anteriormente, se determina que el proyecto presenta características que se ajustan bien a un modelo de desarrollo evolutivo enfocado a la generación de prototipos. A partir de esto, se recurre a un enfoque de desarrollo inspirado en la metodología RAD, metodología de desarrollo rápido que minimiza la planificación en favor de la creación rápida de prototipos. La planificación se realiza en cada iteración, permitiendo que el \ingles{software} se desarrolle más rápido y se tenga una mayor flexibilidad con los requisitos \parencite{mcconnell1996rapid}.
+

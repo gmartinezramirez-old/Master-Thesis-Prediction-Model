@@ -1,0 +1,25 @@
+\begin{ganttchart}[
+    today=4
+    ]{1}{19}
+
+    \gantttitle{Proyecto tesis}{19}\\
+    \gantttitle[]{2017}{19} \\               
+    
+    \gantttitle{Ago}{4}                     
+    \gantttitle{Sep}{4}
+    \gantttitle{Oct}{4}
+    \gantttitle{Nov}{4}
+    \gantttitle{Dic}{1} \\ % Fin: Entrega 7 diciembre 2017
+    
+    \ganttgroup[inline=false]{Diseño de la arquitectura}{1}{8} \\ 
+    \ganttbar[progress=70,inline=false]{Fase de pruebas}{1}{8} \\
+
+    \ganttgroup[inline=false]{Diseño de algoritmo de planificación}{1}{19} \\ 
+    \ganttbar[progress=50,inline=false]{Evaluación de los algoritmos}{1}{16} \\
+    \ganttbar[progress=40,inline=false]{Obtención de resultados}{1}{16} \\
+    \ganttbar[progress=40,inline=false]{Generación de gráficos}{1}{16} \\
+    \ganttbar[progress=30,inline=false]{Comparación de resultados}{12}{19} \\
+    \ganttbar[progress=20,inline=false]{Obtener conclusiones del trabajo}{16}{19} \\
+    
+    \ganttgroup[progress=70, inline=false]{Redacción del documento}{1}{19} \\ 
+\end{ganttchart}

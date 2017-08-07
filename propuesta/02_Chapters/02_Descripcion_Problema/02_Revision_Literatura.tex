@@ -1,40 +1,96 @@
 \section{Revisión de la literatura}
 \label{sec:revision-literatura}
-En esta sección se presenta el estado del arte que da soporte a este trabajo, el cual comprende en primer lugar el estudio del comportamiento de estudiantes. En segundo lugar, técnicas de minería de datos y plataformas de aprendizaje de máquina aplicada al contexto educacional.
+Esta sección tiene como objetivo entregar las bases teóricas, conceptuales y empíricas que soportan el desarrollo de esta investigación. En primer lugar, se presenta el marco conceptual donde se entregan las definiciones y conceptos necesarios para abordar esta investigación. Finalmente, se presenta el estado del arte relacionado con el tema.
+
+\subsection{Marco conceptual}
+
+\subsection*{Alfabetización informacional}
+La alfabetización informacional (conocida en ingles \ingles{information literacy}) es definida como “el grupo de habilidades en las que se requiere reconocer cuándo la información es necesaria y tener la habilidad de encontrar, evaluar y usar efectivamente dicha información necesaria” \footnote{Traducción libre} \parencite[p.~2]{american2000information}. Es un campo que cubre varias áreas, entre las que se destaca la alfabetización digital, las habilidades de uso de bibliotecas, la ética informacional, la lectura crítica, el pensamiento crítico, los derechos de autor, la seguridad y privacidad, entre otras. A través del estudio de estas áreas como factores que influyen a la alfabetización informacional se puede obtener una visión clara de cómo los estudiantes llevan a cabo sus tareas de obtención y selección de información.
+
+\subsection*{Competencias de investigación en línea}
+Se definen las competencias de investigación (\ingles{inquiry skills} en inglés) como “las habilidades para explorar preguntas, para poder reunir, interpretar y sintetizar diferentes tipos de información y datos, además de desarrollar y compartir una explicación para responder preguntas dadas” \footnote{Traducción libre} \parencite[p.~13]{national2000inquiry}. En base a este concepto nacen las competencias de investigación en línea (conocidas en inglés como \ingles{online inquiry skills}), que son una instancia específica de las competencias de investigación, pero aplicada sobre información disponible en línea \parencite{quintana2005framework}. Las competencias de investigación en línea involucran una serie de actividades cognitivas, como generar una pregunta de investigación, buscar información relevante en colecciones digitales, evaluar y seleccionar la información encontrada, e integrar coherentemente la información seleccionada para responder la pregunta original \parencite{eisenberg1990information}.
+
+\subsection*{Minería de datos educacional}
+La minería de datos utiliza una combinación de bases de conocimientos explícita, conocimientos analíticos complejos y conocimiento de campo para descubrir las tendencias y los patrones ocultos, estas tendencias y patrones forman la base de los modelos predictivos que permiten a los analistas realizar nuevas observaciones de los datos existentes \parencite{luan2002data}. La gran cantidad de información generada hoy en día por los estudiantes permite que la minería de datos obtenga datos relevantes y, a través de métodos estadísticos y otras herramientas, relacione la información para conocer si el proceso de enseñanza aprendizaje ha dado resultados positivos. 
+
+\textcite[p.~9]{mining2012enhancing} define la minería de datos educacional como “la teoría que desarrolla métodos, aplica técnicas estadísticas y de aprendizaje automático para analizar los datos recogidos durante el proceso de la enseñanza y aprendizaje” \footnote{Traducción libre}. Actualmente, los usos más generales que se le están dando a la MDE básicamente se enfocan en mejorar la estructura del conocimiento y determinar el apoyo pedagógico.
+
+\subsection{Estado del arte}
+
+\subsection*{Usos de la minería de datos educacional}
+
+
+%TODO: Expandir esto
+\textcite{baker2010data} desarrolló un modelo de predicción usando datos recopilados automáticamente de interacciones entre estudiantes y el \ingles{software} como variables de predicción, y después validando la precisión del modelo al ser generalizado a más estudiantes y contextos. Entonces fueron capaces de estudiar sus avances en el conjunto completo de datos.
+
+Actualmente, la aplicación de MDE se radica en universidades, tales como, Paul Smith’s College, la cual utiliza sus datos históricos para mejorar las tasas de retención de alumnos \parencite{bichsel2012analytics}. En este contexto, University of Georgia desarrolló un modelo para predecir la tasa de graduación y abandono estudiantil en un ambiente en línea \parencite{morris2005predicting}. Finalmente, la Purdue University han usado MD para determinar que la evaluación en etapas tempranas y de forma frecuente permite cambiar los hábitos de los estudiantes con calificaciones bajo la media en cursos introductorios. El equipo de investigación ha desarrollado un sistema de alerta académica temprana para saber el desempeño de los estudiantes \parencite{baepler2010academic}. 
+
+Dickerson \& Hazelton (2012) exploran y ponen en práctica las técnicas de minería de datos para crear un nuevo circuito de retroalimentación hacia los profesores para la evaluación de programas y la adaptación sistemática a los cambios que requiere el sector empresarial de sus estudiantes.
+
+Guruler \& Istanbullu (2014) evaluan y desarrollan un enfoque basado en datos relacionados con la mejora del rendimiento de los estudiantes universitarios mediante la aplicación de técnicas incluidas en el ámbito del "Descubrimiento de Conocimiento en Bases de Datos" (conocido como KDD, las iniciales de \ingles{Knowledge Discovery in Databases}), combinado con minería de datos. 
+
+\textcite{sarala2015empirical} discute las aplicaciones de la minería de datos en instituciones educativas, para extraer la información útil de grandes conjuntos de datos (\ingles{datasets}), y proporciona herramientas analíticas para ver y utilizar esta información para tomar decisiones basadas en ejemplos de la vida real.
+
+J K Jothi and K Venkatalakshmi conducted the students’ performance analysis on the graduate students’ data collected from the Villupuram college of Engineering and Technology. The data included five year period and applied clustering methods on the data to overcome the problem of low score of graduate students, and to raise students academic performance[1]
+
+Suyal and Mohod applied the association and classification rule to identify the students’ performance. They mainly focused to find the students who need special attention to reduce failure rate [6]. 
+
+\subsection*{Técnicas utilizadas en la minería de datos educacional}
+
+Khan \& Choi (2014) a través de un árbol de decisión y algoritmos procesan los datos de los estudiantes para calcular las posibilidades de ganar una beca en función de su grado de semestre, la ubicación del alumno en clase, la cantidad máxima y mínima de horas de crédito tomadas y permitidas y las actividades extracurriculares. 
+
+%TODO: Profundizar
+\textcite{dutt2015clustering} consolida las variantes de algoritmos de clustering aplicados al contexto de MDE. Además, simplifica el diseño los sistemas que aprenden de los datos, utilizando técnicas y algoritmos de minería de datos, tales como, clustering, clasificación y predicción.
+
+\textcite{merceron2005educational} establece cómo los algoritmos de minería de datos pueden escoger información pedagógica importante. El conocimiento obtenido ayuda a mejorar el cómo administrar la clase, como el alumno aprende, y cómo proporcionar un feedback a los alumnos. 
+
+\textcite{akinola2012data} aplica técnicas de minería de datos aplicados a estudiar el rendimiento de estudiantes de educación universitaria en cursos de programación. Los resultados demuestran que el conocimiento a priori de física y matemáticas influye de forma positiva en el rendimiento en la programación. En este mismo contexto, \textcite{lahtinen2005study} estudia las dificultades de aprender programación, con el objetivo de crear material adecuado para introducir el curso a los estudiantes. De este estudio, se obtuvo las dificultades que sufren los estudiantes al momento de enfrentar tareas de programación.
+
+%TODO: FIX THIS
+\textcite{borkar2014attributes} evalúa el rendimiento de los estudiantes, donde selecciona algunos atributos mediante minería de datos, haciendo uso de una red neuronal multicapa perceptrón y usando una validación cruzada selecciona las características más influyentes, estableciendo las reglas necesarias para poder detectar las características necesarias para poder predecir el rendimiento de los estudiantes. \textcite{jayakameswaraiah2014study} aplica los mismos métodos propuestos por \textcite{borkar2014attributes}.
+
+\textcite{abdullah2014students} realiza un sistema de predicción del rendimiento de los estudiantes basado en la actividad actual, y mediciones anteriores, clasificando cuales estudiantes rendirán bien, y los que no. 
+
+% Sacar referencias de: http://ieeexplore.ieee.org.ezproxy.usach.cl/stamp/stamp.jsp?tp=&arnumber=7684167
+Sheik and Gadage have done the analysis related to the student learning behavior by using different data mining models, namely classification, clustering, decision tree, sequential pattern mining and text mining. They used open source tools such as KNIME (Konstanz Information Miner), RAPIDMINER, WEKA, CARROT, ORANGE, RProgramming, and iDA. These tools have different compatibilities and it provided an insight into the prediction and evaluation [2]
+
+Mythili M S and Shanavas A R applied classification algorithms to analyze and evaluate school students performance using weka. They came with various classification algorithms, namely J48, Random Forest, Multilayer perception, IBI and decision table with the data collected from the student management system [3]. 
+
+Osmanbegovic and Suljic conducted a study for investigating students’ future performance in the end semester results at the University of Tuzla. They considered 11 factors and used classification model with highest accuracy for naive Bayes [5]
+
+Noah, Barida and Egerton conducted a study to evaluate students’ performance by grouping the grading into various classes using CGPA. They used different methods like Neural network, Regression and K-means to identify the weak performers for the purpose of performance improvement [7]. 
+
+
+\subsection*{Identificación de factores}
+
+En esta misma línea, \textcite{borkar2013predicting} sugiere un método de evaluación del rendimiento de los estudiantes, usando reglas asociativas de minería de datos, estimando el resultado de los estudiantes basado en la asistencia a sus cursos y su avance académico. \textcite{shazmeen2013performance} evalúa el rendimiento de diferentes algoritmos de clasificación y análisis predictivo, basado en el trabajo de \textcite{borkar2013predicting} y propone técnicas de preprocesamiento de datos para lograr mejores resultados. 
+
+\textcite{oskouei2014predicting} identifica los factores que afectan el rendimiento de los estudiantes en diferentes países, y aplica técnicas de clasificación y predicción para mejorar la precisión de las predicciones de los resultados de los estudiantes. Los resultados muestran que los factores de género, entorno familiar, nivel de educación de los padres, y el estilo de vida, afectan el rendimiento académico de los estudiantes, independiente del país.
+
+%TODO: ¿Que es un buen modelo?
+\textcite{koedinger2015data} define que un buen modelo cognitivo de un estudiante debe ser capaz de predecir las diferencias en la dificultad de una tarea, y como el aprendizaje es transferido de tarea en tarea.
+
+Baradwaj and pal described data mining techniques that help in early identification of student dropouts and students who need special attention. Here they used a decision tree by using information like attendance, class test, semester and assignment marks [8]. 
+
+Jeevalatha, Ananthi, and Saravana Kumar presented a case study on performance analysis for placement selection for undergraduate students. They applied decision tree algorithm by considering the factors like HSC, UG marks and communication skills [9]. 
+
+%En esta sección se presenta el estado del arte que da soporte a este trabajo, el cual comprende en primer lugar el estudio del comportamiento de estudiantes. En segundo lugar, técnicas de minería de datos y plataformas de aprendizaje de máquina aplicada al contexto educacional.
 
 %\subsection{Plataformas de aprendizaje de máquinas aplicadas al contexto educacional}
 
-Cuando se aplica minería de datos en instituciones educativas, la disciplina se conoce como minería de datos educacional (MDE, desde ahora en adelante).
+%Cuando se aplica minería de datos en instituciones educativas, la disciplina se conoce como minería de datos educacional (MDE, desde ahora en adelante).
 
-La MDE es una disciplina en evolución que usa tecnologías informáticas, como son almacenes de datos y herramientas de inteligencia de negocios para descubrir tendencias y patrones sobre datos educacionales. El conocimiento que la MDE genera apoya a las autoridades de centros de educación en la toma de decisiones oportunas, y a los profesores para analizar el comportamiento y aprendizaje de sus alumnos \parencite{romero2010educational}. La disciplina se enfoca en el diseño de modelos para mejorar las experiencias del aprendizaje y la eficiencia organizacional \parencite{pandey2013decision}. El principal objetivo de la MDE es visto por diferentes investigadores como: i) modelado del estudiante, ii) modelado del dominio, iii) sistema de aprendizaje, iv) construir modelos computacionales, y v) estudiar los efectos de los recursos [7-9].
+%La MDE es una disciplina en evolución que usa tecnologías informáticas, como son almacenes de datos y herramientas de inteligencia de negocios para descubrir tendencias y patrones sobre datos educacionales. El conocimiento que la MDE genera apoya a las autoridades de centros de educación en la toma de decisiones oportunas, y a los profesores para analizar el comportamiento y aprendizaje de sus alumnos \parencite{romero2010educational}. La disciplina se enfoca en el diseño de modelos para mejorar las experiencias del aprendizaje y la eficiencia organizacional \parencite{pandey2013decision}. El principal objetivo de la MDE es visto por diferentes investigadores como: i) modelado del estudiante, ii) modelado del dominio, iii) sistema de aprendizaje, iv) construir modelos computacionales, y v) estudiar los efectos de los recursos \parencite{merceron2005educational,kumar2015comprehensive,romero2010educational}.
 
-Actualmente, la aplicación de MDE se radica en universidades, tales como, Paul Smith’s College, la cual utiliza sus datos históricos para mejorar las tasas de retención de alumnos \parencite{bichsel2012analytics}. En este contexto, University of Georgia desarrolló un modelo para predecir la tasa de graduación y abandono estudiantil en un ambiente en línea \parencite{morris2005predicting}. Finalmente, la Purdue University han usado MD para determinar que la evaluación en etapas tempranas y de forma frecuente permite cambiar los hábitos de los estudiantes con calificaciones bajo la media en cursos introductorios. El equipo de investigación ha desarrollado un sistema de alerta académica temprana para saber el desempeño de los estudiantes \cite{baepler2010academic}. 
 
-%TODO: Expandir esto
-\cite{baker2010data} desarrolló un modelo de predicción usando datos recopilados automáticamente de interacciones entre estudiantes y el \ingles{software} como variables de predicción, y después validando la precisión del modelo al ser generalizado a más estudiantes y contextos. Entonces fueron capaces de estudiar sus avances en el conjunto completo de datos.
 
-%TODO: ¿Que es un buen modelo?
-\cite{koedinger2015data} define que un buen modelo cognitivo de un estudiante debe ser capaz de predecir las diferencias en la dificultad de una tarea, y como el aprendizaje es transferido de tarea en tarea.
+
+
+
 
 %TODO: ¿En base a que criterio son relevantes?
-Las contribuciones de \cite{romero2010educational} son las relevantes en este campo hasta la fecha. Acercan la minería de datos al contexto educativo y describe los diferentes grupos de usuarios, tipos de entornos escolares y los datos que proporcionan. Luego, exponen las tareas más típicas en el ambiente escolar que pueden resueltas a través de técnicas de minería de datos.
+%Las contribuciones de \textcite{romero2010educational} son las relevantes en este campo hasta la fecha. Acercan la minería de datos al contexto educativo y describe los diferentes grupos de usuarios, tipos de entornos escolares y los datos que proporcionan. Luego, exponen las tareas más típicas en el ambiente escolar que pueden resueltas a través de técnicas de minería de datos.
 
-\cite{sarala2015empirical} discute las aplicaciones de la minería de datos en instituciones educativas, para extraer la información útil de grandes conjuntos de datos (\ingles{datasets}), y proporciona herramientas analíticas para ver y utilizar esta información para tomar decisiones basadas en ejemplos de la vida real.
 
-%TODO: Profundizar
-\cite{dutt2015clustering} consolida las variantes de algoritmos de clustering aplicados al contexto de MDE. Además, simplifica el diseño los sistemas que aprenden de los datos, utilizando técnicas y algoritmos de minería de datos, tales como, clustering, clasificación y predicción.  
 
-\cite{merceron2005educational} establece cómo los algoritmos de minería de datos pueden escoger información pedagógica importante. El conocimiento obtenido ayuda a mejorar el cómo administrar la clase, como el alumno aprende, y cómo proporcionar un feedback a los alumnos. 
-
-\cite{akinola2012data} aplica técnicas de minería de datos aplicados a estudiar el rendimiento de estudiantes de educación universitaria en cursos de programación. Los resultados demuestran que el conocimiento a priori de física y matemáticas influye de forma positiva en el rendimiento en la programación. En este mismo contexto, \cite{lahtinen2005study} estudia las dificultades de aprender programación, con el objetivo de crear material adecuado para introducir el curso a los estudiantes. De este estudio, se obtuvo las dificultades que sufren los estudiantes al momento de enfrentar tareas de programación.
-
-%TODO: FIX THIS
-\cite{borkar2014attributes} evalúa el rendimiento de los estudiantes, donde selecciona algunos atributos mediante minería de datos, haciendo uso de una red neuronal multicapa perceptrón y usando una validación cruzada selecciona las características más influyentes, estableciendo las reglas necesarias para poder detectar las características necesarias para poder predecir el rendimiento de los estudiantes. \cite{jayakameswaraiah2014study} aplica los mismos métodos propuestos por \cite{borkar2014attributes}.
-
-\cite{abdullah2014students} realiza un sistema de predicción del rendimiento de los estudiantes basado en la actividad actual, y mediciones anteriores, clasificando cuales estudiantes rendirán bien, y los que no. 
-
-\cite{oskouei2014predicting} identifica los factores que afectan el rendimiento de los estudiantes en diferentes países, y aplica técnicas de clasificación y predicción para mejorar la precisión de las predicciones de los resultados de los estudiantes. Los resultados muestran que los factores de género, entorno familiar, nivel de educación de los padres, y el estilo de vida, afectan el rendimiento académico de los estudiantes, independiente del país.
-
-En esta misma línea, \cite{borkar2013predicting} sugiere un método de evaluación del rendimiento de los estudiantes, usando reglas asociativas de minería de datos, estimando el resultado de los estudiantes basado en la asistencia a sus cursos y su avance académico. \cite{shazmeen2013performance} evalúa el rendimiento de diferentes algoritmos de clasificación y análisis predictivo, basado en el trabajo de \cite{borkar2013predicting} y propone técnicas de preprocesamiento de datos para lograr mejores resultados. 
-
-Tal como se muestra en los antecedentes anteriores, las investigaciones en MDE se realizan mayoritariamente en aprendizaje \ingles{online} y en casos puntuales en educación superior, por lo que es limitada la información respecto a educación básica o media, específicamente en la predicción de errores y fracaso escolar \parencite{marquez2013predicting}. Para mayor información de trabajos relacionados con la MDE, consultar los siguientes reviews [30-33]. 
+Tal como se muestra en los antecedentes anteriores, las investigaciones en MDE se realizan mayoritariamente en aprendizaje \ingles{online} y en casos puntuales en educación superior, por lo que es limitada la información respecto a educación básica o media, específicamente en la predicción de errores y fracaso escolar \parencite{marquez2013predicting}. Para mayor información de trabajos relacionados con la MDE, consultar los siguientes \ingles{reviews} \parencite{shahiri2015review,sukhija2015recent,anoopkumar2016review,dutt2017systematic}.

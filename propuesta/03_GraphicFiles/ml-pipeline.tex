@@ -1,0 +1,63 @@
+\begin{tikzpicture}
+    \node[label={Estudiante}, charlie, mirrored, monitor,minimum size=0.9cm](estudiante);
+    \node[block,right=of estudiante] (data) {Ingestión de datos};
+    \node[block,right=of data] (clean)  {Limpieza y transformación de datos};
+    \node[block,right=of clean] (training)  {Entrenamiento del modelo};
+    \node[block,right=of training] (testing)  {Prueba del modelo};
+    \node[block,right=of testing] (prediction)  {Predicción};
+
+ 	% Draw edges
+    \draw[arrow] (estudiante) -- (data);
+    %\draw [arrow] (data) -- node [above] {text} (clean);
+    \draw[arrow] (data) -- (clean);
+    \draw[arrow] (clean) -- (training);
+    \draw[arrow] (training) -- (testing);
+    \draw[arrow] (testing) -- (prediction);
+    \draw[arrow] (testing.south) |-  (training.south);
+    \draw[arrow] (prediction.south) |-  (data.south);
+
+\end{tikzpicture}
+
+
+
+%Ejemplo 1: https://tex.stackexchange.com/questions/327138/tikz-matrix-arrow-from-empty-nodes-is-not-horizontal
+%\begin{tikzpicture}
+%  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,
+%               minimum width=2em]
+%  {
+%      c_0               & c_1 & c_2 & c_3 \\
+%      {\phantom{c_0}}   & c_4 & c_5 & c_6 \\
+%      {\phantom{c_0}}   & c_7 & c_8 &     \\
+%  };
+%
+%  \path[-stealth]
+%      (m-1-1) edge node [above] {$a_0$} (m-1-2)
+%      (m-1-2) edge node [above] {$a_1$} (m-1-3)
+%      (m-1-3) edge node [above] {$a_2$} (m-1-4)
+%      (m-2-1) edge node [above] {$a_3$} (m-2-2)
+%      (m-2-2) edge node [above] {$a_4$} (m-2-3)
+%      (m-2-3) edge node [above] {$a_5$} (m-2-4)
+%      (m-3-1) edge node [above] {$a_6$} (m-3-2)
+%      (m-3-2) edge node [above] {$a_7$} (m-3-3);
+%\end{tikzpicture}
+
+%Ejemplo 2: https://tex.stackexchange.com/questions/168056/tikz-diagram-nodes-with-arrows
+%\node[block] (a) {Ingesta de\\datos};
+%\node[block] (b) {Limpieza\\ y transformación\\de datos};
+%\node[block] (c) {Entrenamiento del modelo};
+%\node[block] (d) {Prueba del modelo};
+%\node[block] (e) {Predicción};
+%\node[block, above right = 0.2cm and 2cm of a] (b) {Inter-Action \\Modeling};
+%\node[block, below =2cm of b]   (c){Responsibilites\\ Modeling};
+%\node[block, right =2cm of b]   (d){Interaction\\ Modeling};
+%\node[block, right =2cm of c]   (e){Work in-group\\ Task Modeling};
+
+%\draw[line] (a.north) |- (b.west);
+%\draw[line] (a.south) |- (c.west);
+%\draw[line] (e.north) -- (d.south);
+%\draw[line] ([xshift=-1cm]b.south) -- ([xshift=-1cm]c.north);
+%\draw[line] ([xshift=1cm]c.north) -- ([xshift=1cm]b.south);
+%\draw[] (b.east) -- ++(10pt,0) coordinate[yshift=-1.7cm](l){} |- (c.east);
+%\draw[<->,>=latex'] (d.west) -- ++(-10pt,0) coordinate[yshift=-1.7cm,](r){} |- (e.west);
+%\draw[-] ([xshift=1cm]c.north) -- ([xshift=1cm]b.south);
+%\draw[line] (l) -- (r);

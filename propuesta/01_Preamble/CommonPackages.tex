@@ -198,4 +198,38 @@
 
 
 %Tikz packages
+\usepackage{tikz}
+\usetikzlibrary{matrix}
 \usepackage{tikzpeople}
+
+\usetikzlibrary{positioning,arrows.meta}
+\tikzset{
+     block/.style={rectangle, draw, text width=7em,text centered, rounded corners, minimum height=3em},
+     arrow/.style={-{Stealth[]}}
+     }
+
+%Pgfgantt
+\usepackage{pgfgantt}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\ganttset{
+    , y unit title=0.5cm
+    , y unit chart=0.7cm
+    , vgrid,hgrid
+    , progress=today
+    , group/.append style={orange}
+    , milestone/.append style={red}
+    , progress label node anchor/.append style={text=red}
+    , bar/.style={draw=black, fill=gray!50}
+    , incomplete/.style={draw=black, fill=white}
+    , title height=1
+    , title label font=\bfseries\footnotesize
+    , bar/.style={fill=black}
+    , bar height=0.7
+    , today label=HOY
+    , group right shift=0
+    , group top shift=0.7
+    , group height=.3
+    , group peaks width={0.2}
+    , inline
+    } 
