@@ -1,6 +1,6 @@
 \begin{tikzpicture}
-    \node[label={Estudiante}, charlie, mirrored, monitor,minimum size=0.9cm](estudiante);
-    \node[block,right=of estudiante] (data) {Ingestión de datos};
+    \node[label={Estudiante},charlie,monitor,minimum size=0.9cm](estudiante);
+    \node[block,right=of estudiante] (data) {Entrada de datos};
     \node[block,right=of data] (clean)  {Limpieza y transformación de datos};
     \node[block,right=of clean] (training)  {Entrenamiento del modelo};
     \node[block,right=of training] (testing)  {Prueba del modelo};
@@ -13,11 +13,18 @@
     \draw[arrow] (clean) -- (training);
     \draw[arrow] (training) -- (testing);
     \draw[arrow] (testing) -- (prediction);
-    \draw[arrow] (testing.south) |-  (training.south);
-    \draw[arrow] (prediction.south) |-  (data.south);
+    %\draw[arrow] (testing.south) |-  (training.south);
+    %\draw[arrow] (prediction.south) |-  (data.south);
+
+    % NO 
+    %\draw[arrow] (testing.south) -- +(-1,0) |- node[pos=0.25]  (training.south);
+    % Fuente: https://tex.stackexchange.com/questions/102385/how-to-draw-a-return-arrow-from-node-3-to-node-1
+    %\draw[arrow](testing.south) edge[du] (training.south)
 
 \end{tikzpicture}
 
+%testing a training: vertical-horizontal-vertical  -|-
+%prediction a data: vertical-horizontal-vertical -|-
 
 
 %Ejemplo 1: https://tex.stackexchange.com/questions/327138/tikz-matrix-arrow-from-empty-nodes-is-not-horizontal

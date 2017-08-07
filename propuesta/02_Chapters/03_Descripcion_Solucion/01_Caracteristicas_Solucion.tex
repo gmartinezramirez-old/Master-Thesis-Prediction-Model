@@ -1,6 +1,6 @@
 \section{Características de la solución}
 \label{sec:caracteristicas-solucion}
-La solución consiste en incorporar un módulo en NEURONE \parencite{gonzalez2017neurone} que implementa un módulo de clasificación y predicción continua del desempeño de búsqueda de los estudiantes de enseñanza básica en un curso de alfabetización informacional, específicamente en el tema de investigaciones en línea\footnote{\traduccionlibre} (\ingles{online inquiry}). 
+La solución consiste en incorporar un módulo en NEURONE \parencite{gonzalez2017neurone} que clasifique y prediga de forma continua del desempeño de búsqueda de los estudiantes de enseñanza básica en un curso de alfabetización informacional, específicamente en el tema de investigaciones en línea\footnote{\traduccionlibre} (\ingles{online inquiry}). 
 
 Los datos son recopilados y almacenados por NEURONE, estos datos provienen de registros del proceso de buscar información en línea en un sistema cerrado, los cuales son: historial de navegación, consultas realizadas, movimientos del \ingles{mouse}, escritura por teclado, número de \ingles{clicks} y tiempos de permanencia en páginas \ingles{web}. Además, se conoce con anticipación los documentos y párrafos ideales a seleccionar por parte de los estudiantes.
 
@@ -11,8 +11,10 @@ El módulo propuesto hará uso de Spark, el cual se conectará con el sistema NE
 
 \begin{figure}[htb]
 	\centering
-	\input{03_GraphicFiles/diagrama_estudiante_docente}
-	\captionsource{Búsqueda.}{\fuentePropia}
+	%\input{03_GraphicFiles/diagrama_estudiante_docente}
+	\includegraphics[width=0.7\textwidth]{03_GraphicFiles/p07.png}
+	%\input{03_GraphicFiles/p07.pdf}
+	\captionsource{Proceso de búsqueda de información de un estudiante.}{\fuentePropia}
 	\label{fig:docente_estudiante}
 \end{figure}
 
@@ -21,8 +23,12 @@ El módulo propuesto hará uso de Spark, el cual se conectará con el sistema NE
 	\centering
 	%FIX: dont compile
 	%\scalebox{0.8}{\input{03_GraphicFiles/ml-pipeline}
-	\input{03_GraphicFiles/ml-pipeline}
-	\captionsource{Flujo.}{\fuentePropia}
+	%\resizebox{1.0\textwidth}{!}{\input{03_GraphicFiles/ml-pipeline}}
+	%Este funciona
+	%\input{03_GraphicFiles/ml-pipeline}
+	%\input{03_GraphicFiles/p06.pdf}
+	\includegraphics[width=0.7\textwidth]{03_GraphicFiles/p06.png}
+	\captionsource{Ciclo de construcción y perfecionamiento del modelo.}{\fuentePropia}
 	\label{fig:ml-pipeline}
 \end{figure}
 

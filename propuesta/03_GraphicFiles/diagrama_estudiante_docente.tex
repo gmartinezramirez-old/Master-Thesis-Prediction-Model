@@ -1,14 +1,29 @@
-\begin{tikzpicture}
+\begin{tikzpicture}[node distance=3.5cm]
 
-\matrix(m)[matrix of nodes,row sep=3em,column sep=4em,minimum width=2em]{
-	\node[label={Docente}, businessman, minimum size=1.5cm](docente); & \node[label={Estudiante}, charlie, mirrored, monitor,minimum size=1.5cm](estudiante);\\
-};
+%\matrix(m)[matrix of nodes,row sep=3em,column sep=4em,minimum width=2em]{
+%	\node[label={Docente}, businessman, minimum size=1.5cm](docente); & \node[label={Estudiante}, charlie, mirrored, monitor,minimum size=1.5cm](estudiante);\\
+%};
 
-% Arrows
-%\draw[arrow] (m-1-1) -- node [above] {texto} (m-1-2);
 
-%\path[-stealth]
-%      (m-1-1) edge node [above] {texto} (m-1-2);
-%      (m-1-2) edge node [above] {$a_1$} (m-1-3);
-%      (m-1-3) edge node [above] {$a_2$} (m-1-4)
+\node[label={Estudiante},charlie,monitor,minimum size=1.5cm](estudiante);
+%motor de busqueda
+\node(db)[cylinder, 
+        shape border rotate=90, 
+        draw,
+        minimum height=1.5cm,
+        minimum width=2cm,
+        shape aspect=.25,
+        right=of estudiante] {Motor de búsqueda};
+
+\node[label={Docente},businessman,monitor,mirrored,minimum size=1.5cm,right=of db](docente);
+
+
+% Draw edges
+\draw[arrow] (estudiante) -- (db);
+%\draw[arrow] (db) -- (estudiante);
+\draw[arrow] (db) -- (docente);
+
+%\draw[->] (B.west) +(0,-1em) coordinate (b1) -- (A.east |- b1);
+%\draw[->] (db.west) +(0,-1em) coordinate (b1) -- (A.east |- b1);
+
 \end{tikzpicture}
