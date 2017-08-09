@@ -1,25 +1,16 @@
 \section{Características de la solución}
 \label{sec:caracteristicas-solucion}
-La solución consiste en incorporar un módulo en NEURONE \parencite{gonzalez2017neurone} que clasifique y prediga de forma continua del desempeño de búsqueda de los estudiantes de enseñanza básica en un curso de alfabetización informacional, específicamente en el tema de investigaciones en línea\footnote{\traduccionlibre} (\ingles{online inquiry}). 
+La solución consiste en incorporar un módulo en NEURONE \parencite{gonzalez2017neurone} que clasifique y prediga de forma continua el desempeño de búsqueda de los estudiantes de enseñanza básica en un curso de alfabetización informacional, específicamente en el tema de investigaciones en línea\footnote{\traduccionlibre} (\ingles{online inquiry}). 
 
-Los datos son recopilados y almacenados por NEURONE, estos datos provienen de registros del proceso de buscar información en línea en un sistema cerrado, los cuales son: historial de navegación, consultas realizadas, movimientos del \ingles{mouse}, escritura por teclado, número de \ingles{clicks} y tiempos de permanencia en páginas \ingles{web}. Además, se conoce con anticipación los documentos y párrafos ideales a seleccionar por parte de los estudiantes.
+Los datos son recopilados y almacenados por NEURONE, estos datos provienen de registros del proceso de búsqueda de información en línea en un sistema cerrado, los cuales son: historial de navegación, consultas realizadas, movimientos del \ingles{mouse}, escritura por teclado, número de \ingles{clicks} y tiempos de permanencia en páginas \ingles{web}. Además, se conoce con anticipación los documentos y párrafos ideales a seleccionar por parte de los estudiantes.
 
-La información de los estudiantes y el resultado de las evaluaciones definen una buena o mala navegación. La plataforma en particular debe predecir de forma continua el desempeño de los estudiantes a partir de su comportamiento de búsqueda de información actual.
+El módulo propuesto hará uso de Apache Spark\footnote{https://spark.apache.org/}, el cual es un \ingles{framework} de código abierto para el procesamiento de datos masivos, el cual incluye librerías de minería de datos y aprendizaje de máquina. Este módulo se conectará con el sistema NEURONE, funcionando como una extensión del mismo, consultando su base de datos, alimentando y perfeccionando el modelo. 
 
-El módulo propuesto hará uso de Spark, el cual se conectará con el sistema NEURONE, funcionando como una extensión del mismo, consultando su base de datos, alimentando y perfeccionando el modelo. El ciclo de construcción, evaluación y optimización del modelo se describe en la Figura 3.1, donde el modelo está en una continua optimización.
+El ciclo de construcción, evaluación y optimización del modelo se ilustra en la Figura \ref{fig:ml-pipeline}, donde a través de los datos históricos obtenidos de NEURONE construye el modelo, lo evalúa y lo optimiza en un proceso continuo, entregando como resultado la clasificación del desempeño de búsqueda y prediciendo de forma continua a partir del comportamiento actual de búsqueda de información del estudiante.
 
-
-\begin{figure}[htb]
-	\centering
-	%\input{03_GraphicFiles/diagrama_estudiante_docente}
-	\includegraphics[width=0.7\textwidth]{03_GraphicFiles/p07.png}
-	%\input{03_GraphicFiles/p07.pdf}
-	\captionsource{Proceso de búsqueda de información de un estudiante}{\fuentePropia}
-	\label{fig:docente_estudiante}
-\end{figure}
 
 %Fuente: https://tex.stackexchange.com/questions/4338/correctly-scaling-a-tikzpicture
-\begin{figure}[htb]
+\begin{figure}[H]
 	\centering
 	%FIX: dont compile
 	%\scalebox{0.8}{\input{03_GraphicFiles/ml-pipeline}

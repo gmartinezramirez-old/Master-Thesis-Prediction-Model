@@ -14,8 +14,7 @@
 % CTAN: http://www.ctan.org/pkg/fontenc
 \usepackage[T1]{fontenc}
 
-% Language support for 'english' (alternative 'ngerman' or 'french' for example)
-% This case is in spanish
+% Language support for 'spanish' (alternative 'ngerman' or 'french' for example)
 % CTAN: http://www.ctan.org/pkg/babel
 %\usepackage[english]{babel} 
 \usepackage[spanish
@@ -96,23 +95,15 @@
 
 % https://www.ctan.org/pkg/biblatex-ieee
 \usepackage[backend=biber
-		  %, style=ieee % Esta bien, pero no agrupa las citaciones
-		  %, style=numeric-comp %Revisar, porque algunas referencias no las tira correctas
-		  %Antes: IEEE
-		  %, bibstyle=ieee  %Combinacion de ambas
-		  %, citestyle=numeric-comp
-		  %AHORA: APA
 		  , style=apa
 		  , hyperref=true
 		  , url=false
 		  , isbn=false
 		  , backref=true
-		 %, style=custom-numeric-comp
 		  , citereset=chapter
 		  , maxcitenames=3
 		  , maxbibnames=100
 		  , block=none
-		  %, sorting=none % El orden de las citas en IEEE es según el orden de aparicion en el texto
 		  , sortcites=true
 		  , sorting=nyt
 		  % APA no tiene referencias cruzadas, si se quiere desactivar, comentar apabackref
