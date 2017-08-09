@@ -62,9 +62,12 @@
 
 % Extended support for catioons of figures and tables etc.
 % CTAN: http://www.ctan.org/pkg/caption
-\usepackage[font={small}
+\usepackage[
+		  % font={small}
 		  %, labelfont={bf,sf}
-		  , labelfont={sf}
+		  %, labelfont={sf}
+		  , labelfont=it
+		  , textfont=it
 		  , format=hang % try plain or hang
 		  , margin=5pt
 ]{caption}
@@ -77,11 +80,11 @@
 
 \newcommand*{\captionsource}[2]{%
 	\caption[{#1}]{#1}
-	\par\centering\small{Fuente: #2.}
+	\par\centering\textit{Fuente: #2}
 }
 
 \newcommand*{\captiontable}[2]{%
-	\captionabove[{#1}]{#1 \par\centering \small{Fuente: #2.}}
+	\captionabove[{#1}]{#1 \par\centering \textit{Fuente: #2}}
 }
 
 % Make Uppecase section title
