@@ -199,3 +199,70 @@
 
 %Tikz packages
 \usepackage{tikzpeople}
+%\usepackage{forest}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetikzlibrary{fit}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{calc} 
+\usetikzlibrary{patterns}
+
+\tikzstyle{roundBox} = [text width=6em, fill=white, minimum height=5em, rounded corners, text centered, draw=black]
+
+\tikzset{
+	arrow/.style={-latex, shorten >=0pt, shorten <=0pt},
+	arrowboth/.style={<->/.tip = Latex, shorten >=0pt, shorten <=0pt}
+}
+
+\usetikzlibrary{decorations.pathreplacing,positioning,arrows}
+
+% Define some styles
+\tikzset{
+ block/.style = {
+    %rectangle, draw, fill=blue!30,
+    rectangle, draw, fill=bgcolor1,
+    text width=7em, 
+    text centered, 
+    rounded corners, 
+    minimum height=4em},
+ line/.style = {
+    draw, -latex'},
+ my brace/.style = {
+   decorate,decoration={brace,amplitude=10pt},
+   shorten >=3pt, shorten <=3pt
+ },
+ bottom label/.style = {
+    black, midway, yshift=-3ex, font=\itshape,
+    text width = 3cm, text centered,
+ },
+ top label/.style = {
+    black, midway, above, yshift=3ex, font=\large,
+ },
+}
+
+%\usepackage{xcolor}
+
+\definecolor{bgcolor0}{RGB}{255, 231, 231} %red!10
+\definecolor{strokecolor0}{RGB}{255, 181, 181} %red!30
+
+\definecolor{bgcolor1}{RGB}{231, 231, 255} %blue!10
+\definecolor{bgcolor2}{RGB}{255, 243, 231} %orange!10
+
+\definecolor{unired}{RGB}{165,0,0}
+\definecolor{bgcolor3}{RGB}{238, 205, 205} %unired!20
+
+\tikzset{
+	cmdarrow/.style={-latex, shorten >=0pt, shorten <=0pt, color = unired},
+	eventarrow/.style={-latex, shorten >=0pt, shorten <=0pt, color = blue!60},
+	queryarrow/.style={-latex, shorten >=0pt, shorten <=0pt, color = blue!60},
+	cmdcircle/.style={circle, draw, minimum size=5, inner sep=0pt, fill=unired},
+	querycircle/.style={circle, draw, minimum size=5, inner sep=0pt, fill=blue!60},
+	eventcircle/.style={circle, draw, minimum size=5, inner sep=0pt, fill=blue!60}
+}
+
+\definecolor{cmdlabel}{RGB}{165, 0, 0} 
+\definecolor{eventlabel}{RGB}{102, 102, 255}
+\definecolor{querylabel}{RGB}{102, 102, 255} 

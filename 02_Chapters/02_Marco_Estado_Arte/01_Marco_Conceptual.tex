@@ -2,9 +2,57 @@
 \label{sec:marco_conceptual}
 En esta sección se presentan conceptos y bases teóricas respecto a la temática que conduce el desarrollo de este trabajo, el cual tiene relación con el uso de interfaces no tradicionales, específicamente con una interfaz operada con el cuerpo. Además, se indaga sobre ciertas definiciones para establecer lo que se pretende medir en este estudio, lo que involucra la experiencia de usuario y métricas de rendimiento en la realización de tareas. Finalmente, se proponen ciertas características fundamentales respecto de este tipo de proyectos relacionados con diseños experimentales con usuarios.
 
+\ingles{Human Computer Information Retrieval} (HCIR) o Recuperación de Información Humano 
+Computador\footnote{Traducción libre.}, es el estudio de los métodos que integran la inteligencia humana y la búsqueda algorítmica para ayudar a la gente a mejorar la búsqueda, exploración y aprendizaje de información (Marchionini, 2007). Dentro de esta área interactúan otras disciplinas, como la recuperación de información, llamada en inglés \ingles{Information Retrieval} (IR), la que está enfocada principalmente en proveer a los usuarios de fácil acceso a la información de su interés trabajando con la representación, almacenamiento, organización y acceso a objetos de información como documentos, páginas \ingles{web}, catálogos en línea y objetos multimedia (Baeza-Yates & Ribeiro-Neto, 2011) y la búsqueda de información, llamada en inglés \ingles{Information Seeking} (IS) que se entiende como un proceso más orientado al usuario y abierto que IR. En IS, no se sabe si existe una respuesta a la consulta del usuario, por lo que el proceso de búsqueda puede proporcionar el aprendizaje necesario para satisfacer su necesidad de información (Baeza-Yates & Ribeiro-Neto, 2011). 
+
 \subsection{Búsqueda de información}
 \label{subsec:busqueda}
 
+\subsection{Rendimiento}
+\label{subsec:rendimiento}
+En el contexto de la recuperación de información se definen \ingles{precision} y \ingles{recall} en función de un conjunto de documentos relevantes y un conjunto de documentos recuperados (Powers, 2011), las cuales se definen a continuación.  
+
+\begin{description}
+	\item [\ingles{Precision}] Métrica que mide la razón de documentos relevantes recuperados con 
+respecto al total de documentos recuperados. Es un valor continuo entre 0 y 1, mientras más cercano a 1, mayor fue su precisión al encontrar los documentos relevantes.
+	\begin{equation}
+	Precision = \frac{\big[\big\{documentos \ relevantes\big\} \cap \big\{documentos \ recuperados\big\}\big]}{\big\{documentos \ recuperados\big\}}
+	\end{equation}
+
+	\item [\ingles{Recall}] Métrica que mide la razón de documentos relevantes recuperados con 
+respecto al total de documentos relevantes. Es un valor continuo entre 0 y 1, mientras más cercano a 1, mayor fue la recuperación de documentos en base al total del universo disponible.
+	\begin{equation}
+	Recall = \frac{\big[\big\{documentos \ relevantes\big\} \cap \big\{documentos \ recuperados\big\}\big]}{\big\{documentos \ relevantes\big\}}
+	\end{equation}
+
+	\item [\ingles{F1}] Métrica que considera a \ingles{precision} y \ingles{recall} en un promedio ponderado. Es un valor continuo entre 0 y 1, en que un valor cercano a uno permite identificar a los estudiantes con una recuperación de documentos proporcional a su precisión, respecto a la relevancia de estos.   
+	\begin{equation}
+	F1 = \frac{2 \cdot Precision\cdot Recall}{Precision+ Recall}
+	\end{equation}
+ 
+	\item [\ingles{Coverage Effectiveness}] Razón entre la cobertura útil, páginas visitadas sobre 30 segundos, y el total de documentos visitados por un estudiante. Es un valor continuo entre 0 a 1, mientras más cercano a 1, mejor fue la efectividad de la cobertura respecto el universo de documentos, respecto al tiempo de permanencia.     
+	\begin{equation}
+	CE = \frac{UsfCover}{TotalCover}
+	\end{equation}
+
+	\item [\ingles{Query Effectiveness}] Razón existente entre la efectividad de la cobertura (fórmula anterior) y el total de consultas realizadas por un estudiante. Esta proporción da indicios del desempeño del estudiante en torno a la calidad de las consultas efectuadas, en base a la cantidad y eficacia. Sus valores también están en un intervalo continuo entre 0 a 1.
+	\begin{equation}
+	QE = \frac{CE}{countQ}
+	\end{equation}
+
+	\item [\ingles{Search Score}] Calificación de los estudiantes que se expresa en una escala continua de 0 a 5 puntos. Es una razón entre la cobertura relevante y el total de páginas marcadas activas al final de la tarea. 
+	\begin{equation}
+	Score = \frac{BMRelv}{ActBM} * 5
+	\end{equation}
+
+\end{description}
+
+%\begin{equation}
+%	Precision = \frac{TP}{TP+ FP}
+%\end{equation}
+%\begin{equation}
+%	Recall = \frac{TP}{TP+ FN}
+%\end{equation}
 \subsection{Alfabetización informacional}
 \label{subsec:alfabetizacion}
 La alfabetización informacional (conocida en ingles \ingles{information literacy}) es definida como “el grupo de habilidades en las que se requiere reconocer cuándo la información es necesaria y tener la habilidad de encontrar, evaluar y usar efectivamente dicha información necesaria” \footnote{\traduccionlibre} \parencite[p.~2]{american2000information}. Es un campo que cubre varias áreas, entre las que se destaca la alfabetización digital, las habilidades de uso de bibliotecas, la ética informacional, la lectura crítica, el pensamiento crítico, los derechos de autor, la seguridad y privacidad, entre otras. A través del estudio de estas áreas como factores que influyen a la alfabetización informacional se puede obtener una visión clara de cómo los estudiantes llevan a cabo sus tareas de obtención y selección de información.
@@ -21,5 +69,22 @@ La minería de datos utiliza una combinación de bases de conocimientos explíci
 \textcite[p.~9]{mining2012enhancing} define la minería de datos educacional (MDE, desde ahora en adelante) como “la teoría que desarrolla métodos, aplica técnicas estadísticas y de aprendizaje automático para analizar los datos recogidos durante el proceso de la enseñanza y aprendizaje” \footnote{\traduccionlibre}. Actualmente, los usos más generales que se le están dando a la MDE básicamente se enfocan en mejorar la estructura del conocimiento y determinar el apoyo pedagógico al estudiante.
 
 \subsection{Técnicas de minería de datos}
-\label{subsec:mineria}
+\label{subsec:tecnicas-mineria}
 
+\subsection*{\ingles{Support Vector Machine}}
+
+\begin{figure}[H]
+	\centering
+	\input{03_GraphicFiles/02_Marco_Teorico/svm}
+	\captionsource{SVM}{\fuentePropia}
+	\label{fig:svm}
+\end{figure}
+
+\subsection*{Perceptrón multicapa}
+
+\begin{figure}[H]
+	\centering
+	\input{03_GraphicFiles/02_Marco_Teorico/multilayer-perceptron}
+	\captionsource{Perceptrón multicapa}{\fuentePropia}
+	\label{fig:multilayer-perceptron}
+\end{figure}

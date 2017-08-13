@@ -1,0 +1,23 @@
+%\centering\makebox[\textwidth]{
+\begin{tikzpicture}[node distance=3cm, auto]
+
+    % Place nodes
+    \node[label={Estudiante},charlie,monitor,minimum size=1.3cm] (estudiante);
+    \node[block, right of=estudiante] (data-ingestion) {Entrada de datos};
+    \node[block, right of=data-ingestion] (data-clean) {Transformación de datos};
+    \node[block, right of=data-clean] (model-training) {Entrenamiento del modelo};
+    \node[block, right of=model-training] (model-testing) {Evaluación del modelo};
+    \node[block, right of=model-testing] (prediction) {Predicción};
+
+\draw[line] (estudiante) -- (data-ingestion)
+            (data-ingestion) -- (data-clean)
+            (data-clean) -- (model-training)
+            (model-training) -- (model-testing)
+            (model-testing) -- (prediction);
+
+\path[line,dashed] 
+   (model-testing.south) -- +(0,-.35) -| (model-training.south)
+   (prediction.south) -- +(0,-.60) -| (data-ingestion.south);
+
+\end{tikzpicture}
+%}

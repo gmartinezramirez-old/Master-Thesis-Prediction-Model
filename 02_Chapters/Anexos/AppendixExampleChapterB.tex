@@ -9,4 +9,623 @@
 Como se puede apreciar en la \tab{tab:b1}.
 
 
-\insertTableFile{Ejemplo de una tabla.}{Elaboración propia, (2017)}{04_Tables/CSVexample.csv}{\label{tab:b1}}
+\insertTableFile{Ejemplo de una tabla}{Elaboración propia, (2017)}{04_Tables/CSVexample.csv}{\label{tab:b1}}
+
+
+
+\begin{figure}[!ht]
+\centering\makebox[\textwidth]{
+\begin{tikzpicture}[node distance =4cm, auto]
+
+    % Place nodes
+    \node[block] (susceptible) {Susceptible};
+    \node[block, right of=susceptible] (exposed) {Exposed};
+    \node[block, right of=exposed] (infectious) {Infectious};
+    \node[block, right of=infectious] (removed) {Removed};
+
+\coordinate[below=8mm of susceptible] (bottom brace);
+
+\draw [my brace]
+      (exposed.south|-bottom brace) -- (susceptible.south west|-bottom brace) 
+      node[bottom label] {
+        Environmental \& Human factors
+        \begin{itemize}
+        \item Foo
+        \item Bar
+        \item Foobar
+        \end{itemize}
+      };
+
+\draw [my brace]
+    (infectious.south|-bottom brace) -- (exposed.south|-bottom brace)
+    node [bottom label] { Variable immunity };
+
+\draw [my brace]
+    (removed.south east|-bottom brace) -- (infectious.south|-bottom brace)
+    node [bottom label] { 
+      Control parameters 
+        \begin{itemize}
+        \item Foo
+        \item Bar
+        \end{itemize}
+     };    
+
+\coordinate[above=3mm of susceptible] (top brace);
+
+\draw [my brace] 
+    (susceptible.north|-top brace) -- (exposed.north|-top brace)
+    node [top label] {Contact parameters};
+
+\draw [my brace]
+    (exposed.north|-top brace) -- (removed.north|-top brace)
+    node[top label] {Disease parameters};
+
+\draw[line] (susceptible) -- (exposed)
+            (exposed) -- (infectious)
+            (infectious) -- (removed);
+
+\path[line,dashed] 
+   (removed.south) -- +(0,-.35) -| (susceptible.south);
+
+\end{tikzpicture}}
+\smallskip
+\label{fig:flowchart_disease_transmission}
+\caption{Flowchart of fundamental disease transmission mechanisms}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}[node distance=5em, scale=2, decoration = brace]
+    \def\yTop{0.2};
+    \def\yBottom{-0.2};
+
+    % timeline
+    \draw [arrow] (0,0) to (3.7,0);
+    \draw [] (0,-0.1) to (0,0.1);
+
+    % group 1
+    \node [cmdcircle] (c0) at (0.3, 0) {};
+    \node[draw=none, fill=none, color = cmdlabel] at (0.3,\yTop) {$c_0$};
+
+    \node [eventcircle] (e0) at (0.6, 0) {};
+    \node[draw=none, fill=none, color = eventlabel] at (0.6,\yBottom) {$e_0$};
+
+    \node [eventcircle] (e1) at (0.9, 0) {};
+    \node[draw=none, fill=none, color = eventlabel] at (0.9,\yBottom) {$e_1$};
+
+    % group 2
+    \node [cmdcircle] (c1) at (1.9, 0) {};
+    \node[draw=none, fill=none, color = cmdlabel] at (1.9,\yTop) {$c_1$};
+
+    \node [eventcircle] (e2) at (2.2, 0) {};
+    \node[draw=none, fill=none, color = eventlabel] at (2.2,\yBottom) {$e_2$};
+
+    % group 3
+    \node [cmdcircle] (c2) at (2.9, 0) {};
+    \node[draw=none, fill=none, color = cmdlabel] at (2.9,\yTop) {$c_2$};
+
+    \node [eventcircle] (e3) at (3.2, 0) {};
+    \node[draw=none, fill=none, color = eventlabel] at (3.2,\yBottom) {$e_3$};
+
+    \draw [cmdarrow, bend angle=40, bend left] (c0) to (c1);
+    \draw [cmdarrow, bend angle=55, bend left] (c1) to (c2);
+
+    \draw [eventarrow, bend angle=55, bend right] (e0) to (e1);
+    \draw [eventarrow, bend angle=55, bend right] (e1) to (e2);
+    \draw [eventarrow, bend angle=55, bend right] (e2) to (e3);
+
+    % labels
+    \node[draw=none,fill=none, color = cmdlabel] at (1.5,0.5) {Replaying Comands};
+    \node[draw=none,fill=none, color = eventlabel] at (2,-0.5) {Rebuilding State};
+
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Supervised setup
+
+\usetikzlibrary{positioning, decorations.pathmorphing}
+
+\begin{tikzpicture}[node distance=1.5cm]
+    \node[rectangle, very thick, draw] (learning) {Learning algorithm, $L$};
+    \node[rectangle, very thick, draw, below = of learning] (inference) {Labelling function, $h$};
+    \node[left = of learning] (train) {Training data, $\vec{s}$};
+    \node[left = of inference] (uns) {Unseen data, $x$};
+    \node[right = of inference] (lab) {Label, $y$};
+    
+    \draw[-stealth, very thick] (train) -- (learning);
+    \draw[-stealth, very thick, decoration={snake, segment length=2mm, amplitude=0.3mm, post length=1.5mm}, decorate] (learning) -- node[right] {$L(\vec{s})$} (inference);
+    \draw[-stealth, very thick] (uns) -- (inference);
+    \draw[-stealth, very thick] (inference) -- node[above] {$h(x)$} (lab);
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  CQRS
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% SVM
+
+%\begin{tikzpicture}[scale=.8]
+%  % Draw axes
+%  \draw [<->,thick] (0,5) node (yaxis) [above] {$y$}
+%        |- (5,0) node (xaxis) [right] {$x$};
+%  % Draw line
+%  \draw (0,-1) -- (5,4); % y=x-1
+%  \draw[dashed] (-1,0) -- (4,5); % y=x+1
+%  \draw[dashed] (2,-1) -- (6,3); % y=x-3
+%  % Draw labels
+%  \draw (3.5,3) node[rotate=45,font=\small] 
+%        {$\mathbf{w}\cdot \mathbf{x} + b = 0$};
+%  \draw (2.5,4) node[rotate=45,font=\small] 
+%        {$\mathbf{w}\cdot \mathbf{x} + b = 1$};
+%  \draw (4.5,2) node[rotate=45,font=\small] 
+%        {$\mathbf{w}\cdot \mathbf{x} + b = -1$};
+%  % Draw distance
+%  \draw[dotted] (4,5) -- (6,3);
+%  \draw (5.25,4.25) node[rotate=-45] {$\frac{2}{\Vert \mathbf{w} \Vert}$};
+%  \draw[dotted] (0,0) -- (0.5,-0.5);
+%  \draw (0,-0.5) node[rotate=-45] {$\frac{b}{\Vert \mathbf{w} \Vert}$};
+%  \draw[->] (2,1) -- (1.5,1.5);
+%  \draw (1.85,1.35) node[rotate=-45] {$\mathbf{w}$};
+%  % Draw negative dots
+%  \fill[red]   (1.5,2.5)   circle (3pt);
+%  \fill[black] (1,2.5)     circle (3pt);
+%  \fill[black] (0.75,2)    circle (3pt);
+%  \fill[black] (0.6,1.9)   circle (3pt);
+%  \fill[black] (0.77, 2.5) circle (3pt);
+%  \fill[black] (1.5,3)     circle (3pt);
+%  \fill[black] (1.3,3.3)   circle (3pt);
+%  \fill[black] (0.6,3.2)   circle (3pt);
+%  % Draw positive dots
+%  \draw[red,thick] (4,1)     circle (3pt); 
+%  \draw[red,thick] (3.3,.3)  circle (3pt); 
+%  \draw[black]     (4.5,1.2) circle (3pt); 
+%  \draw[black]     (4.5,.5)  circle (3pt); 
+%  \draw[black]     (3.9,.7)  circle (3pt); 
+%  \draw[black]     (5,1)     circle (3pt); 
+%  \draw[black]     (3.5,.2)  circle (3pt); 
+%  \draw[black]     (4,.3)    circle (3pt); 
+%\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Processor
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc} 
+\tikzstyle{naveqs} = [text width=3.3cm, fill=white, minimum height=3em, rounded corners, text centered, draw=black,
+minimum width = 3.3cm
+]
+\tikzset{
+    arrow/.style={-latex, shorten >=0pt, shorten <=0pt},
+    arrowboth/.style={<->/.tip = Latex, shorten >=0pt, shorten <=0pt}
+}
+
+%-----#1 height, #2 width, #3 aspect, #4 name of the node, #5 coordinate, #6 label
+\def\elBox[#1,#2,#3,#4,#5]#6{
+    \node[draw, cylinder, alias=cyl, shape border rotate=90, aspect=#3, 
+    minimum height=#1, minimum width=#2, outer sep=-0.5\pgflinewidth, 
+    fill = white!30,
+    %color=orange!40!black, left color=orange!70, right color=orange!80, middle color=white
+    ] (#4) at #5 {};
+
+    %\node at #5 [text width=1.5cm, text centered] {#6};
+    \node at #5 [text width=1.9cm, text centered] {#6};
+
+    \fill [white!30] let \p1 = ($(cyl.before top)!0.5!(cyl.after top)$), 
+        \p2 = (cyl.top), \p3 = (cyl.before top),
+        \n1={veclen(\x3-\x1,\y3-\y1)},
+        \n2={veclen(\x2-\x1,\y2-\y1)} in (\p1) ellipse (\n1 and \n2); 
+}
+%-----ABoxes
+%-----#1 height, #2 width, #3 aspect, #4 name of the node, #5
+%-----coordinate, #6 label
+\def\aboxl[#1,#2,#3,#4,#5]#6{%
+    \node[draw, cylinder, alias=cyl, shape border rotate=90, aspect=#3, %
+    minimum height=#1, minimum width=#2, outer sep=-0.5\pgflinewidth, %
+    fill = white!30%
+] (#4) at #5 {};%
+    \node at #5 [text width=1.5cm, text centered] {#6};%
+    \fill [white!30] let \p1 = ($(cyl.before top)!0.5!(cyl.after
+    top)$), \p2 =
+    (cyl.top), \p3 = (cyl.before top),
+    \n1={veclen(\x3-\x1,\y3-\y1)},
+    \n2={veclen(\x2-\x1,\y2-\y1)} in (\p1) ellipse (\n1 and
+    \n2); }
+            
+
+\begin{tikzpicture}
+    \def\y{2}
+    \def\x{4.0}
+    \def\n{0.2}
+    \def\shift{5mm}
+
+    \node (cqrs) [roundBox, label={[yshift=-6.8cm]Command Model}, fill = bgcolor0, minimum width = 5cm, minimum height = 6.2cm] at (\x,-1.9cm) {};
+    \node (retro) [roundBox, label={[yshift=-6.87cm]Query Model}, fill = bgcolor2, minimum width = 5cm, minimum height = 6.2cm] at (-\x,-1.9cm) {};
+
+    \node (commands) at (\x, 2.1) {Commands};
+    \node (queries) at (-\x, 2.1) {Queries};
+
+    \node (commandmodel) [naveqs, fill = white!30] at (\x, 0){Command Processor};
+    \draw [arrow] (commands) to (commandmodel);
+
+    \node (ceventlog) [naveqs, fill = white!30] at (\x, -4){Event Log};
+
+    \node (state) [naveqs,  align = center, fill = white!30] at (-\x, 0) {State};
+    \node (querymodel) [naveqs,  align = center, fill = white!30] at (-\x, -2) {Event Processor};
+    %\draw [arrow] (queries) to (querymodel);
+    \node (qeventlog) [naveqs, fill = white!30] at (-\x, -4){Event Log};
+    \draw [arrow] 
+        (commandmodel) to 
+        node[midway, right=0.0em, text centered] {Events}  
+        (ceventlog);
+    \draw [arrow] 
+        (qeventlog) to 
+        node[midway, right=0.0em, text centered] {Events}  
+        (querymodel);
+
+    \draw [arrow] (querymodel) to (state);
+
+    %\draw [arrow] ([xshift=2cm]querymodel) to ([xshift=2cm]queries);
+    % uebler hack
+    \draw [arrow] (-\x - \n, 1.8) to (-\x - \n, 0.54);
+    \draw [arrow] (-\x + \n, 0.54) to (-\x + \n, 1.8);
+
+    %\draw [arrow] ([transform canvas={xshift=\shift}]querymodel) to ([transform canvas={xshift=\shift}]queries);
+
+    \draw [arrow, dashed] 
+        (ceventlog) to 
+        node[midway,above=0.0em, text centered] {Publish Events}  
+        (qeventlog);
+
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{tikzpicture}
+
+\begin{scope}[block/.style={align=center,rectangle,draw=black!100,inner sep=0cm,minimum size=2.3cm,fill=#1!60},
+             red block/.style={block=red},
+             green block/.style={block=green}]
+%Draw the four blocks
+\matrix[inner sep=0cm,row sep=0.2cm,column sep=0.2cm,ampersand replacement=\&]{
+    \node [block=green] (h)  {\begin{tabular}{c}\textbf{hit}\\\mathcal{H\!i}\end{tabular}};                       \& 
+    \node [block=violet]   (fa) {\begin{tabular}{c}\textbf{false alarm}\\\mathcal{F\!A}\end{tabular}} ;    \\
+    \node [block=red]   (m)  {\begin{tabular}{c}\textbf{miss}\\\mathcal{M\!i}\end{tabular}} ;                     \&
+    \node [block=olive] (cr) {\begin{tabular}{c}\textbf{correct reject}\\\mathcal{C\!R} \end{tabular}} ; \\
+};
+
+% Draw the class-labels
+\node[above=0.2cm,anchor=base] at (h.north) {Anomaly $(\mathcal{C}_{\text{A}})$};
+\node[above=0.2cm,anchor=base] at (fa.north) {Normality $(\mathcal{C}_{\text{N}})$};
+\node[left=0.2cm,rotate=90,anchor=base] at (h.west) {Outlier $(\mathcal{C}_{\text{O}})$};
+\node[left=0.2cm,rotate=90,anchor=base] at (m.west) {Inlier $(\mathcal{C}_{\text{I}})$};
+
+% Define necessary coordinates
+\coordinate (ul) at ($(h.north west)+(0cm,0.6cm)$);
+\coordinate (ur) at ($(fa.north east)+(0cm,0.6cm)$);
+\coordinate (la) at ($(h.north west)-(0.6cm,0cm)$);
+\coordinate (lb) at ($(m.south west)-(0.6cm,0cm)$);
+
+% Draw the two lines
+\draw (ul) -- (ur);
+\draw (la) -- (lb);
+
+% Draw the ``Expert'' and ``Algorithmic'' labels
+\node[above=0.2cm,anchor=base,inner sep=0cm,outer sep=0cm] at ($ (ul)!.5!(ur) $) {Expert labels the observation as a(n)};
+\node[left=0.2cm,rotate=90,anchor=base,inner sep=0cm,outer sep=0cm] at ($ (la)!.5!(lb) $) {Algorithm classifies the data point as an};
+\end{scope}
+
+%\thesisbb
+
+\end{tikzpicture}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Confusion Matrix
+
+\newcommand\MyBox[2]{
+  \fbox{\lower0.75cm
+    \vbox to 1.7cm{\vfil
+      \hbox to 1.7cm{\hfil\parbox{1.4cm}{#1\\#2}\hfil}
+      \vfil}%
+  }%
+}
+
+\noindent
+\renewcommand\arraystretch{1.5}
+\setlength\tabcolsep{0pt}
+\begin{tabular}{c >{\bfseries}r @{\hspace{0.7em}}c @{\hspace{0.4em}}c @{\hspace{0.7em}}l}
+  \multirow{10}{*}{\rotatebox{90}{\parbox{1.1cm}{\bfseries\centering actual\\ value}}} & 
+    & \multicolumn{2}{c}{\bfseries Prediction outcome} & \\
+  & & \bfseries p & \bfseries n & \bfseries total \\
+  & p$'$ & \MyBox{True}{Positive} & \MyBox{False}{Negative} & P$'$ \\[2.4em]
+  & n$'$ & \MyBox{False}{Positive} & \MyBox{True}{Negative} & N$'$ \\
+  & total & P & N &
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Use of forest: https://tex.stackexchange.com/questions/263749/how-to-create-classification-taxonomies-for-literature-review-using-latex
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc} 
+\tikzstyle{naveqs} = [text width=6em, fill=white, minimum height=5em, rounded corners, text centered, draw=black]
+\tikzset{
+    arrow/.style={-latex, shorten >=0pt, shorten <=0pt},
+    arrowboth/.style={<->/.tip = Latex, shorten >=0pt, shorten <=0pt}
+}
+
+%-----#1 height, #2 width, #3 aspect, #4 name of the node, #5 coordinate, #6 label
+\def\elBox[#1,#2,#3,#4,#5]#6{
+    \node[draw, cylinder, alias=cyl, shape border rotate=90, aspect=#3, 
+    minimum height=#1, minimum width=#2, outer sep=-0.5\pgflinewidth, 
+    fill = white!30,
+    %color=orange!40!black, left color=orange!70, right color=orange!80, middle color=white
+    ] (#4) at #5 {};
+
+    %\node at #5 [text width=1.5cm, text centered] {#6};
+    \node at #5 [text width=1.9cm, text centered] {#6};
+
+    \fill [white!30] let \p1 = ($(cyl.before top)!0.5!(cyl.after top)$), 
+        \p2 = (cyl.top), \p3 = (cyl.before top),
+        \n1={veclen(\x3-\x1,\y3-\y1)},
+        \n2={veclen(\x2-\x1,\y2-\y1)} in (\p1) ellipse (\n1 and \n2); 
+}
+%-----ABoxes
+%-----#1 height, #2 width, #3 aspect, #4 name of the node, #5
+%-----coordinate, #6 label
+\def\aboxl[#1,#2,#3,#4,#5]#6{%
+  \node[draw, cylinder, alias=cyl, shape border rotate=90, aspect=#3, %
+    minimum height=#1, minimum width=#2, outer sep=-0.5\pgflinewidth, %
+    fill = white!30%
+      ] (#4) at #5 {};%
+      \node at #5 [text width=1.5cm, text centered] {#6};%
+        \fill [white!30] let \p1 = ($(cyl.before top)!0.5!(cyl.after
+        top)$), \p2 =
+          (cyl.top), \p3 = (cyl.before top),
+          \n1={veclen(\x3-\x1,\y3-\y1)},
+        \n2={veclen(\x2-\x1,\y2-\y1)} in (\p1) ellipse (\n1 and
+        \n2); }
+            
+
+\begin{tikzpicture}
+
+    \node (applogic) [naveqs, minimum width = 10cm, text width = 5cm, fill = blue!10] at (0, 1.3cm) {Application};
+
+    \node (cqrs) [naveqs, label={[anchor=west]}, fill = red!10, minimum width = 10cm, minimum height = 8cm] at (0,-4.0cm) {};
+
+    \node (api) [naveqs] {CQRS Application Interface};
+
+    %\node [tri, shape border rotate=180] (A) {A};
+
+    \node (commandmodel) [naveqs, below right = 10mm and 10mm of api, fill = white!30] {Command Model};
+    \draw [arrow, bend angle=25, bend left] 
+        (api) to 
+        node[midway,right=0.4em] {Commands}  
+        (commandmodel);
+    %\draw [arrow, bend angle=25, bend left] (commandmodel) to (api);
+
+    \elBox[5.2em,5em,2.0,eventlog, (3.4,-6.5)] { Event\\Log };
+    \draw [arrow] 
+        ([yshift=0mm]commandmodel) to 
+        node[midway,right=0.0em, text centered] {Events}  
+        (eventlog);
+
+    \node (querymodel) [naveqs,  below left = 10mm and 10mm of api, align = center, fill = white!30] {Query\\Model};
+    \draw [arrow, bend angle=25, bend right] 
+        (api) to 
+        node[midway,left=0.5em] {Queries}  
+        (querymodel);
+
+    \draw [arrow, bend angle=25, bend right] (querymodel) to (api);
+
+    \aboxl[5.2em,5em,2.0,currentstate, (-3.4,-6.5)] { Current State };
+
+    \draw [arrow] 
+        (currentstate) to
+        node[midway,right=0.0em, text centered, text width = 1.5cm] {Read-only\\Access}  
+        ([yshift=-8.7mm]querymodel);
+
+    %\draw [arrow, bend angle=25, bend left, dashed] 
+        %(commandmodel) to 
+        %node[midway,below=1.4em,text width=2.2cm, text centered] {State Updates (Events)}  
+        %(currentstate);
+
+    \draw [arrow, dashed] 
+        (eventlog) to 
+        node[midway,below=0.3em,text width=2.2cm, text centered] {State Updates (Events)}  
+        (currentstate);
+
+    %\path (api) -- (commandmodel) node[draw=none, midway, left]{ Commands };
+    %\draw [bend angle=25, bend left] (api) to (commandmodel) {Commands};
+    %\draw  (api)  to [bend left=45] node[sloped,midway,above] {midway label} (commandmodel) ;
+
+
+
+%\begin{scope}[>=Latex]
+%\draw[>->] (0pt,3ex) -- (1cm,3ex);
+%\draw[|<-|] (0pt,2ex) -- (1cm,2ex);
+%\end{scope}
+\end{tikzpicture}
+
+
+
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{calc} 
+\tikzstyle{naveqs} = [text width=6em, fill=white, minimum height=5em, rounded corners, text centered, draw=black]
+\tikzset{
+    arrow/.style={-latex, shorten >=0pt, shorten <=0pt},
+    arrowboth/.style={<->/.tip = Latex, shorten >=0pt, shorten <=0pt}
+}
+
+%-----#1 height, #2 width, #3 aspect, #4 name of the node, #5 coordinate, #6 label
+\def\elBox[#1,#2,#3,#4,#5]#6{
+    \node[draw, cylinder, alias=cyl, shape border rotate=90, aspect=#3, 
+    minimum height=#1, minimum width=#2, outer sep=-0.5\pgflinewidth, 
+    fill = white,
+    %color=orange!40!black, left color=orange!70, right color=orange!80, middle color=white
+    ] (#4) at #5 {};
+
+    %\node at #5 [text width=1.5cm, text centered] {#6};
+    \node at #5 [text width=3.8cm, text centered] {#6};
+
+    \fill [white] let \p1 = ($(cyl.before top)!0.5!(cyl.after top)$), 
+        \p2 = (cyl.top), \p3 = (cyl.before top),
+        \n1={veclen(\x3-\x1,\y3-\y1)},
+        \n2={veclen(\x2-\x1,\y2-\y1)} in (\p1) ellipse (\n1 and \n2); 
+}
+
+%-----#1 height, #2 width, #3 aspect, #4 name of the node, #5 coordinate, #6 label
+\def\aboxl[#1,#2,#3,#4,#5]#6{
+    \node[draw, cylinder, alias=cyl, shape border rotate=90, aspect=#3, 
+    minimum height=#1, minimum width=#2, outer sep=-0.5\pgflinewidth, 
+    fill = white
+    ] (#4) at #5 {};
+
+    \node at #5 [text width=1.5cm, text centered] {#6};
+
+    \fill [white] let \p1 = ($(cyl.before top)!0.5!(cyl.after top)$), 
+        \p2 = (cyl.top), \p3 = (cyl.before top),
+        \n1={veclen(\x3-\x1,\y3-\y1)}, 
+        \n2={veclen(\x2-\x1,\y2-\y1)} in (\p1) ellipse (\n1 and \n2); 
+}
+
+\begin{tikzpicture}[decoration=brace]
+
+    \node (applogic) [naveqs, xshift = 52.5mm, minimum width = 20.5cm, text width = 5cm, fill = blue!10] at (-0.05, 1.3cm) {Application};
+
+    \node (cqrs) [naveqs, label={[anchor=west]}, fill = red!10, minimum width = 20.5cm, minimum height = 8cm] at (5.20,-4.0cm) {};
+
+    \node (api) [naveqs] {CQRS Application Interface};
+
+    %\node (where) [align = center, yshift = 15mm, right = 10mm of applogic] {Where are the retroactive\\features available?};
+
+    %\node [tri, shape border rotate=180] (A) {A};
+
+    \node (commandmodel) [naveqs, below right = 10mm and 10mm of api] {Command Model};
+    \draw [arrow, bend angle=25, bend left] 
+        (api) to 
+        node[midway,right=0.4em] {Commands}  
+        (commandmodel);
+
+    %\draw [arrow, bend angle=25, bend left] 
+        %(commandmodel) 
+        %node[midway, yshift=-25mm, xshift=15mm, left=0.0em, align = center] {Event\\Reference}  
+        %to (api);
+
+    %\elBox[5.2em,11.5em,2.0,eventlog, (11.7,-6.6)] { Command/Event Log + Retroactive Store };
+    \elBox[5.2em,11.5em,2.0,eventlog, (8.3,-6.8)] { Timeline + Retroactive Store };
+    \draw [arrow] 
+        ([yshift=0mm]commandmodel) to 
+        node[midway, left=0.1em, text centered, 
+        yshift=0mm, xshift=0mm, 
+        text width = 2.5cm] {Commands\\\qquad\quad+ Events}  
+        (eventlog);
+
+    \node (querymodel) [naveqs,  below left = 10mm and 10mm of api, align = center] {Query\\Model};
+    \draw [arrow, bend angle=25, bend right] 
+        (api) to 
+        node[midway,left=0.5em] {Queries}  
+        (querymodel);
+
+    \draw [arrow, bend angle=25, bend right] (querymodel) to (api);
+
+    \aboxl[5.2em,5em,2.0,currentstate, (-3.4,-6.8)] { Current State };
+
+    %\draw [<->,arrowboth] 
+        %([yshift=-3mm]querymodel) to 
+        %node[midway,right=0.1em, text centered, align = center] {Read-only\\Access}  
+        %(currentstate);
+
+    \draw [arrow] 
+        (currentstate) to
+        node[midway, right=0.0em, text centered, text width = 1.5cm] {Read-only\\Access}  
+        ([yshift=-8.7mm]querymodel);
+
+    %\draw [arrow,  bend left, bend angle = 20, dashed] 
+    \draw [arrow,   dashed] 
+        ([yshift=0mm]eventlog) to 
+        node[midway,below=0.4em,text width=5.9cm, text centered] {State Updates (Events)}  
+        ([xshift=9mm]currentstate);
+
+    %\path (api) -- (commandmodel) node[draw=none, midway, left]{ Commands };
+    %\draw [bend angle=25, bend left] (api) to (commandmodel) {Commands};
+    %\draw  (api)  to [bend left=45] node[sloped,midway,above] {midway label} (commandmodel) ;
+
+    % Retroactive Stuff
+    %\node (rapi) [naveqs, yshift = 40mm, right = 44mm of cqrs] {Retroactive Application Interface};
+
+    \node (rcommandmodel) [naveqs, yshift = 0mm, right = 80mm of commandmodel] {Retroactive Operations Model};
+    %\draw [arrow, bend angle=8, bend left] 
+    \draw [arrow, bend angle = 31, bend left] 
+        (commandmodel) to 
+        node[midway, above=0.2em, align = center, text width = 4cm] {Retroactive Operations}  
+        (rcommandmodel);
+    %\draw [arrow, bend angle=8, bend left] 
+    \draw [arrow, bend angle= 24, bend right] 
+        (rcommandmodel) to 
+        %node[midway, below=0.2em, align = center, text width = 4cm] {Event Reference}  
+        (commandmodel);
+
+    \node (rquerymodel) [naveqs,  right = 25mm of commandmodel, align = center] {Retroactive Query Model};
+    \draw [arrow, bend angle=10, bend left] 
+        (commandmodel) to 
+        node[midway, below=1.9em, align = center] {Retroactive\\Queries}  
+        (rquerymodel);
+
+    \draw [arrow, bend angle=10, bend left] (rquerymodel) to (commandmodel);
+
+    %\draw [arrow, bend angle=10, bend right] 
+        %(rcommandmodel) to 
+        %node[midway,below=0.7em,text width=2.2cm, text centered] {Events}  
+        %(eventlog);
+
+    %\draw [<->,arrowboth] 
+    \draw [arrow] 
+        (eventlog) to 
+        node[midway,right=0.1em, text centered, align = center] {Read-only\\Access}  
+        (rquerymodel);
+
+    \draw [arrow] 
+        (rcommandmodel) to 
+        node[midway,right=0.9em, align = center] {Write\\Access}  
+        (eventlog);
+
+    \draw[decorate, yshift=-4ex] (-2.0,-8) -- node[below=0.4ex] {eventually consistent} (-4.5,-8);
+
+    \draw[decorate, yshift=-4ex] (15.0,-8) -- node[below=0.4ex] {always consistent} (2.0,-8);
+
+\end{tikzpicture}
+
+
+%\begin{figure}[H]
+%    \centering
+%    \scalebox{0.3}{\input{03_GraphicFiles/architecture-example}}
+%    \captionsource{Architecture}{\fuentePropia}
+%    \label{fig:architecture-example}
+%\end{figure}

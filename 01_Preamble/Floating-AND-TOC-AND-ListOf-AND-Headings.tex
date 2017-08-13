@@ -62,8 +62,9 @@
 
 % Extended support for catioons of figures and tables etc.
 % CTAN: http://www.ctan.org/pkg/caption
-\usepackage[font={small}
+\usepackage[%font={small}
 		  %, labelfont={bf,sf}
+		  , font=it
 		  , labelfont={sf}
 		  , format=hang % try plain or hang
 		  , margin=5pt
@@ -78,11 +79,11 @@
 
 \newcommand*{\captionsource}[2]{%
 	\caption[{#1}]{#1}
-	\par\centering\small{Fuente: #2.}
+	\par\centering Fuente: #2
 }
 
-\newcommand*{\captiontable}[2]{%
-	\captionabove[{#1}]{#1 \par\centering \small{Fuente: #2.}}
+\newcommand*{\captiontable}[1]{%
+	\captionabove[{#1}]{#1}
 }
 
 % Make Uppecase section title
@@ -105,7 +106,7 @@
 \newcommand{\insertTableFile}[4]{
 	\begin{table}[htb]
 	\centering
-	\captiontable{#1}{#2}
+	\captiontable{#1}
 	\pgfplotstabletypeset[
 	every even row/.style={
 		before row={\rowcolor[gray]{0.9}}},
@@ -117,6 +118,7 @@
 	string type]{#3}
 	#4 % Label command		
 	\end{table}
+	\par\centering Fuente: #2
 }
 
 
@@ -161,7 +163,7 @@
 \newcommand{\correcion}[1]{\hl{#1}}
 \newcommand{\currentYear}{2017}
 \newcommand{\fuentePropia}{Elaboración propia, (\currentYear)}
-
+\newcommand{\traduccionlibre}{Traducción libre.}
 
 %% References
 \newcommand{\tab}[1]{Tabla~\ref{#1}}

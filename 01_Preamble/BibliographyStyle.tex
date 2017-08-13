@@ -3,18 +3,6 @@
 
 %% Bibliography style
 
-% Prints author names as small caps
-%\renewcommand{\mkbibnamefirst}[1]{\textsc{#1}}
-%\renewcommand{\mkbibnamelast}[1]{\textsc{#1}}
-%\renewcommand{\mkbibnameprefix}[1]{\textsc{#1}}
-%\renewcommand{\mkbibnameaffix}[1]{\textsc{#1}}
-
-% document preamble
-% removes period at the very end of bibliographic record
-%\renewcommand{\finentrypunct}{}
-
-%\renewcommand{\newunitpunct}{\addspace\midsentence}
-
 \DeclareUnicodeCharacter{00A0}{ }
 
 \DefineBibliographyStrings{english}{%
@@ -23,20 +11,9 @@
 }
 
 \DefineBibliographyStrings{spanish}{%
-	backrefpage  = {\lowercase{v}er pág.}, % for single page number
-	backrefpages = {\lowercase{v}er págs.} % for multiple page numbers
+	backrefpage  = {\lowercase{c}itado en página}, % for single page number
+	backrefpages = {\lowercase{c}itado en páginas} % for multiple page numbers
 }
-
-
-%\DeclareFieldFormat{journaltitle}{\mkbibemph{#1},} % italic journal title with comma
-%\DeclareFieldFormat[inbook,thesis]{title}{\mkbibemph{#1}\addperiod} % italic title with period
-%\DeclareFieldFormat[article]{title}{#1} % title of journal article is printed as normal text
-
-% makes volume of journal bold and adds colon
-%\DeclareFieldFormat[article]{volume}{\textbf{#1}\addcolon\space}
-
-% removes pagination (p./pp.) before page numbers
-%\DeclareFieldFormat{pages}{#1}
 
 %%
 % Footnote
