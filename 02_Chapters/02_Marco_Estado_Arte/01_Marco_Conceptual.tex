@@ -2,11 +2,16 @@
 \label{sec:marco_conceptual}
 En esta sección se presentan conceptos y bases teóricas respecto a la temática que conduce el desarrollo de este trabajo, el cual tiene relación con el uso de interfaces no tradicionales, específicamente con una interfaz operada con el cuerpo. Además, se indaga sobre ciertas definiciones para establecer lo que se pretende medir en este estudio, lo que involucra la experiencia de usuario y métricas de rendimiento en la realización de tareas. Finalmente, se proponen ciertas características fundamentales respecto de este tipo de proyectos relacionados con diseños experimentales con usuarios.
 
-\ingles{Human Computer Information Retrieval} (HCIR) o Recuperación de Información Humano 
-Computador\footnote{Traducción libre.}, es el estudio de los métodos que integran la inteligencia humana y la búsqueda algorítmica para ayudar a la gente a mejorar la búsqueda, exploración y aprendizaje de información (Marchionini, 2007). Dentro de esta área interactúan otras disciplinas, como la recuperación de información, llamada en inglés \ingles{Information Retrieval} (IR), la que está enfocada principalmente en proveer a los usuarios de fácil acceso a la información de su interés trabajando con la representación, almacenamiento, organización y acceso a objetos de información como documentos, páginas \ingles{web}, catálogos en línea y objetos multimedia (Baeza-Yates & Ribeiro-Neto, 2011) y la búsqueda de información, llamada en inglés \ingles{Information Seeking} (IS) que se entiende como un proceso más orientado al usuario y abierto que IR. En IS, no se sabe si existe una respuesta a la consulta del usuario, por lo que el proceso de búsqueda puede proporcionar el aprendizaje necesario para satisfacer su necesidad de información (Baeza-Yates & Ribeiro-Neto, 2011). 
-
 \subsection{Búsqueda de información}
 \label{subsec:busqueda}
+
+\subsection{Recuperación de Información Humano Computador}
+\label{subsec:HCIR}
+\ingles{Human Computer Information Retrieval} (HCIR) o Recuperación de Información Humano Computador\footnote{Traducción libre.}, es el estudio de los métodos que integran la inteligencia humana y la búsqueda algorítmica para ayudar a la gente a mejorar la búsqueda, exploración y aprendizaje de información (Marchionini, 2007). Dentro de esta área interactúan otras disciplinas, como la recuperación de información, llamada en inglés \ingles{Information Retrieval} (IR), la que está enfocada principalmente en proveer a los usuarios de fácil acceso a la información de su interés trabajando con la representación, almacenamiento, organización y acceso a objetos de información como documentos, páginas \ingles{web}, catálogos en línea y objetos multimedia (Baeza-Yates & Ribeiro-Neto, 2011) y la búsqueda de información, llamada en inglés \ingles{Information Seeking} (IS) que se entiende como un proceso más orientado al usuario y abierto que IR. En IS, no se sabe si existe una respuesta a la consulta del usuario, por lo que el proceso de búsqueda puede proporcionar el aprendizaje necesario para satisfacer su necesidad de información (Baeza-Yates & Ribeiro-Neto, 2011).
+
+La búsqueda de información es un campo de la investigación que relaciona el desarrollo del área de las tecnologías y ciencias de la computación con la psicología y ciencias sociales en el procesamiento de la información, en donde el usuario toma un papel activo por medio de interacciones explicitas e implícitas con la información (Carroll, 1997).
+
+Es una disciplina que contempla tanto al sistema como al usuario, así como la relación que se establece a través del comportamiento del usuario y sus experiencias (Kelly, 2009). Se ubica en un punto medio entre las disciplinas de HCI e IR.
 
 \subsection{Rendimiento}
 \label{subsec:rendimiento}
@@ -63,31 +68,13 @@ Se definen las competencias de investigación (\ingles{inquiry skills} en inglé
 
 Las competencias de investigación en línea involucran una serie de actividades cognitivas, como generar una pregunta de investigación, buscar información relevante en colecciones digitales, evaluar y seleccionar la información encontrada, e integrar coherentemente la información seleccionada para responder la pregunta original \parencite{eisenberg1990information}.
 
-\subsection{Minería de datos educacional}
-La minería de datos utiliza una combinación de bases de conocimientos explícita, conocimientos analíticos complejos y conocimiento de campo para descubrir las tendencias y los patrones ocultos, estas tendencias y patrones forman la base de los modelos predictivos que permiten a los analistas realizar nuevas observaciones de los datos existentes \parencite{luan2002data}. La gran cantidad de información generada hoy en día por los estudiantes permite que la minería de datos obtenga datos relevantes y, a través de métodos estadísticos y otras herramientas relacione la información para conocer si el proceso de enseñanza aprendizaje ha dado resultados positivos. 
+\subsection{Minería de datos}
 
-\textcite[p.~9]{mining2012enhancing} define la minería de datos educacional (MDE, desde ahora en adelante) como “la teoría que desarrolla métodos, aplica técnicas estadísticas y de aprendizaje automático para analizar los datos recogidos durante el proceso de la enseñanza y aprendizaje” \footnote{\traduccionlibre}. Actualmente, los usos más generales que se le están dando a la MDE básicamente se enfocan en mejorar la estructura del conocimiento y determinar el apoyo pedagógico al estudiante.
 
-\subsection{Técnicas de minería de datos}
+Debido a las características de este proyecto, se utilizan técnicas de aprendizaje de máquina supervisado.
+
+\subsection{Técnicas de aprendizaje de máquina supervisado}
 \label{subsec:tecnicas-mineria}
-
-\subsubsection*{\ingles{Support Vector Machine}}
-
-\begin{figure}[H]
-	\centering
-	\input{03_GraphicFiles/02_Marco_Teorico/svm}
-	\captionsource{SVM}{\fuentePropia}
-	\label{fig:svm}
-\end{figure}
-
-\subsubsection*{Perceptrón multicapa}
-
-\begin{figure}[H]
-	\centering
-	\input{03_GraphicFiles/02_Marco_Teorico/multilayer-perceptron}
-	\captionsource{Perceptrón multicapa}{\fuentePropia}
-	\label{fig:multilayer-perceptron}
-\end{figure}
 
 \subsubsection*{Árboles de decisión}
 
@@ -98,3 +85,49 @@ La minería de datos utiliza una combinación de bases de conocimientos explíci
 	\label{fig:decision-tree}
 \end{figure}
 
+
+\subsubsection*{\ingles{Support Vector Machine}}
+
+\begin{figure}[H]
+	\centering
+	\input{03_GraphicFiles/02_Marco_Teorico/svm}
+	\captionsource{SVM}{\fuentePropia}
+	\label{fig:svm}
+\end{figure}
+
+\subsubsection*{Perceptrón}
+
+\begin{figure}[H]
+	\centering
+	\input{03_GraphicFiles/02_Marco_Teorico/perceptron}
+	\captionsource{Perceptrón}{\fuentePropia}
+	\label{fig:perceptron}
+\end{figure}
+
+\begin{equation}
+ \pmb{\mu_1} = \begin{bmatrix}0\\0\\...\\0\end{bmatrix}
+\end{equation}
+
+\subsubsection*{Perceptrón multicapa}
+
+\begin{figure}[H]
+	\centering
+	\input{03_GraphicFiles/02_Marco_Teorico/multilayer-perceptron}
+	\captionsource{Perceptrón multicapa}{\fuentePropia}
+	\label{fig:multilayer-perceptron}
+\end{figure}
+
+\subsubsection*{Na\"ive Bayes}
+
+Na\"ive Bayes se utiliza para
+
+\begin{equation}
+ P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}
+ \label{eq:naive-bayes}
+\end{equation}
+
+
+\subsection{Minería de datos educacional}
+La minería de datos utiliza una combinación de bases de conocimientos explícita, conocimientos analíticos complejos y conocimiento de campo para descubrir las tendencias y los patrones ocultos, estas tendencias y patrones forman la base de los modelos predictivos que permiten a los analistas realizar nuevas observaciones de los datos existentes \parencite{luan2002data}. La gran cantidad de información generada hoy en día por los estudiantes permite que la minería de datos obtenga datos relevantes y, a través de métodos estadísticos y otras herramientas relacione la información para conocer si el proceso de enseñanza aprendizaje ha dado resultados positivos. 
+
+\textcite[p.~9]{mining2012enhancing} define la minería de datos educacional (MDE, desde ahora en adelante) como “la teoría que desarrolla métodos, aplica técnicas estadísticas y de aprendizaje automático para analizar los datos recogidos durante el proceso de la enseñanza y aprendizaje” \footnote{\traduccionlibre}. Actualmente, los usos más generales que se le están dando a la MDE básicamente se enfocan en mejorar la estructura del conocimiento y determinar el apoyo pedagógico al estudiante.
