@@ -10,7 +10,7 @@
 \setcounter{secnumdepth}{5}
 
 % Level of chapters that appear in Table of Contents
-\setcounter{tocdepth}{5}
+\setcounter{tocdepth}{5} % bis wohin ins Inhaltsverzeichnis aufnehmen
 % -2 no caption at all
 % -1 part
 % 0  chapter
@@ -50,6 +50,39 @@
 \newcommand{\chapterwithfigures}{\addxcontentsline{lof}{chapteratlist}[{\thechapter}]{\scr@ds@tocentry}}%
 \makeatother
 
+%TODO: agregar Lista de figuras del Capitulo X
+%\providebool{newchap}
+%\newcommand{\newchapter}[1]{%
+%    \chapter{#1}
+%    \global\setbool{newchap}{true}
+%}
+%\let\oldcaption\caption
+%\renewcommand{\caption}[2][\shortcaption]{%
+%\def\shortcaption{#2}
+%\ifbool{newchap}{%
+%    \addtocontents{lof}{\protect\contentsline{chapter}{%
+%        Chapter \thechapter \vspace{10pt}
+%    }{}}
+%        \addtocontents{lot}{\protect\contentsline{chapter}{%
+%        Chapter \thechapter \vspace{10pt}
+%    }{}}
+%    }{}
+%    \global\boolfalse{newchap}
+%    \oldcaption[#1]{#2}
+%}
+%\makeatletter
+%\newcommand{\saved@chapter}{}
+%\let\saved@chapter\chapter
+%\renewcommand{\chapter}{%
+%  \@ifstar {\saved@chapter*}{\@dblarg\my@chapter}%
+%}
+%\newcommand*{\my@chapter}[2][]{%
+%  \saved@chapter[#1]{#2}%
+%  \global\setbool{newchap}{true}
+%}
+%\makeatother
+
+
 %
 % #######################
 % End: Table of Contents (TOC) Customization
@@ -62,15 +95,17 @@
 
 % Extended support for catioons of figures and tables etc.
 % CTAN: http://www.ctan.org/pkg/caption
-\usepackage[
-		  , labelfont=it
-		  , textfont=it
+\usepackage[%font={small}
+		  %, labelfont={bf,sf}
+		  , font=it
+		  , labelfont={sf}
 		  , format=hang % try plain or hang
 		  , margin=5pt
 ]{caption}
 %
 
 \newcommand{\englishword}[1]{\textit{#1}}
+
 \newcommand{\ingles}[1]{\textit{#1}}
 \newcommand{\producto}[1]{\textit{#1}}
 \newcommand{\tecnologia}[1]{\textit{#1}}
@@ -104,24 +139,8 @@
 \newcommand{\insertTableFile}[4]{
 	\begin{table}[htb]
 	\centering
-	\captiontable{#1}{#2}
+	\captiontable{#1}
 	\pgfplotstabletypeset[
-	every even row/.style={before row={\rowcolor[gray]{0.9}}},
-	every head row/.style={before row=\toprule,after row=\midrule},
-	every last row/.style={after row=\bottomrule},
-	col sep=semicolon, 
-	string type]{#3}
-	#4 % Label command		
-	\end{table}
-}
-
-\newcommand{\insertTableFileMoreText}[4]{
-	\begin{table}[htb]
-	\centering
-	\captiontable{#1}{#2}
-	\pgfplotstabletypeset[
-	columns={Actividad;Duración (HH)},
-	columns type=r,
 	every even row/.style={
 		before row={\rowcolor[gray]{0.9}}},
 	every head row/.style={
@@ -132,6 +151,7 @@
 	string type]{#3}
 	#4 % Label command		
 	\end{table}
+	\par\centering Fuente: #2
 }
 
 
@@ -178,7 +198,6 @@
 \newcommand{\fuentePropia}{Elaboración propia, (\currentYear)}
 \newcommand{\traduccionlibre}{Traducción libre.}
 
-
 %% References
 \newcommand{\tab}[1]{Tabla~\ref{#1}}
 \newcommand{\tabla}[1]{Tabla~\ref{#1}}
@@ -195,3 +214,16 @@
 % Start: Headings Customization
 % ##############################################
 %
+
+% KOMA-Script code to customize the headings
+% Applying the color 'myColorMainA' which is defined in the main file (MainFile.tex)
+%\addtokomafont{chapter}{\color{myColorMainA}}
+%\addtokomafont{section}{\color{myColorMainA}}
+%\addtokomafont{subsection}{\color{myColorMainA}}
+%\addtokomafont{subsubsection}{\color{myColorMainA}}
+%\addtokomafont{paragraph}{\color{myColorMainA}}
+%\addtokomafont{subparagraph}{\color{myColorMainA}}
+
+% #######################
+% End: Headings Customization
+% #######################

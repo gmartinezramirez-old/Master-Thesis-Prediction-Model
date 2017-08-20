@@ -14,7 +14,8 @@
 % CTAN: http://www.ctan.org/pkg/fontenc
 \usepackage[T1]{fontenc}
 
-% Language support for 'spanish' (alternative 'ngerman' or 'french' for example)
+% Language support for 'english' (alternative 'ngerman' or 'french' for example)
+% This case is in spanish
 % CTAN: http://www.ctan.org/pkg/babel
 %\usepackage[english]{babel} 
 \usepackage[spanish
@@ -75,6 +76,10 @@
 % factor=1100 - add 10% to the protrusion amount (default is 1000)
 % stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
 
+\SetProtrusion{encoding={*},family={bch},series={*},size={6,7}}
+              {1={ ,750},2={ ,500},3={ ,500},4={ ,500},5={ ,500},
+               6={ ,500},7={ ,600},8={ ,500},9={ ,500},0={ ,500}}
+
 \SetExtraKerning[unit=space]
 {encoding={*}, family={bch}, series={*}, size={footnotesize,small,normalsize}}
 {\textendash={400,400}, % en-dash, add more space around it
@@ -95,15 +100,23 @@
 
 % https://www.ctan.org/pkg/biblatex-ieee
 \usepackage[backend=biber
+		  %, style=ieee % Esta bien, pero no agrupa las citaciones
+		  %, style=numeric-comp %Revisar, porque algunas referencias no las tira correctas
+		  %Antes: IEEE
+		  %, bibstyle=ieee  %Combinacion de ambas
+		  %, citestyle=numeric-comp
+		  %AHORA: APA
 		  , style=apa
 		  , hyperref=true
 		  , url=false
 		  , isbn=false
 		  , backref=true
+		 %, style=custom-numeric-comp
 		  , citereset=chapter
 		  , maxcitenames=3
 		  , maxbibnames=100
 		  , block=none
+		  %, sorting=none % El orden de las citas en IEEE es según el orden de aparicion en el texto
 		  , sortcites=true
 		  , sorting=nyt
 		  % APA no tiene referencias cruzadas, si se quiere desactivar, comentar apabackref
@@ -120,7 +133,7 @@
 \usepackage[style=english]{csquotes}
 
 %TODO: Cambiar de bibliografia a Referencias Bibliograficas
-\renewcommand\bibname{Referencias Bibliogr\'aficas}
+\renewcommand\bibname{Referencias bibliogr\'aficas}
 \DefineBibliographyStrings{spanish}{%
 	andothers = {\em et\addabbrvspace al\adddot}
 }
@@ -189,44 +202,79 @@
 
 
 %Tikz packages
-\usepackage{tikz}
-\usetikzlibrary{matrix}
 \usepackage{tikzpeople}
+%\usepackage{forest}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% For lupe (lupa)
-%\usepackage{bclogo}
-%\bcloupe 
+\usetikzlibrary{fit}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{calc} 
+\usetikzlibrary{patterns}
 
-\usetikzlibrary{shapes,shapes.geometric}
-\usetikzlibrary{positioning,arrows.meta}
-\usetikzlibrary{paths.ortho}
+\tikzstyle{roundBox} = [text width=6em, fill=white, minimum height=5em, rounded corners, text centered, draw=black]
+
 \tikzset{
-     block/.style={rectangle, draw, text width=7em,text centered, rounded corners, minimum height=3em},
-     arrow/.style={-{Stealth[]}}
-     }
+	arrow/.style={-latex, shorten >=0pt, shorten <=0pt},
+	arrowboth/.style={<->/.tip = Latex, shorten >=0pt, shorten <=0pt}
+}
 
-%Pgfgantt
-\usepackage{pgfgantt}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\ganttset{
-    , y unit title=0.5cm
-    , y unit chart=0.7cm
-    , vgrid,hgrid
-    , progress=today
-    , group/.append style={orange}
-    , milestone/.append style={red}
-    , progress label node anchor/.append style={text=red}
-    , bar/.style={draw=black, fill=gray!50}
-    , incomplete/.style={draw=black, fill=white}
-    , title height=1
-    , title label font=\bfseries\footnotesize
-    , bar/.style={fill=black}
-    , bar height=0.7
-    , today label=HOY
-    , group right shift=0
-    , group top shift=0.7
-    , group height=.3
-    , group peaks width={0.2}
-    , inline
-    } 
+\usetikzlibrary{decorations.pathreplacing,positioning,arrows}
+
+% Define some styles
+\tikzset{
+ block/.style = {
+    %rectangle, draw, fill=blue!30,
+    rectangle, draw, fill=bgcolor1,
+    text width=7em, 
+    text centered, 
+    rounded corners, 
+    minimum height=4em},
+ line/.style = {
+    draw, -latex'},
+ my brace/.style = {
+   decorate,decoration={brace,amplitude=10pt},
+   shorten >=3pt, shorten <=3pt
+ },
+ bottom label/.style = {
+    black, midway, yshift=-3ex, font=\itshape,
+    text width = 3cm, text centered,
+ },
+ top label/.style = {
+    black, midway, above, yshift=3ex, font=\large,
+ },
+}
+
+%\usepackage{xcolor}
+
+\definecolor{bgcolor0}{RGB}{255, 231, 231} %red!10
+\definecolor{strokecolor0}{RGB}{255, 181, 181} %red!30
+
+\definecolor{bgcolor1}{RGB}{231, 231, 255} %blue!10
+\definecolor{bgcolor2}{RGB}{255, 243, 231} %orange!10
+
+\definecolor{unired}{RGB}{165,0,0}
+\definecolor{bgcolor3}{RGB}{238, 205, 205} %unired!20
+
+\tikzset{
+	cmdarrow/.style={-latex, shorten >=0pt, shorten <=0pt, color = unired},
+	eventarrow/.style={-latex, shorten >=0pt, shorten <=0pt, color = blue!60},
+	queryarrow/.style={-latex, shorten >=0pt, shorten <=0pt, color = blue!60},
+	cmdcircle/.style={circle, draw, minimum size=5, inner sep=0pt, fill=unired},
+	querycircle/.style={circle, draw, minimum size=5, inner sep=0pt, fill=blue!60},
+	eventcircle/.style={circle, draw, minimum size=5, inner sep=0pt, fill=blue!60}
+}
+
+\definecolor{cmdlabel}{RGB}{165, 0, 0} 
+\definecolor{eventlabel}{RGB}{102, 102, 255}
+\definecolor{querylabel}{RGB}{102, 102, 255} 
+
+
+\usepackage{amssymb}
+
+% Custom settings and commands
+% \newcommand{\y}{\raisebox{-0.12cm}{\begin{tikzpicture}\node{\includegraphics[height=0.25cm]{/home/jeroen/phd/latex/thesis//dev/tickmark.pdf}};\end{tikzpicture}}}
+\newcommand{\y}{\checkmark}
+\newcommand{\n}{}

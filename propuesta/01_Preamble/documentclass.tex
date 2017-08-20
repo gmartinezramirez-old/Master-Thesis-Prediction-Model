@@ -11,6 +11,7 @@
 			 , fontsize=10pt % Arial 10 for all text.
 			 , headings=big
 			 , parskip=half-
+			%, noparskip % No par skip. If yes park skip the command is parskip
 			%, numbers=noendperiod % 2.3.1 vs 2.3.1. (no dot after the last chapter number)
 			 , numbers=endperiod
 	         , twoside=false
@@ -18,6 +19,7 @@
 			% , toc=listof % List of Figures and List of Tables appear in Table of Contents
 			% , chapterprefix=true
 			 , chapterprefix=false
+			% , bibliography=totoc % The bibliography will have an entry at the table of contents but no number.
 			 , numbers=noenddot
 			 , titlepage=simple
 			 , headings=onelinechapter
@@ -25,6 +27,7 @@
 			 , final
 ]{scrbook}
 
+% TODO: Revisar las separaciones
 \RedeclareSectionCommand[
 afterskip=\parskip]{chapter}
 \RedeclareSectionCommand[
@@ -45,7 +48,7 @@ beforeskip=1.1\parskip plus 3mm
 }
 
 \addtokomafont{section}{\large}
-\addtokomafont{subsection}{\normalsize }  %1.1.1 Minus size: 10 % normalsize is 10
+\addtokomafont{subsection}{\normalsize}  %1.1.1 Minus size: 10 % normalsize is 10
 
 %REVISAR
 \usepackage[compact]{titlesec}
