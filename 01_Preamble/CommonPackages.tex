@@ -76,6 +76,10 @@
 % factor=1100 - add 10% to the protrusion amount (default is 1000)
 % stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
 
+\SetProtrusion{encoding={*},family={bch},series={*},size={6,7}}
+              {1={ ,750},2={ ,500},3={ ,500},4={ ,500},5={ ,500},
+               6={ ,500},7={ ,600},8={ ,500},9={ ,500},0={ ,500}}
+
 \SetExtraKerning[unit=space]
 {encoding={*}, family={bch}, series={*}, size={footnotesize,small,normalsize}}
 {\textendash={400,400}, % en-dash, add more space around it
@@ -129,7 +133,7 @@
 \usepackage[style=english]{csquotes}
 
 %TODO: Cambiar de bibliografia a Referencias Bibliograficas
-\renewcommand\bibname{Referencias Bibliogr\'aficas}
+\renewcommand\bibname{Referencias bibliogr\'aficas}
 \DefineBibliographyStrings{spanish}{%
 	andothers = {\em et\addabbrvspace al\adddot}
 }

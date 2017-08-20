@@ -50,6 +50,39 @@
 \newcommand{\chapterwithfigures}{\addxcontentsline{lof}{chapteratlist}[{\thechapter}]{\scr@ds@tocentry}}%
 \makeatother
 
+%TODO: agregar Lista de figuras del Capitulo X
+%\providebool{newchap}
+%\newcommand{\newchapter}[1]{%
+%    \chapter{#1}
+%    \global\setbool{newchap}{true}
+%}
+%\let\oldcaption\caption
+%\renewcommand{\caption}[2][\shortcaption]{%
+%\def\shortcaption{#2}
+%\ifbool{newchap}{%
+%    \addtocontents{lof}{\protect\contentsline{chapter}{%
+%        Chapter \thechapter \vspace{10pt}
+%    }{}}
+%        \addtocontents{lot}{\protect\contentsline{chapter}{%
+%        Chapter \thechapter \vspace{10pt}
+%    }{}}
+%    }{}
+%    \global\boolfalse{newchap}
+%    \oldcaption[#1]{#2}
+%}
+%\makeatletter
+%\newcommand{\saved@chapter}{}
+%\let\saved@chapter\chapter
+%\renewcommand{\chapter}{%
+%  \@ifstar {\saved@chapter*}{\@dblarg\my@chapter}%
+%}
+%\newcommand*{\my@chapter}[2][]{%
+%  \saved@chapter[#1]{#2}%
+%  \global\setbool{newchap}{true}
+%}
+%\makeatother
+
+
 %
 % #######################
 % End: Table of Contents (TOC) Customization
