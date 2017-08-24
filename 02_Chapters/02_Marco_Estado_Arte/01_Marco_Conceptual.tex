@@ -74,7 +74,19 @@ Se definen las competencias de investigación (\ingles{inquiry skills} en inglé
 
 Las competencias de investigación en línea involucran una serie de actividades cognitivas, como generar una pregunta de investigación, buscar información relevante en colecciones digitales, evaluar y seleccionar la información encontrada, e integrar coherentemente la información seleccionada para responder la pregunta original \parencite{eisenberg1990information}.
 
-\subsection{Minería de datos}
+\subsection{Aprendizaje de máquina}
+
+Estos comprenden un área de la Inteligencia Artificial enfocada al desarrollo de algoritmos capaces de generalizar comportamientos, a partir de información no estructurada suministrada en forma de ejemplos, de manera que posean la capacidad de adaptarse en base a experiencia adquirida y no deban ser reprogramados. Los diversos algoritmos de esta rama se diferencian en su forma de llevar a cabo el aprendizaje, algunas de estas son:
+
+\begin{description}
+\item[Aprendizaje supervisado] Se realiza mediante un entrenamiento controlado por un agente externo (supervisor, maestro), que determina la respuesta que se debería generar a partir de una entrada determinada. El supervisor controla la salida y en caso de que esta no coincida con la deseada. Se modifican los parámetros usados, con el fin de conseguir que la salida obtenida se aproxime a la deseada.
+
+\item[Aprendizaje no supervisado]  Se realiza mediante un entrenamiento sin conocimiento a priori de la salida deseada, es decir, solo son conocidas las entradas, por lo tanto el aprendizaje se basa en el grado de familiaridad o similitud entre la información que presenta una entrada y la información recolectada por entradas anteriores.
+
+\end{description}
+
+
+
 
 
 Debido a las características de este proyecto, se utilizan técnicas de aprendizaje de máquina supervisado.
@@ -93,7 +105,9 @@ A continuación, se describen los algoritmos y datos seleccionados para esta inv
 \end{figure}
 
 
-\subsubsection*{\ingles{Support Vector Machine}}
+\subsubsection*{Máquinas de vectores de soporte (SVM)}
+Las máquinas de vectores de soporte o SVM (del inglés \ingles{Support Vector Machine}) son un conjunto de algoritmos de aprendizaje supervisado que se enfocan en resolver problemas de clasificación, regresión y agrupamiento. La SVM destinada para clasificación, es un clasificador lineal binario que busca encontrar un hiperplano que separe de forma óptima un conjunto de datos, maximizando la distancia entre las dos clases.
+
 
 \begin{figure}[H]
 	\centering
@@ -125,8 +139,7 @@ A continuación, se describen los algoritmos y datos seleccionados para esta inv
 \end{figure}
 
 \subsubsection*{Na\"ive Bayes}
-
-Na\"ive Bayes se utiliza para
+El clasificador Na\"ive Bayes, también conocido como clasificador bayesiano, es un clasificador probabilístico basado en el teorema de Bayes descrito en la \ec{eq:naive-bayes}, donde $P(A|B)$ es la probabilidad de la hipotesis
 
 \begin{equation}
  P(A|B) = \frac{P(A) \cdot P(B|A)}{P(B)}
