@@ -2,60 +2,40 @@
 \label{sec:marco_conceptual}
 En esta sección se presentan conceptos y bases teóricas respecto a la temática que conduce el desarrollo de este trabajo, el cual tiene relación con el uso de interfaces no tradicionales, específicamente con una interfaz operada con el cuerpo. Además, se indaga sobre ciertas definiciones para establecer lo que se pretende medir en este estudio, lo que involucra la experiencia de usuario y métricas de rendimiento en la realización de tareas. Finalmente, se proponen ciertas características fundamentales respecto de este tipo de proyectos relacionados con diseños experimentales con usuarios.
 
-\subsection{Búsqueda de información}
-\label{subsec:busqueda}
-
 \subsection{Recuperación de Información Humano Computador}
 \label{subsec:HCIR}
-\ingles{Human Computer Information Retrieval} (HCIR) o Recuperación de Información Humano Computador\footnote{Traducción libre.}, es el estudio de los métodos que integran la inteligencia humana y la búsqueda algorítmica para ayudar a la gente a mejorar la búsqueda, exploración y aprendizaje de información (Marchionini, 2007). Dentro de esta área interactúan otras disciplinas, como la recuperación de información, llamada en inglés \ingles{Information Retrieval} (IR), la que está enfocada principalmente en proveer a los usuarios de fácil acceso a la información de su interés trabajando con la representación, almacenamiento, organización y acceso a objetos de información como documentos, páginas \ingles{web}, catálogos en línea y objetos multimedia (Baeza-Yates & Ribeiro-Neto, 2011) y la búsqueda de información, llamada en inglés \ingles{Information Seeking} (IS) que se entiende como un proceso más orientado al usuario y abierto que IR. En IS, no se sabe si existe una respuesta a la consulta del usuario, por lo que el proceso de búsqueda puede proporcionar el aprendizaje necesario para satisfacer su necesidad de información (Baeza-Yates & Ribeiro-Neto, 2011).
+La Recuperación de Información Humano Computador\footnote{Traducción libre.} (HCIR, por sus iniciales en inglés de \ingles{Human Computer Information Retrieval}) es el estudio de los métodos que integran la inteligencia humana y la búsqueda algorítmica para ayudar a la gente a mejorar la búsqueda, exploración y aprendizaje de información \parencite{marchionini2006}. Dentro de esta área interactúan otras disciplinas, como la recuperación de información, llamada en inglés \ingles{Information Retrieval} (IR), la que está enfocada principalmente en proveer a los usuarios de fácil acceso a la información de su interés trabajando con la representación, almacenamiento, organización y acceso a objetos de información como documentos, páginas \ingles{web}, catálogos en línea y objetos multimedia \parencite{ricardo2011modern} y la búsqueda de información, llamada en inglés \ingles{Information Seeking} (IS) que se entiende como un proceso más orientado al usuario y abierto que IR. En IS, no se sabe si existe una respuesta a la consulta del usuario, por lo que el proceso de búsqueda puede proporcionar el aprendizaje necesario para satisfacer su necesidad de información \parencite{ricardo2011modern}.
 
-La búsqueda de información es un campo de la investigación que relaciona el desarrollo del área de las tecnologías y ciencias de la computación con la psicología y ciencias sociales en el procesamiento de la información, en donde el usuario toma un papel activo por medio de interacciones explicitas e implícitas con la información (Carroll, 1997).
-
-Es una disciplina que contempla tanto al sistema como al usuario, así como la relación que se establece a través del comportamiento del usuario y sus experiencias (Kelly, 2009). Se ubica en un punto medio entre las disciplinas de HCI e IR.
+La búsqueda de información es un campo de la investigación que relaciona el desarrollo del área de las tecnologías y ciencias de la computación con la psicología y ciencias sociales en el procesamiento de la información, en donde el usuario toma un papel activo por medio de interacciones explicitas e implícitas con la información \parencite{carroll1997human}. Es una disciplina que contempla tanto al sistema como al usuario, así como la relación que se establece a través del comportamiento del usuario y sus experiencias \parencite{kelly2009methods}. Se ubica en un punto medio entre las disciplinas de HCI e IR.
 
 \subsection{Rendimiento}
 \label{subsec:rendimiento}
-En el contexto de la recuperación de información se definen \ingles{precision} y \ingles{recall} en función de un conjunto de documentos relevantes y un conjunto de documentos recuperados (Powers, 2011), las cuales se definen a continuación.  
+En el contexto de la recuperación de información se definen \ingles{precision} y \ingles{recall} en función de un conjunto de documentos relevantes y un conjunto de documentos recuperados \parencite[p.~38]{powers2011evaluation}, las cuales se definen a continuación.  
 
 \begin{description}
 	\item [\ingles{Precision}] Métrica que mide la razón de documentos relevantes recuperados con 
-respecto al total de documentos recuperados. Es un valor continuo entre 0 y 1, mientras más cercano a 1, mayor fue su precisión al encontrar los documentos relevantes. La \eq{eq:precision} muestra
+respecto al total de documentos recuperados. Representado en la \eq{eq:precision}, el resultado de esta métrica es un valor continuo entre 0 y 1, mientras más cercano a 1, mayor fue su precisión al encontrar los documentos relevantes.
+
 	\begin{equation}
 	Precision = \frac{\big[\big\{documentos \ relevantes\big\} \cap \big\{documentos \ recuperados\big\}\big]}{\big\{documentos \ recuperados\big\}}
 	\label{eq:precision}
 	\end{equation}
 
 	\item [\ingles{Recall}] Métrica que mide la razón de documentos relevantes recuperados con 
-respecto al total de documentos relevantes. Es un valor continuo entre 0 y 1, mientras más cercano a 1, mayor fue la recuperación de documentos en base al total del universo disponible. La \eq{eq:recall} muestra
+respecto al total de documentos relevantes. Representado en la \eq{eq:recall}, el resultado de esta métrica es un valor continuo entre 0 y 1, mientras más cercano a 1, mayor fue la recuperación de documentos en base al total del universo disponible.
+
 	\begin{equation}
 	Recall = \frac{\big[\big\{documentos \ relevantes\big\} \cap \big\{documentos \ recuperados\big\}\big]}{\big\{documentos \ relevantes\big\}}
 	\label{eq:recall}
 	\end{equation}
 
-	\item [\ingles{F1}] Métrica que considera a \ingles{precision} y \ingles{recall} en un promedio ponderado. Es un valor continuo entre 0 y 1, en que un valor cercano a uno permite identificar a los estudiantes con una recuperación de documentos proporcional a su precisión, respecto a la relevancia de estos. La \eq{eq:F1} muestra   
+	\item [\ingles{F1}] Métrica que considera los valores de \ingles{precision} y \ingles{recall} en un promedio ponderado. Representado en la \eq{eq:F1}, el resultado de esta métrica es un valor continuo entre 0 y 1, en que un valor cercano a uno permite identificar a los estudiantes con una recuperación de documentos proporcional a su precisión, respecto a la relevancia de estos.  
+
 	\begin{equation}
 	F1 = \frac{2 \cdot Precision\cdot Recall}{Precision+ Recall}
 	\label{eq:F1}
 	\end{equation}
  
-	\item [\ingles{Coverage Effectiveness}] Razón entre la cobertura útil, páginas visitadas sobre 30 segundos, y el total de documentos visitados por un estudiante. Es un valor continuo entre 0 a 1, mientras más cercano a 1, mejor fue la efectividad de la cobertura respecto el universo de documentos, respecto al tiempo de permanencia. La \eq{eq:CE} muestra     
-	\begin{equation}
-	CE = \frac{UsfCover}{TotalCover}
-	\label{eq:CE}
-	\end{equation}
-
-	\item [\ingles{Query Effectiveness}] Razón existente entre la efectividad de la cobertura (fórmula anterior) y el total de consultas realizadas por un estudiante. Esta proporción da indicios del desempeño del estudiante en torno a la calidad de las consultas efectuadas, en base a la cantidad y eficacia. Sus valores también están en un intervalo continuo entre 0 a 1. La \eq{eq:QE} muestra
-	\begin{equation}
-	QE = \frac{CE}{countQ}
-	\label{eq:QE}
-	\end{equation}
-
-	\item [\ingles{Search Score}] Calificación de los estudiantes que se expresa en una escala continua de 0 a 5 puntos. Es una razón entre la cobertura relevante y el total de páginas marcadas activas al final de la tarea. La \eq{eq:score} muestra
-	\begin{equation}
-	Score = \frac{BMRelv}{ActBM} * 5
-	\label{eq:score}
-	\end{equation}
-
 \end{description}
 
 %\begin{equation}
@@ -74,27 +54,25 @@ Se definen las competencias de investigación (\ingles{inquiry skills} en inglé
 
 Las competencias de investigación en línea involucran una serie de actividades cognitivas, como generar una pregunta de investigación, buscar información relevante en colecciones digitales, evaluar y seleccionar la información encontrada, e integrar coherentemente la información seleccionada para responder la pregunta original \parencite{eisenberg1990information}.
 
-\subsection{Aprendizaje de máquina}
-
-Estos comprenden un área de la Inteligencia Artificial enfocada al desarrollo de algoritmos capaces de generalizar comportamientos, a partir de información no estructurada suministrada en forma de ejemplos, de manera que posean la capacidad de adaptarse en base a experiencia adquirida y no deban ser reprogramados. Los diversos algoritmos de esta rama se diferencian en su forma de llevar a cabo el aprendizaje, algunas de estas son:
+\subsection{Aprendizaje automático}
+El aprendizaje automático (\ingles{Machine Learning}, por su nombre en inglés) es un área de la Inteligencia Artificial enfocada al desarrollo de algoritmos capaces de generalizar comportamientos, a partir de información no estructurada suministrada en forma de ejemplos, de manera que posean la capacidad de adaptarse en base a experiencia adquirida y no deban ser reprogramados. Los diversos algoritmos de esta rama se diferencian en su forma de llevar a cabo el aprendizaje, algunas de estas son:
 
 \begin{description}
-\item[Aprendizaje supervisado] Se realiza mediante un entrenamiento controlado por un agente externo (supervisor, maestro), que determina la respuesta que se debería generar a partir de una entrada determinada. El supervisor controla la salida y en caso de que esta no coincida con la deseada. Se modifican los parámetros usados, con el fin de conseguir que la salida obtenida se aproxime a la deseada.
+\item [Aprendizaje supervisado] Se realiza mediante un entrenamiento controlado por un agente externo (supervisor, maestro), que determina la respuesta que se debería generar a partir de una entrada determinada. El supervisor controla la salida y en caso de que esta no coincida con la deseada. Se modifican los parámetros usados, con el fin de conseguir que la salida obtenida se aproxime a la deseada.
 
-\item[Aprendizaje no supervisado]  Se realiza mediante un entrenamiento sin conocimiento a priori de la salida deseada, es decir, solo son conocidas las entradas, por lo tanto el aprendizaje se basa en el grado de familiaridad o similitud entre la información que presenta una entrada y la información recolectada por entradas anteriores.
-
+\item [Aprendizaje no supervisado] Se realiza mediante un entrenamiento sin conocimiento a priori de la salida deseada, es decir, solo son conocidas las entradas, por lo tanto el aprendizaje se basa en el grado de familiaridad o similitud entre la información que presenta una entrada y la información recolectada por entradas anteriores.
 \end{description}
 
-Uno de los problemas que intenta solucionar la rama de aprendizaje automático supervisado, es la clasificación, cuya definición en este contexto corresponde al problema de identificar a qué categoría pertenece una nueva observación.
+Uno de los problemas que intenta solucionar la rama de aprendizaje automático supervisado, es la clasificación, cuya definición en este contexto corresponde al problema de identificar a qué categoría pertenece una nueva observación. 
 
-Entonces, un clasificador se define como cualquier algoritmo que resuelva el problema de clasificación. Para ello, este tipo de algoritmo necesita ser entrenado con un conjunto de observaciones que ya estén etiquetadas en una categoría, de forma que pueda corregir su aprendizaje. Las observaciones son representadas a través de un conjunto de propiedades que permiten determinar a qué categoría pertenece. Por su parte, las propiedades pueden ser de tipo categórico (por ejemplo el tipo de sangre), ordinal (“grande”, “medio”, “pequeño”), valores enteros o reales o incluso utilizando la diferencia y similitud entre la observación actual y las observaciones previas (Vilches, 2015). Como consecuencia del entrenamiento, se consigue un modelo del clasificador capaz de asignar observaciones desconocidas a una categoría conocida específica, solo sabiendo sus propiedades.
+Un clasificador se define como cualquier algoritmo que resuelva el problema de clasificación. Para ello, este tipo de algoritmo necesita ser entrenado con un conjunto de observaciones que ya estén etiquetadas en una categoría, de forma que pueda corregir su aprendizaje. Las observaciones son representadas a través de un conjunto de propiedades que permiten determinar a qué categoría pertenece. Por su parte, las propiedades pueden ser de tipo categórico (por ejemplo el tipo de sangre), ordinal (“grande”, “medio”, “pequeño”), valores enteros o reales o incluso utilizando la diferencia y similitud entre la observación actual y las observaciones previas (Vilches, 2015). Como consecuencia del entrenamiento, se consigue un modelo del clasificador capaz de asignar observaciones desconocidas a una categoría conocida específica, solo sabiendo sus propiedades.
 
 La terminología usada en esta área, suele llamar a las observaciones “instancias”, “ejemplos” o “sujetos”, a las propiedades “características” o “atributos”, a las categorías “clases”, al conjunto de observaciones “conjunto de entrada” y al conjunto de observaciones usadas en el entrenamiento “conjunto de entrenamiento”.
 
 
-Debido a las características de este proyecto, se utilizan técnicas de aprendizaje de máquina supervisado.
+Debido a las características de este proyecto, se utilizan técnicas de aprendizaje automático supervisado.
 
-\subsection{Técnicas de aprendizaje de máquina supervisado}
+\subsection{Técnicas de aprendizaje automático supervisado}
 \label{subsec:tecnicas-mineria}
 A continuación, se describen los algoritmos y datos seleccionados para esta investigación.
 
@@ -149,6 +127,16 @@ El clasificador Na\"ive Bayes, también conocido como clasificador bayesiano, es
  \label{eq:naive-bayes}
 \end{equation}
 
+
+\subsection{Técnicas de reforzamiento}
+
+
+\begin{figure}[H]
+	\centering
+	\input{03_GraphicFiles/02_Marco_Teorico/RL}
+	\captionsource{Aprendizaje por reforzamiento}{\fuentePropia}
+	\label{fig:decision-tree}
+\end{figure}
 
 \subsection{Minería de datos educacional}
 La minería de datos utiliza una combinación de bases de conocimientos explícita, conocimientos analíticos complejos y conocimiento de campo para descubrir las tendencias y los patrones ocultos, estas tendencias y patrones forman la base de los modelos predictivos que permiten a los analistas realizar nuevas observaciones de los datos existentes \parencite{luan2002data}. La gran cantidad de información generada hoy en día por los estudiantes permite que la minería de datos obtenga datos relevantes y, a través de métodos estadísticos y otras herramientas relacione la información para conocer si el proceso de enseñanza aprendizaje ha dado resultados positivos. 

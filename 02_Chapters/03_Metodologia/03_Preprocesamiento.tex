@@ -1,1 +1,21 @@
 \section{Preprocesamiento de los datos}
+
+\begin{description}
+	\item [\ingles{Coverage Effectiveness}] Razón entre la cobertura útil, páginas visitadas sobre 30 segundos, y el total de documentos visitados por un estudiante. Es un valor continuo entre 0 a 1, mientras más cercano a 1, mejor fue la efectividad de la cobertura respecto el universo de documentos, respecto al tiempo de permanencia. La \eq{eq:CE} muestra     
+	\begin{equation}
+	CE = \frac{UsfCover}{TotalCover}
+	\label{eq:CE}
+	\end{equation}
+
+	\item [\ingles{Query Effectiveness}] Razón existente entre la efectividad de la cobertura (fórmula anterior) y el total de consultas realizadas por un estudiante. Esta proporción da indicios del desempeño del estudiante en torno a la calidad de las consultas efectuadas, en base a la cantidad y eficacia. Sus valores también están en un intervalo continuo entre 0 a 1. La \eq{eq:QE} muestra
+	\begin{equation}
+	QE = \frac{CE}{countQ}
+	\label{eq:QE}
+	\end{equation}
+
+	\item [\ingles{Search Score}] Calificación de los estudiantes que se expresa en una escala continua de 0 a 5 puntos. Es una razón entre la cobertura relevante y el total de páginas marcadas activas al final de la tarea. La \eq{eq:score} muestra
+	\begin{equation}
+	Score = \frac{BMRelv}{ActBM} * 5
+	\label{eq:score}
+	\end{equation}
+\end{description}
