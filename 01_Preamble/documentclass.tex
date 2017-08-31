@@ -28,14 +28,15 @@
 ]{scrbook}
 
 % TODO: Revisar las separaciones
-\RedeclareSectionCommand[
-afterskip=\parskip]{chapter}
-\RedeclareSectionCommand[
-beforeskip=\parskip
-, afterskip=0.1\parskip]{section}
-\RedeclareSectionCommand[
-beforeskip=1.1\parskip plus 3mm
-, afterskip=0.1\parskip]{subsection}
+%\RedeclareSectionCommand[
+%afterskip=\parskip]{chapter}
+
+%\RedeclareSectionCommand[
+%beforeskip=\parskip
+%, afterskip=0.1\parskip]{section}
+
+%\RedeclareSectionCommand[beforeskip=1.1\parskip plus 3mm
+%, afterskip=0.1\parskip]{subsection}
 
 
 \KOMAoption{bibliography}{leveldown}
@@ -78,14 +79,18 @@ beforeskip=1.1\parskip plus 3mm
 {\vspace*{0.5cm}}
 
 \titleformat{\subsubsection}
-{\itshape\normalsize\vspace{1.0cm}}
+%{\itshape\normalsize\vspace{1.0cm}}
+{\itshape\normalsize}
 {\itshape\thesubsubsection\ }
 {0pt}
-{\vspace*{0.5cm}\itshape}
+%{\vspace*{0.5cm}\itshape}
+{\itshape}
 
 \titlespacing*{\chapter} {0pt}{85pt}{20pt} 
 \titlespacing*{\section} {0pt}{6.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\subsection} {0pt}{6.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing*{\subsubsection*}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
 \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
 \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}
