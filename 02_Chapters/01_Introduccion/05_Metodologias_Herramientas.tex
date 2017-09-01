@@ -2,15 +2,15 @@
 \label{sec:metodologia-herramientas}
 
 
-\subsection{Metodología a usar}
+\subsection{Metodologías utilizadas}
 \label{subsec:metodologia}
 
 El presente proyecto presenta una componente de investigación y desarrollo de \ingles{software} (I+D), esto debido a la relación que existe entre ambas componentes, la investigación necesita una herramienta de \ingles{software} de apoyo que permita recibir los datos de NEURONE, alimentar el modelo de predicción y que permita al usuario interactuar con resultados de la predicción realizada.
 
-La componente de investigación del proyecto será guiada por la metodología Descubrimiento de Conocimiento en Base de Datos (conocido como KDD, las iniciales de \ingles{Knowledge Discovery in Databases}) \parencite{fayyad1996data}, mientras que la componente de desarrollo será guiada por la metodología de desarrollo de \ingles{software} Desarrollo de Rápido de Aplicaciones (conocido como RAD, las iniciales de \ingles{Rapid Application Development}) \parencite{martin1991rapid}. A continuación, se explica el uso de ambas metodologías en el trabajo propuesto.
+La componente de investigación del proyecto es guiada por la metodología Descubrimiento de Conocimiento en Base de Datos (conocido como KDD, las iniciales de \ingles{Knowledge Discovery in Databases}) \parencite{fayyad1996data}, mientras que la componente de desarrollo es guiada por la metodología de desarrollo de \ingles{software} Desarrollo de Rápido de Aplicaciones (conocido como RAD, las iniciales de \ingles{Rapid Application Development}) \parencite{martin1991rapid}. A continuación, se explica el uso de ambas metodologías en el trabajo propuesto.
 
 \subsubsection*{Metodología usada en la investigación}
-Respecto a la componente de investigación, esta será guiada bajo la metodología KDD, la cual se define como “un proceso no trivial de identificar patrones en los datos que sean válidos, novedosos, potencialmente útiles y finalmente comprensibles” \parencite[p.~5]{fayyad1996data}. En primer lugar, se seleccionan y limpian los datos que se deben extraer para poder realizar el modelado del comportamiento de búsqueda. Luego, se transforman los datos y se realiza minería de datos sobre ellos para buscar los patrones de interés que pueden expresarse como un modelo o que expresen dependencia de los datos. Finalmente, se identifican los patrones realmente interesantes que representan el conocimiento, usando diferentes técnicas, incluyendo análisis estadísticos para posteriormente interpretar los datos obtenidos.
+Respecto a la componente de investigación, esta es guiada bajo la metodología KDD, la cual se define como “un proceso no trivial de identificar patrones en los datos que sean válidos, novedosos, potencialmente útiles y finalmente comprensibles” \parencite[p.~5]{fayyad1996data}. En primer lugar, se seleccionan y limpian los datos que se deben extraer para poder realizar el modelado del comportamiento de búsqueda. Luego, se transforman los datos y se realiza minería de datos sobre ellos para buscar los patrones de interés que pueden expresarse como un modelo o que expresen dependencia de los datos. Finalmente, se identifican los patrones realmente interesantes que representan el conocimiento, usando diferentes técnicas, incluyendo análisis estadísticos para posteriormente interpretar los datos obtenidos.
 
 \subsubsection*{Metodología usada para el desarrollo}
 Respecto a la componente de desarrollo de \ingles{software}, se toma en cuenta las condiciones bajo las cuales se desarrolla el proyecto, las cuales se expresan a continuación:
@@ -32,11 +32,11 @@ Dado los antecedentes mencionados anteriormente, se determina que el proyecto pr
 \label{subsec:herramientas}
 Las herramientas a utilizar en el trabajo de tesis se dividen tanto en \ingles{hardware} como en \ingles{software}, las cuales se explican a continuación.
 
-\subsubsection*{\textit{Hardware}}
+\subsubsection*{Herramientas de \textit{hardware}}
 El desarrollo se llevará a cabo con procesador Intel Core i7 7ma Generación \textit{Kabylake} de 3.6 Ghz, con memoria Ram de 16 GB y 2 TB de disco duro. Además, los despliegues de prueba se realizan sobre un servidor privado virtual (VPS, por sus siglas en inglés) con el sistema operativo GNU/Linux Ubuntu Server alojado en el proveedor DigitalOcean\footnote{https://www.digitalocean.com/}.
 
-\subsubsection*{\textit{Software}}
-En cuanto a las herramientas del \ingles{software}, el desarrollo se llevará a cabo en la distribución GNU/Linux Debian\footnote{https://www.debian.org/} en su versión 9.0. El modelo se llevará a cabo en Spark ML\footnote{https://spark.apache.org/}. Para el análisis estadístico se hará uso de R. Además, cada módulo desarrollado estará contenido en contenedores de Docker para facilitar el despliegue en producción del modelo desarrollado. Todo el trabajo realizado, tanto código como documento escrito estará bajo el sistema de control de versiones Git. Finalmente, se hará uso de \LaTeX\ para el documento escrito.
+\subsubsection*{Herramientas de \textit{software}}
+En cuanto a las herramientas de \ingles{software}, el desarrollo se llevará a cabo en la distribución GNU/Linux Debian\footnote{https://www.debian.org/} en su versión 9.0. El modelo se llevará a cabo en Spark ML\footnote{https://spark.apache.org/}. Para el análisis estadístico se hará uso de R. Además, cada módulo desarrollado estará contenido en contenedores de Docker para facilitar el despliegue en producción del modelo desarrollado. Todo el trabajo realizado, tanto código como documento escrito estará bajo el sistema de control de versiones Git. Finalmente, se hará uso de \LaTeX\ para el documento escrito.
 
 %
 %\begin{itemize}
