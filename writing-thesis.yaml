@@ -1,0 +1,10 @@
+session_name: thesis-writing
+windows:
+- window_name: writing
+  layout: tiled
+  shell_command_before:
+    - cd ~/Thesis/Master-Thesis-Prediction-Model
+  panes:
+    - shell_command:           # pane no. 1
+        - nvim .
+
