@@ -19,5 +19,26 @@
    (model-testing.south) -- +(0,-.35) -| (model-training.south)
    (prediction.south) -- +(0,-.60) -| (data-ingestion.south);
 
+\coordinate[below=11mm of data-ingestion] (bottom brace);
+
+\draw [my brace]
+      (data-ingestion.south|-bottom brace) -- (model-training.south west|-bottom brace) 
+      node[bottom label] {
+        %Obtención de datos de NEURONE
+        \begin{itemize}
+        \item Spark
+        \end{itemize}
+      };
+
+\draw [my brace]
+      (model-training.south|-bottom brace) -- (prediction.south west|-bottom brace) 
+      node[bottom label] {
+        %Environmental \& Human factors
+        \begin{itemize}
+        \item Spark ML
+        \end{itemize}
+      };
+
+
 \end{tikzpicture}
 %}

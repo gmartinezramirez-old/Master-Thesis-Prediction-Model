@@ -4,6 +4,28 @@
 \label{chp:desarrollo_software}
 A través del presente capítulo se expone el desarrollo de \ingles{software} de apoyo a la experimentación llevado a cabo mediante la metodología de desarrollo de \ingles{software} Desarrollo Rápido de Aplicaciones (desde ahora en adelante RAD, las iniciales de \ingles{Rapid Application Development}). En primer lugar, se presenta la metodología de desarrollo de \ingles{software} donde se define brevemente en que se basa la construcción de la herramienta. En segundo lugar, se hace una definición conceptual de los aspectos básicos que debe cumplir el \ingles{software} desarrollado. Luego, se presenta el desarrollo de \ingles{software} desde el punto de vista de los prototipos construidos a razón de la metodología ocupada. Finalmente, se describe la arquitectura construida para la herramienta. 
 
+%\begin{tikz*}[%
+%	every node/.style={rectangle,align=center,minimum height=2.25em}
+%]
+%	\node(req) [draw] {Инженерия требований};
+%	\node(req-doc) [right=5em of req] {Спецификация требований};
+%	\node(design) [below right=2em and -3em of req,draw] {Проектирование};
+%	\node(arch) [right=4em of design] {Архитектура};
+%	\node(impl) [below right=2em and -3em of design,draw] {Имплементация};
+%	\node(sw) [right=4em of impl] {Программный продукт};
+%	\node(test) [below right=2em and -3em of impl,draw] {Тестирование};
+%	\node(maint) [below right=2em and -3em of test,draw] {Сопровождение};
+	
+%	\draw[->] (req) to (design);
+%	\draw[->,dashed] (req) to (req-doc);
+%	\draw[->] (design) to (impl);
+%	\draw[->,dashed] (design) to (arch);
+%	\draw[->] (impl) to (test);
+%	\draw[->,dashed] (impl) to (sw);
+%	\draw[->] (test) to (maint);
+%	\draw[->,dotted] (maint) -| (req);
+%\end{tikz*}
+
 \input{02_Chapters/04_Desarrollo_Software/01_RAD.tex}
 \input{02_Chapters/04_Desarrollo_Software/02_Definicion_Conceptual.tex}
 \input{02_Chapters/04_Desarrollo_Software/03_Desarrollo.tex}

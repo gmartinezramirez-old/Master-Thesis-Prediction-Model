@@ -59,7 +59,10 @@
 {\bfseries\Large\vspace*{-4.0cm}}	% Formato título
 {	% Contenido de la etiqueta
 	\filright
-	\Large\MakeUppercase\chaptertitlename\ \thechapter.\ 
+	% En memoria tesis, va capitulo prefix
+	%\Large\MakeUppercase\chaptertitlename\thechapter.\
+	% En propuesta no
+	\Large\MakeUppercase\thechapter.\ 
 }
 {0pt} % Espacio mínimo entre etiqueta y cuerpo
 {\filright\MakeUppercase} % Código que precede al cuerpo del título

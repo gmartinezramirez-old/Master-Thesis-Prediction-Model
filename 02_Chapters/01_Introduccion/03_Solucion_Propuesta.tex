@@ -9,13 +9,13 @@ Los datos son recopilados y almacenados por NEURONE, estos datos provienen de re
 
 El módulo propuesto hará uso de Apache Spark\footnote{https://spark.apache.org/}, el cual es un \ingles{framework} de código abierto para el procesamiento de datos masivos, el cual incluye librerías de minería de datos y aprendizaje automático. Este módulo se conectará con el sistema NEURONE, funcionando como una extensión del mismo, consultando su base de datos, alimentando y perfeccionando el modelo. 
 
-El ciclo de construcción, evaluación y optimización del modelo se ilustra en la Figura \ref{fig:ml-pipeline}, donde a través de los datos históricos obtenidos de NEURONE construye el modelo, lo evalúa y lo optimiza en un proceso continuo, entregando como resultado la clasificación del desempeño de búsqueda y prediciendo de forma continua a partir del comportamiento actual de búsqueda de información del estudiante.
+El ciclo de construcción, evaluación y optimización del modelo se ilustra en la Figura \ref{fig:ml-pipeline}, donde a través de los datos históricos obtenidos de NEURONE construye el modelo, lo evalúa y lo optimiza en un proceso continuo, entregando como resultado la clasificación y predicción del desempeño de búsqueda de información actual del estudiante. Dentro de este proceso cíclico, el modelo será optimizado de forma continua a través de reentrenamiento.
 
 %Fuente: https://tex.stackexchange.com/questions/4338/correctly-scaling-a-tikzpicture
 \begin{figure}[H]
 	\centering
 	\scalebox{0.8}{\input{03_GraphicFiles/ml-pipeline}}
-	\captionsource{Ciclo de construcción y perfeccionamiento del modelo}{\fuentePropia}
+	\captionsource{Ciclo de construcción y perfeccionamiento del modelo a través de reentrenamiento}{\fuentePropia}
 	\label{fig:ml-pipeline}
 \end{figure}
 
@@ -32,3 +32,64 @@ Con el módulo propuesto en este trabajo, el docente obtiene una estimación tem
 	\captionsource{Proceso de búsqueda de información de un estudiante}{\fuentePropia}
 	\label{fig:docente_estudiante}
 \end{figure}
+
+
+%\begin{figure}[H]
+%\centering\makebox[\textwidth]{
+%\begin{tikzpicture}[node distance =4cm, auto]
+%
+%    % Place nodes
+%    \node[block] (susceptible) {Susceptible};
+%    \node[block, right of=susceptible] (exposed) {Exposed};
+%    \node[block, right of=exposed] (infectious) {Infectious};
+%    \node[block, right of=infectious] (removed) {Removed};
+%
+%\coordinate[below=8mm of susceptible] (bottom brace);
+%
+%\draw [my brace]
+%      (exposed.south|-bottom brace) -- (susceptible.south west|-bottom brace) 
+%      node[bottom label] {
+%        Environmental \& Human factors
+%        \begin{itemize}
+%        \item Foo
+%        \item Bar
+%        \item Foobar
+%        \end{itemize}
+%      };
+
+%\draw [my brace]
+%    (infectious.south|-bottom brace) -- (exposed.south|-bottom brace)
+%    node [bottom label] { Variable immunity };
+
+%\draw [my brace]
+%    (removed.south east|-bottom brace) -- (infectious.south|-bottom brace)
+%    node [bottom label] { 
+%      Control parameters 
+%        \begin{itemize}
+%        \item Foo
+%        \item Bar
+%        \end{itemize}
+%     };    
+
+%\coordinate[above=3mm of susceptible] (top brace);
+
+%\draw [my brace] 
+%    (susceptible.north|-top brace) -- (exposed.north|-top brace)
+%    node [top label] {Contact parameters};
+
+%\draw [my brace]
+%    (exposed.north|-top brace) -- (removed.north|-top brace)
+%    node[top label] {Disease parameters};
+
+%\draw[line] (susceptible) -- (exposed)
+%            (exposed) -- (infectious)
+%            (infectious) -- (removed);
+
+%\path[line,dashed] 
+%   (removed.south) -- +(0,-.35) -| (susceptible.south);
+
+%\end{tikzpicture}}
+%\smallskip
+%\label{fig:flowchart_disease_transmission}
+%\caption{Flowchart of fundamental disease transmission mechanisms}
+%\end{figure}
