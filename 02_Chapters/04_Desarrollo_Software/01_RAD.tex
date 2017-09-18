@@ -9,3 +9,68 @@ Utilizando RAD la planificación del desarrollo de \ingles{software} se intercal
 	\item \textbf{Etapa de desarrollo}: También conocida como etapa de “Construcción”, es cuando se ejecuta el trabajo planificado en las etapas anteriores y hace el desarrollo propio del sistema.
 	\item \textbf{Etapa de despliegue}: También conocida como “Implementación” es cuando el prototipo es liberado y se entrega para la evaluación por parte del cliente. 
 \end{enumerate}
+
+\smartdiagram[circular diagram:clockwise]{Edit,
+  pdf\LaTeX, Bib\TeX/ biber, make\-index, pdf\LaTeX}
+
+\begin{center}
+\smartdiagramset{circular distance=4cm,
+module minimum width=2.5cm,
+module minimum height=1.5cm,
+arrow tip=to}
+\smartdiagram[circular diagram]{Analyze,Design,Develop,Test,Support,
+Define}
+\end{center}
+
+\begin{center}
+\smartdiagramset{border color=none,
+uniform color list=teal!60 for 4 items,
+arrow style=[-stealth’,
+module x sep=3.75,
+back arrow distance=0.75,
+}
+\smartdiagram[flow diagram:horizontal]{Set up,Run,Analyse,Modify~/ Add}
+\end{center}
+
+\begin{center}
+\smartdiagramset{border color=none,
+set color list={blue!50!cyan,green!60!lime,orange!50!red,red!80!black},
+back arrow disabled=true}
+\smartdiagram[flow diagram:horizontal]{Set up,Run,Analyse,Modify~/ Add}
+\end{center}
+
+\begin{center}
+\smartdiagram[sequence diagram]{Pretest,Intervención,Postest}
+\end{center}
+
+\begin{center}
+\smartdiagram[sequence diagram]{Pretest,Postest}
+\end{center}
+
+
+\begin{minipage}[c][8cm]{\textwidth}
+\centering
+\smartdiagramset{
+uniform color list=orange!60!yellow for 5 items,
+circular final arrow disabled=true,
+circular distance=2.25cm,
+arrow tip=to,
+arrow line width=2pt,
+additions={
+additional item bottom color=orange!60!yellow,
+additional item border color=gray,
+additional item shadow=drop shadow,
+additional item offset=0.65cm,
+additional arrow line width=2pt,
+additional arrow tip=to,
+additional arrow color=orange!60!yellow,
+}
+}
+\smartdiagramadd[circular diagram]{
+aa,bb,cc,dd,ee
+}{
+above of module1/Start,right of module5/End
+}
+\smartdiagramconnect{to-}{module1/additional-module1}
+\smartdiagramconnect{-to}{module5/additional-module2}
+\end{minipage}
