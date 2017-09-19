@@ -69,9 +69,32 @@ Un clasificador se define como cualquier algoritmo que resuelva el problema de c
 
 La terminología usada en esta área, suele llamar a las observaciones “instancias”, “ejemplos” o “sujetos”, a las propiedades “características” o “atributos”, a las categorías “clases”, al conjunto de observaciones “conjunto de entrada” y al conjunto de observaciones usadas en el entrenamiento “conjunto de entrenamiento”. Debido a las características de este proyecto, se utilizan técnicas de aprendizaje automático supervisado.
 
-\subsection{Técnicas de aprendizaje automático supervisado}
+\subsection{Técnicas de minería de datos}
 \label{subsec:tecnicas-mineria}
-A continuación, se describen los algoritmos y datos seleccionados para esta investigación.
+A continuación se presentan algunos de los modelos y algoritmos de minería de datos utilizados para extraer conocimiento desde los datos. Estos algoritmos son genéricos, pudiendo existir variantes de cada uno, ya que se van adaptando, combinando o incluyendo mejoras dependiendo del tipo de problema en estudio. 
+
+\begin{itemize}
+\item \textbf{\textit{K-Nearest Neighboor} (KNN)}: El algoritmo del K vecino más cercano o KNN es un de los algoritmos más simple. Este algoritmo no requiere de ningún parámetro fuera del número de vecinos a considerar. En pocas palabras, el algoritmo puede resumirse en que ``reúne los K vecinos más cercanos y los hace votar, la clase con más vecinos gana, mientras que más vecinos consideramos, menos la tasa de error''[22]. Dicha cercanía, generalmente se mide en base a alguna distancia, por lo que se pueden obtener distintos resultados dependiendo de la distancia escogida, pues diferentes métricas definirán diferentes regiones [26]. Su esquema general se propone en la siguiente Figura.
+
+% TODO: insertar figura KDD
+
+
+\item \textbf{Na\"ive Bayes}: En general los algoritmos de clasificación que utilizan el aprendizaje bayesiano resultan complejos en el sentido de la cantidad de parámetros. Sin embargo, el método de na\"ive bayes convierte dicha complejidad en una simpleza factible, “debido a que hace un supuesto de independencia con-
+dicional que reduce el número de parámetros a estimar, cuando se modela P(x|y)” [76]. De forma cuantitativa, si la variable a predecir tiene dos valores pasa de estimar 2 (2n − 1) parámetros a 2n. La utilidad de los algoritmos de aprendizaje bayesiano es que “da una medida probabilística de la importancia de esas variables en el problema, y, por lo tanto, una probabilidad explícita de las hipótesis que se formulan” [68].
+
+\item \textbf{Árboles de decisión}: Los árboles de decisión son modelos que usualmente se representan en forma de grafos. Es ``un modelo predictivo que puede ser usado para representar tanto modelos regresivos como aquellos de clasificación, se refiere a un modelo jerárquico de decisiones y sus consecuencias'' [33]. Dentro de un esquema general, el árbol de decisión consiste en un grafo donde existe un nodo único o padre, el cual, contiene las instancias a contemplar en el modelo. Un ejemplo de este tipo de modelos es el LADTree, el cual es un tipo de árbol de decisión que itera sobre el ADTree, que es un árbol que en vez de establecer criterios y dividir la muestra, asigna una puntuación a las categorías relevantes de determinadas variables.
+
+
+
+\item \textbf{Máquina vectorial de soporte (SVM)}: A diferencia de los algoritmos anteriores, la máquina de soporte vectorial, o bien, \ingles{Support Vector Machines}, utilizan planos complejos para encontrar la mejor división de las instancias que permita clasificarlas de manera óptima. Cuya formulación es un problema de minimización cuadrática con un número de variables igual al número de casos de entrenamiento.
+
+\item \textbf{Redes neuronales}: Una red neuronal artificial (o denominada simplemente red neuronal, o ANN) ``consiste en procesar elementos (llamados neuronas)''
+
+\item \textbf{Regresión}: La regresión, consiste en ``\textit{el estudio de la dependencia de la variable dependiente, respecto a una o más variables, con el objetivo de estimar y/o predecir la media o valor promedio poblacional de la primera en términos de los valores conocidos o fijos (en muestras repetidas) de las últimas}'' [19]. Por lo que este modelo sirve para predecir y clasificar, donde su uso típico es el de predecir la demanda o el inventario futuro de una empresa. En el caso de la clasificación, la regresión que se utiliza comúnmente no resulta muy efectiva, puesto que la variable a predecir posee una connotación nominal, sin embargado, existe un tipo de regresión que se encarga de predecir variables nominales y se denomina regresión logística.
+
+
+\item \textbf{Multiclasificadores}:
+\end{itemize}
 
 \subsubsection*{Árboles de decisión}
 
@@ -134,6 +157,26 @@ El clasificador Na\"ive Bayes, también conocido como clasificador bayesiano, es
 	\captionsource{Aprendizaje por reforzamiento}{\fuentePropia}
 	\label{fig:decision-tree}
 \end{figure}
+
+
+\subsection{Comparación entre los principales algoritmos de aprendizaje automático}
+A continuación se describen brevemente los modelos básicos con sus ventajas y desventajas.
+
+\begin{itemize}
+\item \textbf{SVM (Support Vector Machines)}: Usando las funciones Kernel se pueden incluir distintos grados de NO linealidad y de esta manera, ﬂexibilizar el modelo.
+
+La desventaja de este modelo es que el resultado de la clasifícación es puramente dicotómico y no hay probabilidad de pertenencia, además, no se tiene una idea clara de explicación dada la complejidad del modelo en sí.
+
+\item \textbf{K- vecino más cercano (\textit{K-Nearest neighbor})}: La ventaja es que los vecinos pueden dar una explicación de los resultados de clasificación. La desventaja de este modelo es que requiere deﬁnir una métrica que mida la distancia entre los datos, puesto que no es clara como deﬁnir dicha métrica.
+
+\item \textbf{Árboles de decisión}: La desventaja de este modelo está en que las variables continuas o numéricas son implícitamente discretizadas en el proceso de separación, perdiendo información en el camino. No obstante, previo al análisis anterior, los árboles son tolerantes al ruido, a los atributos no signiﬁcativos y a los valores faltantes; son escalables a grandes volúmenes.
+
+Dentro de sus desventajas están la de su imprecisión y su debilidad en el sentido de que 2 muestras distintas sobre la misma distribución pueden llevar a 2 árboles muy diferentes. La ventaja es que establece una explicación clara acerca de la predicción.
+
+\item \textbf{Regresión lineal}: Este modelo es ﬂexible por el hecho de que se pueden incluir términos de interacción, es decir, productos que hagan el modelo no lineal. La desventaja es que no posee alto grado como las redes neuronales ya que la alta ﬂexibilidad conlleva un alto riesgo de sobreajuste u \ingles{overfitting}, lo que reduce el \ingles{accuracy}.
+
+\end{itemize}
+
 
 \subsection{Minería de datos educacional}
 La minería de datos utiliza una combinación de bases de conocimientos explícita, conocimientos analíticos complejos y conocimiento de campo para descubrir las tendencias y los patrones ocultos, estas tendencias y patrones forman la base de los modelos predictivos que permiten a los analistas realizar nuevas observaciones de los datos existentes \parencite{luan2002data}. La gran cantidad de información generada hoy en día por los estudiantes permite que la minería de datos obtenga datos relevantes y, a través de métodos estadísticos y otras herramientas relacione la información para conocer si el proceso de enseñanza aprendizaje ha dado resultados positivos. 
