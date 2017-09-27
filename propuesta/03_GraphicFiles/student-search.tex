@@ -1,0 +1,16 @@
+%\centering\makebox[\textwidth]{
+\begin{tikzpicture}[node distance=4cm, auto]
+
+    % Place nodes
+    \node[label={Estudiante},charlie,monitor,minimum size=1.3cm] (estudiante);
+    \node[block,right of=estudiante] (search-process) {Búsqueda};
+    \node[label={Docente},businessman,mirrored,monitor,minimum size=1.3cm,right of=search-process] (docente);
+
+\draw[line] (estudiante) -- (search-process)
+            (search-process) -- (docente);
+
+\path[line,dashed] 
+   (docente.south) -- +(0,-.35) -| (estudiante.south);
+
+\end{tikzpicture}
+%}

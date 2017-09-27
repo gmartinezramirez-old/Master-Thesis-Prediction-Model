@@ -11,12 +11,8 @@
 			 , fontsize=10pt % Arial 10 for all text.
 			 , headings=big
 			 , parskip=half-
-			%, noparskip % No par skip. If yes park skip the command is parskip
-			%, numbers=noendperiod % 2.3.1 vs 2.3.1. (no dot after the last chapter number)
 			 , numbers=endperiod
 	         , twoside=false
-			% , toc=bibliography % Bibliography appears in Table of Contents (without a number)
-			% , toc=listof % List of Figures and List of Tables appear in Table of Contents
 			% , chapterprefix=true
 			 , chapterprefix=false
 			% , bibliography=totoc % The bibliography will have an entry at the table of contents but no number.
@@ -28,14 +24,15 @@
 ]{scrbook}
 
 % TODO: Revisar las separaciones
-\RedeclareSectionCommand[
-afterskip=\parskip]{chapter}
-\RedeclareSectionCommand[
-beforeskip=\parskip
-, afterskip=0.1\parskip]{section}
-\RedeclareSectionCommand[
-beforeskip=1.1\parskip plus 3mm
-, afterskip=0.1\parskip]{subsection}
+%\RedeclareSectionCommand[
+%afterskip=\parskip]{chapter}
+
+%\RedeclareSectionCommand[
+%beforeskip=\parskip
+%, afterskip=0.1\parskip]{section}
+
+%\RedeclareSectionCommand[beforeskip=1.1\parskip plus 3mm
+%, afterskip=0.1\parskip]{subsection}
 
 
 \KOMAoption{bibliography}{leveldown}
@@ -58,7 +55,10 @@ beforeskip=1.1\parskip plus 3mm
 {\bfseries\Large\vspace*{-4.0cm}}	% Formato título
 {	% Contenido de la etiqueta
 	\filright
-	\Large\MakeUppercase\chaptertitlename\ \thechapter.\ 
+	% En memoria tesis, va capitulo prefix
+	%\Large\MakeUppercase\chaptertitlename\thechapter.\
+	% En propuesta no
+	\Large\MakeUppercase\thechapter.\ 
 }
 {0pt} % Espacio mínimo entre etiqueta y cuerpo
 {\filright\MakeUppercase} % Código que precede al cuerpo del título
@@ -78,14 +78,18 @@ beforeskip=1.1\parskip plus 3mm
 {\vspace*{0.5cm}}
 
 \titleformat{\subsubsection}
-{\itshape\normalsize\vspace{1.0cm}}
+%{\itshape\normalsize\vspace{1.0cm}}
+{\itshape\normalsize}
 {\itshape\thesubsubsection\ }
 {0pt}
-{\vspace*{0.5cm}\itshape}
+%{\vspace*{0.5cm}\itshape}
+{\itshape}
 
 \titlespacing*{\chapter} {0pt}{85pt}{20pt} 
 \titlespacing*{\section} {0pt}{6.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\subsection} {0pt}{6.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 \titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing*{\subsubsection*}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
 \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}
 \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}

@@ -37,9 +37,12 @@
 \let\oldaddchaptertocentry\addchaptertocentry
 \renewcommand{\addchaptertocentry}[2]{%
 	\oldaddchaptertocentry{}{\@chapapp{} #1. #2}}
+%	\oldaddchaptertocentry{}{\@chapapp{} #2}}
 \let\oldaddparttocentry\addparttocentry
 \renewcommand{\addparttocentry}[2]{%
 	\oldaddchaptertocentry{}{\partname{} #1. #2}}
+%	\oldaddchaptertocentry{}{\partname{} #2}}
+
 
 \RedeclareSectionCommand[tocindent=5.5em]{section}
 \RedeclareSectionCommand[tocindent=7.8em]{subsection}
@@ -95,9 +98,7 @@
 
 % Extended support for catioons of figures and tables etc.
 % CTAN: http://www.ctan.org/pkg/caption
-\usepackage[%font={small}
-		  %, labelfont={bf,sf}
-		  , font=it
+\usepackage[font=it
 		  , labelfont={sf}
 		  , format=hang % try plain or hang
 		  , margin=5pt
@@ -203,7 +204,7 @@
 \newcommand{\tabla}[1]{Tabla~\ref{#1}}
 \newcommand{\fig}[1]{Figura~\ref{#1}}
 \newcommand{\alg}[1]{Algoritmo~\ref{#1}}
-\newcommand{\eq}[1]{Ecuación~\ref{#1}}
+\newcommand{\eq}[1]{Ecuación~(\ref{#1})}
 
 
 % #######################

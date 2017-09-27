@@ -107,6 +107,8 @@
 		  %, citestyle=numeric-comp
 		  %AHORA: APA
 		  , style=apa
+		  %TODO: Revisar esto
+		  %, style=apa-good
 		  , hyperref=true
 		  , url=false
 		  , isbn=false
@@ -125,6 +127,7 @@
 ]{biblatex}
 \bibliography{bibfile}
 
+%\bibliographystyle{apa-good}
 % Separacion entre entradas de la referencia
 \setlength\bibitemsep{\baselineskip}
 
@@ -278,3 +281,7 @@
 % \newcommand{\y}{\raisebox{-0.12cm}{\begin{tikzpicture}\node{\includegraphics[height=0.25cm]{/home/jeroen/phd/latex/thesis//dev/tickmark.pdf}};\end{tikzpicture}}}
 \newcommand{\y}{\checkmark}
 \newcommand{\n}{}
+
+\usepackage{smartdiagram}
+\usesmartdiagramlibrary{additions} % required in the preamble
+\usetikzlibrary{arrows} % required in the preamble
