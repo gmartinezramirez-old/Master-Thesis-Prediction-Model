@@ -19,7 +19,6 @@ El ciclo de construcción, evaluación y optimización del modelo se ilustra en 
 	\label{fig:ml-pipeline}
 \end{figure}
 
-
 \subsection{Propósito de la solución}
 \label{subsec:proposito-solucion}
 El propósito de la solución consiste en proveer evaluaciones de desempeño de búsqueda oportunas que permitan a los docentes aplicar acciones correctivas durante el proceso de formación y desarrollo de competencias informacionales en cursos de alfabetización informacional.
@@ -32,64 +31,3 @@ Con el módulo propuesto en este trabajo, el docente obtiene una estimación tem
 	\captionsource{Proceso de búsqueda de información de un estudiante}{\fuentePropia}
 	\label{fig:docente_estudiante}
 \end{figure}
-
-
-%\begin{figure}[H]
-%\centering\makebox[\textwidth]{
-%\begin{tikzpicture}[node distance =4cm, auto]
-%
-%    % Place nodes
-%    \node[block] (susceptible) {Susceptible};
-%    \node[block, right of=susceptible] (exposed) {Exposed};
-%    \node[block, right of=exposed] (infectious) {Infectious};
-%    \node[block, right of=infectious] (removed) {Removed};
-%
-%\coordinate[below=8mm of susceptible] (bottom brace);
-%
-%\draw [my brace]
-%      (exposed.south|-bottom brace) -- (susceptible.south west|-bottom brace) 
-%      node[bottom label] {
-%        Environmental \& Human factors
-%        \begin{itemize}
-%        \item Foo
-%        \item Bar
-%        \item Foobar
-%        \end{itemize}
-%      };
-
-%\draw [my brace]
-%    (infectious.south|-bottom brace) -- (exposed.south|-bottom brace)
-%    node [bottom label] { Variable immunity };
-
-%\draw [my brace]
-%    (removed.south east|-bottom brace) -- (infectious.south|-bottom brace)
-%    node [bottom label] { 
-%      Control parameters 
-%        \begin{itemize}
-%        \item Foo
-%        \item Bar
-%        \end{itemize}
-%     };    
-
-%\coordinate[above=3mm of susceptible] (top brace);
-
-%\draw [my brace] 
-%    (susceptible.north|-top brace) -- (exposed.north|-top brace)
-%    node [top label] {Contact parameters};
-
-%\draw [my brace]
-%    (exposed.north|-top brace) -- (removed.north|-top brace)
-%    node[top label] {Disease parameters};
-
-%\draw[line] (susceptible) -- (exposed)
-%            (exposed) -- (infectious)
-%            (infectious) -- (removed);
-
-%\path[line,dashed] 
-%   (removed.south) -- +(0,-.35) -| (susceptible.south);
-
-%\end{tikzpicture}}
-%\smallskip
-%\label{fig:flowchart_disease_transmission}
-%\caption{Flowchart of fundamental disease transmission mechanisms}
-%\end{figure}
