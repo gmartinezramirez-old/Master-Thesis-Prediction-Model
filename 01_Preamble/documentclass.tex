@@ -15,7 +15,6 @@
 	         , twoside=false
 			% , chapterprefix=true
 			 , chapterprefix=false
-			% , bibliography=totoc % The bibliography will have an entry at the table of contents but no number.
 			 , numbers=noenddot
 			 , titlepage=simple
 			 , headings=onelinechapter
@@ -56,9 +55,9 @@
 {	% Contenido de la etiqueta
 	\filright
 	% En memoria tesis, va capitulo prefix
-	%\Large\MakeUppercase\chaptertitlename\thechapter.\
+	\Large\MakeUppercase\chaptertitlename\thechapter.\
 	% En propuesta no
-	\Large\MakeUppercase\thechapter.\ 
+	%\Large\MakeUppercase\thechapter.\ 
 }
 {0pt} % Espacio mínimo entre etiqueta y cuerpo
 {\filright\MakeUppercase} % Código que precede al cuerpo del título
